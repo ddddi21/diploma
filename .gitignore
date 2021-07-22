@@ -7,4 +7,3 @@
 .externalNativeBuild
 app/src/main/aidl/
 app/*.apk
-/.idea/
