@@ -2,7 +2,6 @@ package com.technokratos.app.navigation
 
 import android.content.Context
 import androidx.navigation.NavController
-import com.technokratos.app.MainActivity
 import com.technokratos.app.R
 import com.technokratos.splash.SplashRouter
 import com.technokratos.users.UsersRouter
@@ -32,6 +31,6 @@ class Navigator : UsersRouter, SplashRouter {
     }
 
     override fun openMain(context: Context) {
-        MainActivity.start(context)
+//        navController?.navigate(R.id.ma )
     }
 }

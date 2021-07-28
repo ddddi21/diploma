@@ -1,6 +1,6 @@
 package com.technokratos.splash.presentation.di
 
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -16,8 +16,8 @@ import dagger.multibindings.IntoMap
 class SplashModule {
 
     @Provides
-    internal fun provideScannerViewModel(activity: AppCompatActivity, factory: ViewModelProvider.Factory): SplashViewModel {
-        return ViewModelProviders.of(activity, factory).get(SplashViewModel::class.java)
+    internal fun provideScannerViewModel(fragment: Fragment, factory: ViewModelProvider.Factory): SplashViewModel {
+        return ViewModelProviders.of(fragment, factory).get(SplashViewModel::class.java)
     }
 
     @Provides

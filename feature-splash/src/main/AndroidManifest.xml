@@ -4,14 +4,9 @@
     <application>
 
         <activity
-            android:name="com.technokratos.splash.presentation.SplashActivity"
+            android:name="com.technokratos.splash.presentation.SplashFragment"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
     </application>

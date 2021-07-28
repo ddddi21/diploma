@@ -14,6 +14,10 @@ android {
 
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -32,6 +36,7 @@ dependencies {
     implementation androidDep
 
     implementation daggerDep
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     kapt daggerKapt
 
     implementation lifecycleDep
