@@ -21,16 +21,6 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
         return binding.root
     }
 
-//    splashViewModel.openUsersEvent.observe(this, EventObserver
-//    {
-//        binding.eyeIcon.animate()
-//            .rotationX(10f)
-//            .start()
-//        splashViewModel.openMain(this)
-//        finish()
-//    })
-//  }
-
     override fun initViews() {
 
         val endActionTwo = Runnable {
