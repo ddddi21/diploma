@@ -23,5 +23,8 @@
     <dimen name="app_logo_margin_top">160dp</dimen>
     <dimen name="app_logo_margin_bottom">612dp</dimen>
 
+    <dimen name="email_input_layout_margin_top">112dp</dimen>
+    <dimen name="email_input_layout_margin_bottom">440dp</dimen>
+
 
 </resources>

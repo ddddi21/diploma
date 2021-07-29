@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/login_app_logo"
         android:layout_width="@dimen/app_logo_width"
         android:layout_height="@dimen/app_logo_height"
         android:layout_marginBottom="@dimen/app_logo_margin_bottom"
@@ -20,4 +20,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/watch_later_logo_full" />
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/emailInputLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/email_input_layout_margin_top"-->
+<!--        android:layout_marginEnd="@dimen/email_input_layout_margin_bottom"-->
+<!--        android:theme="@style/Auth.TextInputLayout"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/login_app_logo">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/emailInputEditText"-->
+<!--            style="@style/Auth.TextInputEditText"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawableStart="@drawable/ic_email"-->
+<!--            android:drawablePadding="@dimen/text_input_edit_text_drawable_padding"-->
+<!--            android:hint="@string/hint_email_input_edit_text"-->
+<!--            android:inputType="textEmailAddress" />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/passwordInputLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/auth_container_margin"-->
+<!--        android:layout_marginEnd="@dimen/auth_container_margin"-->
+<!--        android:theme="@style/Auth.TextInputLayout"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout"-->
+<!--        app:passwordToggleDrawable="@drawable/toggle_password"-->
+<!--        app:passwordToggleEnabled="true"-->
+<!--        app:passwordToggleTint="@color/text_input_control_normal">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/passwordInputEditText"-->
+<!--            style="@style/Auth.TextInputEditText"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawableStart="@drawable/ic_lock"-->
+<!--            android:drawablePadding="@dimen/text_input_edit_text_drawable_padding"-->
+<!--            android:hint="@string/hint_password_input_edit_text"-->
+<!--            android:inputType="textPassword" />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

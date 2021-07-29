@@ -6,7 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.technokratos.app.di.deps.findComponentDependencies
 import com.technokratos.app.di.main.MainComponent
-import com.technokratos.app.navigation.Navigator
+import com.technokratos.app.navigation.NavControllerProvider
 import com.technokratos.common.base.BaseActivity
 import javax.inject.Inject
 
@@ -20,7 +20,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
         }
     }
 
-    @Inject lateinit var navigator: Navigator
+    @Inject lateinit var navigator: NavControllerProvider
 
     private var navController: NavController? = null
 

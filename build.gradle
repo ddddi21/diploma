@@ -17,7 +17,7 @@ buildscript {
         rxJavaVersion = '2.2.7'
         rxAndroidVersion = '2.1.0'
 
-        daggerVersion = '2.25.2'
+        daggerVersion = '2.38.1'
         javaxInjectVersion = '1'
 
         architectureComponentVersion = '2.0.0'

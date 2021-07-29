@@ -69,9 +69,9 @@ abstract class BaseFragment<T : BaseViewModel> : Fragment() {
         observables.add(source)
     }
 
-    abstract fun initViews()
-
     abstract fun inject()
+
+    abstract fun initViews()
 
     abstract fun subscribe(viewModel: T)
 }

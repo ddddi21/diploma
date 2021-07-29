@@ -4,6 +4,7 @@ import com.technokratos.app.App
 import com.technokratos.app.di.deps.ComponentDependenciesModule
 import com.technokratos.app.di.deps.ComponentHolderModule
 import com.technokratos.app.di.main.MainDependencies
+import com.technokratos.app.navigation.NavControllerProvider
 import com.technokratos.common.di.CommonApi
 import com.technokratos.common.di.modules.CommonModule
 import com.technokratos.common.di.modules.NetworkModule
@@ -17,6 +18,7 @@ import dagger.Component
         AppModule::class,
         CommonModule::class,
         NetworkModule::class,
+        RouterModule::class,
         NavigationModule::class,
         ComponentHolderModule::class,
         ComponentDependenciesModule::class,
@@ -35,4 +37,6 @@ interface AppComponent : MainDependencies, CommonApi {
     }
 
     fun inject(app: App)
+
+    fun provideNavControllerProvider(): NavControllerProvider
 }

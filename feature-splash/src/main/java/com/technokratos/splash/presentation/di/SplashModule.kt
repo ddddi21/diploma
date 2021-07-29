@@ -16,14 +16,14 @@ import dagger.multibindings.IntoMap
 class SplashModule {
 
     @Provides
-    internal fun provideScannerViewModel(fragment: Fragment, factory: ViewModelProvider.Factory): SplashViewModel {
+    internal fun provideSplashViewModelFromStore(fragment: Fragment, factory: ViewModelProvider.Factory): SplashViewModel {
         return ViewModelProviders.of(fragment, factory).get(SplashViewModel::class.java)
     }
 
     @Provides
     @IntoMap
     @ViewModelKey(SplashViewModel::class)
-    fun provideSignInViewModel(router: SplashRouter): ViewModel {
+    fun provideSplashViewModelFromStore(router: SplashRouter): ViewModel {
         return SplashViewModel(router)
     }
 }

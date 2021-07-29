@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
 import com.technokratos.splash.databinding.SplashFragmentBinding
-import com.technokratos.splash.di.SplashFeatureApi
+import com.technokratos.splash.di.SplashFeatureKey
 import com.technokratos.splash.di.SplashFeatureComponent
 
 class SplashFragment : BaseFragment<SplashViewModel>() {
@@ -43,7 +43,7 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
     }
 
     override fun inject() {
-        FeatureUtils.getFeature<SplashFeatureComponent>(this, SplashFeatureApi::class.java)
+        FeatureUtils.getFeature<SplashFeatureComponent>(this, SplashFeatureKey::class.java)
             .splashComponentFactory()
             .create(this)
             .inject(this)
