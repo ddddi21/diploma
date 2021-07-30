@@ -1,9 +1,7 @@
 package com.technokratos.app.di.main
 
 import androidx.appcompat.app.AppCompatActivity
-import com.technokratos.app.MainActivity
-import com.technokratos.app.di.app.NavigationModule
-import com.technokratos.app.navigation.NavControllerProvider
+import com.technokratos.app.presentation.MainActivity
 import com.technokratos.common.di.scope.ApplicationScope
 import dagger.BindsInstance
 import dagger.Component
@@ -13,8 +11,7 @@ import dagger.Component
         MainDependencies::class
     ],
     modules = [
-        MainModule::class,
-        NavigationModule::class
+        MainModule::class
     ]
 )
 @ApplicationScope
@@ -36,6 +33,4 @@ interface MainComponent {
     }
 
     fun inject(mainActivity: MainActivity)
-
-    fun provideNavControllerProvider(): NavControllerProvider
 }

@@ -1,4 +1,4 @@
-package com.technokratos.app.navigation
+package com.example.navigation.navigation
 
 import androidx.navigation.NavController
 import javax.inject.Provider
@@ -11,6 +11,10 @@ class NavControllerProvider : Provider<NavController?> {
 
     fun attachNavController(navController: NavController, graph: Int) {
         navController.setGraph(graph)
+        this.navController = navController
+    }
+
+    fun bind(navController: NavController) {
         this.navController = navController
     }
 

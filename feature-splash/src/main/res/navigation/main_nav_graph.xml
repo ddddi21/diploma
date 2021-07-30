@@ -24,5 +24,4 @@
         android:name="com.technokratos.users.presentation.details.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
-
 </navigation>

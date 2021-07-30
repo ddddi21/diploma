@@ -1,10 +1,12 @@
 package com.technokratos.app.di.app
 
+import com.example.navigation.navigation.NavControllerProvider
+import com.example.navigation.navigation.NavigationModule
+import com.example.navigation.router.RouterModule
 import com.technokratos.app.App
 import com.technokratos.app.di.deps.ComponentDependenciesModule
 import com.technokratos.app.di.deps.ComponentHolderModule
 import com.technokratos.app.di.main.MainDependencies
-import com.technokratos.app.navigation.NavControllerProvider
 import com.technokratos.common.di.CommonApi
 import com.technokratos.common.di.modules.CommonModule
 import com.technokratos.common.di.modules.NetworkModule

@@ -1,6 +1,5 @@
-package com.technokratos.app.di.app
+package com.example.navigation.navigation
 
-import com.technokratos.app.navigation.NavControllerProvider
 import com.technokratos.common.di.scope.ApplicationScope
 import dagger.Module
 import dagger.Provides

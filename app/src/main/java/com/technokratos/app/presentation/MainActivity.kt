@@ -1,12 +1,13 @@
-package com.technokratos.app
+package com.technokratos.app.presentation
 
 import android.content.Context
 import android.content.Intent
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
+import com.example.navigation.navigation.NavControllerProvider
+import com.technokratos.app.R
 import com.technokratos.app.di.deps.findComponentDependencies
 import com.technokratos.app.di.main.MainComponent
-import com.technokratos.app.navigation.NavControllerProvider
 import com.technokratos.common.base.BaseActivity
 import javax.inject.Inject
 
@@ -20,9 +21,16 @@ class MainActivity : BaseActivity<MainViewModel>() {
         }
     }
 
-    @Inject lateinit var navigator: NavControllerProvider
+    @Inject
+    lateinit var navigator: NavControllerProvider
 
-    private var navController: NavController? = null
+    var host = NavHostFragment()
+
+    var navController = NavController(this)
+
+    override fun layoutResource(): Int {
+        return R.layout.activity_launch
+    }
 
     override fun inject() {
         MainComponent
@@ -30,13 +38,16 @@ class MainActivity : BaseActivity<MainViewModel>() {
             .inject(this)
     }
 
-    override fun layoutResource(): Int {
-        return R.layout.activity_main
+    override fun onStart() {
+        super.onStart()
     }
 
     override fun initViews() {
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        navigator.attachNavController(navController!!, R.navigation.main_nav_graph)
+        host = (supportFragmentManager
+            .findFragmentById(R.id.launch_nav_host_fragment) as NavHostFragment?) ?: return
+        navController = host.navController
+
+        navigator.attachNavController(navController, R.navigation.auth_nav_graph)
     }
 
     override fun subscribe(viewModel: MainViewModel) {
@@ -44,8 +55,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     override fun onDestroy() {
         super.onDestroy()
-        navController?.let {
-            navigator.detachNavController(it)
-        }
+
+        navigator.detachNavController(navController)
     }
 }

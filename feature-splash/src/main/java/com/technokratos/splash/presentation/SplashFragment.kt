@@ -14,6 +14,13 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
 
     private lateinit var binding: SplashFragmentBinding
 
+    override fun inject() {
+        FeatureUtils.getFeature<SplashFeatureComponent>(this, SplashFeatureKey::class.java)
+            .splashComponentFactory()
+            .create(this)
+            .inject(this)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         binding = SplashFragmentBinding.inflate(layoutInflater)
@@ -22,7 +29,14 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
     }
 
     override fun initViews() {
+        animation()
+        viewModel.navigateToLogin()
+    }
 
+    override fun subscribe(viewModel: SplashViewModel) {
+    }
+
+    private fun animation() {
         val endActionTwo = Runnable {
             binding.eyeIcon.animate()
                 .translationX(1f)
@@ -40,15 +54,5 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
             .translationX(40f)
             .setDuration(800)
             .withEndAction(endActionOne)
-    }
-
-    override fun inject() {
-        FeatureUtils.getFeature<SplashFeatureComponent>(this, SplashFeatureKey::class.java)
-            .splashComponentFactory()
-            .create(this)
-            .inject(this)
-    }
-
-    override fun subscribe(viewModel: SplashViewModel) {
     }
 }

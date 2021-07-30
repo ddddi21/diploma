@@ -1,4 +1,4 @@
-package com.technokratos.app.navigation
+package com.example.navigation.router
 
 import com.technokratos.auth.router.AuthRouter
 import com.technokratos.auth.router.RegistrationRouter
@@ -9,4 +9,5 @@ interface Router :
     SplashRouter,
     UsersRouter,
     AuthRouter,
-    RegistrationRouter
+    RegistrationRouter,
+    MainRouter

@@ -1,3 +1,4 @@
+include ':navigation'
 include ':feature-auth'
 include ':app'
 include ':test-shared'

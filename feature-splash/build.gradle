@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -30,6 +29,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
+    implementation project(':feature-user-api')
+    implementation project(':feature-user-impl')
+    implementation project(':feature-auth')
 
     implementation kotlinDep
 
@@ -37,6 +39,7 @@ dependencies {
 
     implementation daggerDep
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-runtime-ktx:2.3.5'
     kapt daggerKapt
 
     implementation lifecycleDep
@@ -44,4 +47,6 @@ dependencies {
 
     testImplementation jUnitDep
     testImplementation mockitoDep
+
+    implementation fragmentDep
 }
