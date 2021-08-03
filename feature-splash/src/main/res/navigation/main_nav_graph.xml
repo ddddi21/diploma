@@ -11,17 +11,16 @@
         android:label="fragment_users"
         tools:layout="@layout/fragment_users" />
 
-
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.technokratos.splash.presentation.SplashFragment"
         android:label="splash_fragment"
         tools:layout="@layout/splash_fragment" />
 
-
     <fragment
         android:id="@+id/userFragment"
         android:name="com.technokratos.users.presentation.details.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
+
 </navigation>
