@@ -10,14 +10,12 @@ import com.technokratos.splash.databinding.SplashFragmentBinding
 import com.technokratos.splash.di.SplashFeatureApi
 import com.technokratos.splash.di.SplashFeatureComponent
 
-class SplashFragment : BaseFragment<SplashViewModel>() {
+private const val FIRST_TRANSLATION_X_VALUE = 40f
+private const val SECOND_TRANSLATION_X_VALUE = -55f
+private const val THIRD_TRANSLATION_X_VALUE = 1f
+private const val ANIMATION_DURATION = 800L
 
-    companion object {
-        const val FIRST_TRANSLATION_X_VALUE = 40f
-        const val SECOND_TRANSLATION_X_VALUE = -55f
-        const val THIRD_TRANSLATION_X_VALUE = 1f
-        const val ANIMATION_DURATION = 800.toLong()
-    }
+class SplashFragment : BaseFragment<SplashViewModel>() {
 
     private lateinit var binding: SplashFragmentBinding
 
