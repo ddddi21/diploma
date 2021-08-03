@@ -1,3 +1,3 @@
 package com.technokratos.splash.di
 
-interface SplashFeatureApi
+interface SplashFeatureKey

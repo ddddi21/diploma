@@ -1,6 +1,5 @@
 package com.technokratos.splash.presentation
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.technokratos.common.base.BaseViewModel
@@ -18,7 +17,7 @@ class SplashViewModel(
         _openUsersEvent.value = Event(Unit)
     }
 
-    fun openMain(context: Context) {
-        router.openMain(context)
+    fun onAnimationFinished() {
+        router.toLogin()
     }
 }

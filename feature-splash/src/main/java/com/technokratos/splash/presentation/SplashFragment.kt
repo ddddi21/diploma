@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
 import com.technokratos.splash.databinding.SplashFragmentBinding
-import com.technokratos.splash.di.SplashFeatureApi
+import com.technokratos.splash.di.SplashFeatureKey
 import com.technokratos.splash.di.SplashFeatureComponent
 
 private const val FIRST_TRANSLATION_X_VALUE = 40f
@@ -25,13 +25,18 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
     }
 
     override fun inject() {
-        FeatureUtils.getFeature<SplashFeatureComponent>(this, SplashFeatureApi::class.java)
+        FeatureUtils.getFeature<SplashFeatureComponent>(this, SplashFeatureKey::class.java)
             .splashComponentFactory()
             .create(this)
             .inject(this)
     }
 
     override fun initViews() {
+        animation()
+        viewModel.onAnimationFinished()
+    }
+
+    private fun animation() {
         val endActionTwo = Runnable {
             binding.eyeIconImageView.animate()
                 .translationX(THIRD_TRANSLATION_X_VALUE)

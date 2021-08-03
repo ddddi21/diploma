@@ -1,13 +1,17 @@
 package com.technokratos.app.di.deps
 
 import com.technokratos.app.App
+import com.technokratos.auth.di.auth.AuthFeatureHolder
+import com.technokratos.auth.di.auth.AuthFeatureKey
+import com.technokratos.auth.di.registration.RegistrationFeatureHolder
+import com.technokratos.auth.di.registration.RegistrationFeatureKey
 import com.technokratos.common.di.FeatureApiHolder
 import com.technokratos.common.di.FeatureContainer
 import com.technokratos.common.di.scope.ApplicationScope
 import com.technokratos.core_db.di.DbApi
 import com.technokratos.core_db.di.DbHolder
 import com.technokratos.feature_user_api.di.UserFeatureApi
-import com.technokratos.splash.di.SplashFeatureApi
+import com.technokratos.splash.di.SplashFeatureKey
 import com.technokratos.splash.di.SplashFeatureHolder
 import com.technokratos.users.di.UserFeatureHolder
 import dagger.Binds
@@ -24,7 +28,7 @@ interface ComponentHolderModule {
 
     @ApplicationScope
     @Binds
-    @ClassKey(SplashFeatureApi::class)
+    @ClassKey(SplashFeatureKey::class)
     @IntoMap
     fun provideSplashFeatureHolder(splashFeatureHolder: SplashFeatureHolder): FeatureApiHolder
 
@@ -39,4 +43,16 @@ interface ComponentHolderModule {
     @ClassKey(DbApi::class)
     @IntoMap
     fun provideDbFeature(dbHolder: DbHolder): FeatureApiHolder
+
+    @ApplicationScope
+    @Binds
+    @ClassKey(AuthFeatureKey::class)
+    @IntoMap
+    fun provideAuthFeatureHolder(authFeatureHolder: AuthFeatureHolder): FeatureApiHolder
+
+    @ApplicationScope
+    @Binds
+    @ClassKey(RegistrationFeatureKey::class)
+    @IntoMap
+    fun provideRegistrationFeatureHolder(registrationFeatureHolder: RegistrationFeatureHolder): FeatureApiHolder
 }

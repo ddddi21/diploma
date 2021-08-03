@@ -1,4 +1,4 @@
-package com.technokratos.app
+package com.technokratos.app.presentation
 
 import com.technokratos.common.base.BaseViewModel
 
