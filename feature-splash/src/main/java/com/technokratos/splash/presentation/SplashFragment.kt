@@ -29,18 +29,18 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
     }
 
     override fun initViews() {
-        animation()
-        viewModel.navigateToLogin()
+        startSplashAnimation()
     }
 
     override fun subscribe(viewModel: SplashViewModel) {
     }
 
-    private fun animation() {
+    private fun startSplashAnimation() {
         val endActionTwo = Runnable {
             binding.eyeIcon.animate()
                 .translationX(1f)
                 .setDuration(800)
+                .withEndAction(viewModel::navigateToLogin)
         }
 
         val endActionOne = Runnable {
