@@ -35,8 +35,8 @@ class MainActivity : BaseActivity<MainViewModel>() {
     }
 
     override fun initViews() {
-        val navHostFragment = (supportFragmentManager
-            .findFragmentById(R.id.launch_nav_host_fragment) as NavHostFragment?) ?: return
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.launch_nav_host_fragment) as NavHostFragment? ?: return
         navController = navHostFragment.navController
         navigator.attachNavController(navController, R.navigation.auth_nav_graph)
     }
