@@ -24,13 +24,9 @@ class MainActivity : BaseActivity<MainViewModel>() {
     @Inject
     lateinit var navigator: NavControllerProvider
 
-    var host = NavHostFragment()
+    private var navController = NavController(this)
 
-    var navController = NavController(this)
-
-    override fun layoutResource(): Int {
-        return R.layout.activity_launch
-    }
+    override fun layoutResource() = R.layout.activity_launch
 
     override fun inject() {
         MainComponent
@@ -38,24 +34,19 @@ class MainActivity : BaseActivity<MainViewModel>() {
             .inject(this)
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
     override fun initViews() {
-        host = (supportFragmentManager
+        val navHostFragment = (supportFragmentManager
             .findFragmentById(R.id.launch_nav_host_fragment) as NavHostFragment?) ?: return
-        navController = host.navController
-
+        navController = navHostFragment.navController
         navigator.attachNavController(navController, R.navigation.auth_nav_graph)
     }
 
     override fun subscribe(viewModel: MainViewModel) {
+        // TODO
     }
 
     override fun onDestroy() {
         super.onDestroy()
-
         navigator.detachNavController(navController)
     }
 }

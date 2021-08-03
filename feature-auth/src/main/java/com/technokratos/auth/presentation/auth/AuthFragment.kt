@@ -15,9 +15,7 @@ class AuthFragment : BaseFragment<AuthViewModel>() {
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
         binding = FragmentLoginBinding.inflate(layoutInflater)
-
         return binding.root
     }
 
@@ -29,8 +27,10 @@ class AuthFragment : BaseFragment<AuthViewModel>() {
     }
 
     override fun initViews() {
+        // TODO
     }
 
     override fun subscribe(viewModel: AuthViewModel) {
+        // TODO
     }
 }

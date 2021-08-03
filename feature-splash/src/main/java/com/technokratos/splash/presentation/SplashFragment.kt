@@ -30,7 +30,7 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
 
     override fun initViews() {
         animation()
-        viewModel.navigateToLogin()
+        viewModel.onAnimationFinished()
     }
 
     override fun subscribe(viewModel: SplashViewModel) {

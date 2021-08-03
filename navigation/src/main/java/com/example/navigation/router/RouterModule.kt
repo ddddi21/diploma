@@ -13,7 +13,7 @@ abstract class RouterModule {
 
     @ApplicationScope
     @Binds
-    abstract fun provideMainRouter(routerImpl: RouterImpl): UsersRouter
+    abstract fun provideUsersRouter(routerImpl: RouterImpl): UsersRouter
 
     @ApplicationScope
     @Binds
