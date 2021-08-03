@@ -40,7 +40,7 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
             binding.eyeIconImageView.animate()
                 .translationX(THIRD_TRANSLATION_X_VALUE)
                 .setDuration(ANIMATION_DURATION)
-                .withEndAction(viewModel::navigateToLogin)
+                .withEndAction(viewModel::onAnimationFinished)
         }
 
         val endActionOne = Runnable {
