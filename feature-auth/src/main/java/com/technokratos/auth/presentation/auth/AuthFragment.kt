@@ -16,6 +16,9 @@ class AuthFragment : BaseFragment<AuthViewModel>() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentLoginBinding.inflate(layoutInflater)
+        binding.RegistrationClickedTextView.setOnClickListener {
+            viewModel.onRegistrationClicked()
+        }
         return binding.root
     }
 

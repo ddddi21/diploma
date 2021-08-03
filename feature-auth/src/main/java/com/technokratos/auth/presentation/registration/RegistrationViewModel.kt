@@ -5,4 +5,9 @@ import com.technokratos.common.base.BaseViewModel
 
 class RegistrationViewModel(
     private val router: RegistrationRouter
-) : BaseViewModel()
+) : BaseViewModel() {
+
+    fun onBackToLoginScreenClicked() {
+        router.navigateToLogin()
+    }
+}

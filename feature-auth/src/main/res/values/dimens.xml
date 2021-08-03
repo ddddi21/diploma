@@ -45,4 +45,11 @@
     <dimen name="registration_liner_layout_padding">16dp</dimen>
     <dimen name="registration_textView_padding_start">4dp</dimen>
 
+    <dimen name="registration_email_input_layout_margin_top">100dp</dimen>
+    <dimen name="registration_enter_button_margin_top">96dp</dimen>
+
+    <dimen name="back_arrow_image_view_margin_top">56dp</dimen>
+    <dimen name="back_arrow_image_view_margin_bottom">736dp</dimen>
+    <dimen name="back_arrow_image_view_margin_start">8dp</dimen>
+    <dimen name="back_arrow_image_view_margin_end">352dp</dimen>
 </resources>
