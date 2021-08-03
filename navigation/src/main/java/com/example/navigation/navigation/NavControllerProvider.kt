@@ -14,10 +14,6 @@ class NavControllerProvider : Provider<NavController?> {
         this.navController = navController
     }
 
-    fun bind(navController: NavController) {
-        this.navController = navController
-    }
-
     fun detachNavController(navController: NavController) {
         if (this.navController == navController) {
             this.navController = null

@@ -13,7 +13,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildFeatures {
@@ -23,7 +22,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -36,7 +34,6 @@ android {
 }
 
 dependencies {
-
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
 
@@ -45,7 +42,7 @@ dependencies {
     implementation androidDep
 
     implementation daggerDep
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation constraintDep
     kapt daggerKapt
 
     implementation lifecycleDep

@@ -10,9 +10,19 @@ import com.technokratos.splash.databinding.SplashFragmentBinding
 import com.technokratos.splash.di.SplashFeatureKey
 import com.technokratos.splash.di.SplashFeatureComponent
 
+private const val FIRST_TRANSLATION_X_VALUE = 40f
+private const val SECOND_TRANSLATION_X_VALUE = -55f
+private const val THIRD_TRANSLATION_X_VALUE = 1f
+private const val ANIMATION_DURATION = 800L
+
 class SplashFragment : BaseFragment<SplashViewModel>() {
 
     private lateinit var binding: SplashFragmentBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = SplashFragmentBinding.inflate(layoutInflater)
+        return binding.root
+    }
 
     override fun inject() {
         FeatureUtils.getFeature<SplashFeatureComponent>(this, SplashFeatureKey::class.java)
@@ -21,38 +31,32 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
             .inject(this)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
-        binding = SplashFragmentBinding.inflate(layoutInflater)
-
-        return binding.root
-    }
-
     override fun initViews() {
         startSplashAnimation()
     }
 
-    override fun subscribe(viewModel: SplashViewModel) {
-    }
-
     private fun startSplashAnimation() {
         val endActionTwo = Runnable {
-            binding.eyeIcon.animate()
-                .translationX(1f)
-                .setDuration(800)
+            binding.eyeIconImageView.animate()
+                .translationX(THIRD_TRANSLATION_X_VALUE)
+                .setDuration(ANIMATION_DURATION)
                 .withEndAction(viewModel::navigateToLogin)
         }
 
         val endActionOne = Runnable {
-            binding.eyeIcon.animate()
-                .translationX(-55f)
-                .setDuration(800)
+            binding.eyeIconImageView.animate()
+                .translationX(SECOND_TRANSLATION_X_VALUE)
+                .setDuration(ANIMATION_DURATION)
                 .withEndAction(endActionTwo)
         }
 
-        binding.eyeIcon.animate()
-            .translationX(40f)
-            .setDuration(800)
+        binding.eyeIconImageView.animate()
+            .translationX(FIRST_TRANSLATION_X_VALUE)
+            .setDuration(ANIMATION_DURATION)
             .withEndAction(endActionOne)
+    }
+
+    override fun subscribe(viewModel: SplashViewModel) {
+        // TODO
     }
 }

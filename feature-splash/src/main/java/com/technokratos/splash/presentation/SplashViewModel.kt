@@ -17,7 +17,7 @@ class SplashViewModel(
         _openUsersEvent.value = Event(Unit)
     }
 
-    fun navigateToLogin() {
+    fun onAnimationFinished() {
         router.toLogin()
     }
 }
