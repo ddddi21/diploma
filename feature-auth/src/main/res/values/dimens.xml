@@ -6,22 +6,20 @@
     <dimen name="watch_later_logo_margin_top">336dp</dimen>
     <dimen name="watch_later_logo_margin_bottom">388dp</dimen>
 
-    <dimen name="eye_logo_center_place_margin_left">176dp</dimen>
-    <dimen name="eye_logo_center_place_margin_right">164dp</dimen>
+    <dimen name="eye_logo_center_place_margin_start">176dp</dimen>
+    <dimen name="eye_logo_center_place_margin_end">164dp</dimen>
     
-    <dimen name="eye_logo_right_place_margin_left">184dp</dimen>
-    <dimen name="eye_logo_right_place_margin_right">156dp</dimen>
+    <dimen name="eye_logo_right_place_margin_start">184dp</dimen>
+    <dimen name="eye_logo_right_place_margin_end">156dp</dimen>
 
-    <dimen name="eye_logo_left_place_margin_left">164dp</dimen>
-    <dimen name="eye_logo_left_place_margin_right">176dp</dimen>
+    <dimen name="eye_logo_left_place_margin_start">164dp</dimen>
+    <dimen name="eye_logo_left_place_margin_end">176dp</dimen>
     
     <dimen name="app_logo_width">96dp</dimen>
     <dimen name="app_logo_height">44dp</dimen>
 
-    <dimen name="app_logo_margin_left">140dp</dimen>
-    <dimen name="app_logo_margin_right">140dp</dimen>
+    <dimen name="app_logo_margin_start">140dp</dimen>
+    <dimen name="app_logo_margin_end">140dp</dimen>
     <dimen name="app_logo_margin_top">160dp</dimen>
     <dimen name="app_logo_margin_bottom">612dp</dimen>
-
-
 </resources>

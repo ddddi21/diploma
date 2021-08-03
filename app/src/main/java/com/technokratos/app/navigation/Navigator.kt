@@ -31,6 +31,5 @@ class Navigator : UsersRouter, SplashRouter {
     }
 
     override fun openMain(context: Context) {
-//        navController?.navigate(R.id.ma )
     }
 }

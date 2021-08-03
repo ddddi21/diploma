@@ -12,34 +12,18 @@ import com.technokratos.splash.di.SplashFeatureComponent
 
 class SplashFragment : BaseFragment<SplashViewModel>() {
 
+    companion object {
+        const val FIRST_TRANSLATION_X_VALUE = 40f
+        const val SECOND_TRANSLATION_X_VALUE = -55f
+        const val THIRD_TRANSLATION_X_VALUE = 1f
+        const val ANIMATION_DURATION = 800.toLong()
+    }
+
     private lateinit var binding: SplashFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
         binding = SplashFragmentBinding.inflate(layoutInflater)
-
         return binding.root
-    }
-
-    override fun initViews() {
-
-        val endActionTwo = Runnable {
-            binding.eyeIcon.animate()
-                .translationX(1f)
-                .setDuration(800)
-        }
-
-        val endActionOne = Runnable {
-            binding.eyeIcon.animate()
-                .translationX(-55f)
-                .setDuration(800)
-                .withEndAction(endActionTwo)
-        }
-
-        binding.eyeIcon.animate()
-            .translationX(40f)
-            .setDuration(800)
-            .withEndAction(endActionOne)
     }
 
     override fun inject() {
@@ -49,6 +33,27 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
             .inject(this)
     }
 
+    override fun initViews() {
+        val endActionTwo = Runnable {
+            binding.eyeIconImageView.animate()
+                .translationX(THIRD_TRANSLATION_X_VALUE)
+                .duration = ANIMATION_DURATION
+        }
+
+        val endActionOne = Runnable {
+            binding.eyeIconImageView.animate()
+                .translationX(SECOND_TRANSLATION_X_VALUE)
+                .setDuration(ANIMATION_DURATION)
+                .withEndAction(endActionTwo)
+        }
+
+        binding.eyeIconImageView.animate()
+            .translationX(FIRST_TRANSLATION_X_VALUE)
+            .setDuration(ANIMATION_DURATION)
+            .withEndAction(endActionOne)
+    }
+
     override fun subscribe(viewModel: SplashViewModel) {
+        // TODO
     }
 }

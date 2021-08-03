@@ -19,7 +19,6 @@ interface SplashComponent {
 
         fun create(
             @BindsInstance fragment: Fragment
-
         ): SplashComponent
     }
 
