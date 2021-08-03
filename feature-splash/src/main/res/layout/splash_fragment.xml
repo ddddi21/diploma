@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/watchLaterIcon"
+        android:id="@+id/watchLaterIconImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/watch_later_logo_margin_top"
@@ -17,19 +17,19 @@
         app:srcCompat="@drawable/frame" />
 
     <ImageView
-        android:id="@+id/eyeIcon"
+        android:id="@+id/eyeIconImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/eye_logo_center_place_margin_left"
-        android:layout_marginRight="@dimen/eye_logo_center_place_margin_right"
-        app:layout_constraintBottom_toBottomOf="@+id/watchLaterIcon"
+        android:layout_marginStart="@dimen/eye_logo_center_place_margin_start"
+        android:layout_marginEnd="@dimen/eye_logo_center_place_margin_end"
+        app:layout_constraintBottom_toBottomOf="@+id/watchLaterIconImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/watchLaterIcon"
+        app:layout_constraintTop_toTopOf="@+id/watchLaterIconImageView"
         app:srcCompat="@drawable/eye_center" />
 
     <ImageView
-        android:id="@+id/agona_logo"
+        android:id="@+id/agonaLogoImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/agona_logo_margin_bottom"

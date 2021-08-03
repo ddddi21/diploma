@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ImageView
-        android:id="@+id/login_app_logo"
+        android:id="@+id/appLogoImageView"
         android:layout_width="@dimen/app_logo_width"
         android:layout_height="@dimen/app_logo_height"
         android:layout_marginBottom="@dimen/app_logo_margin_bottom"
         android:layout_marginTop="@dimen/app_logo_margin_top"
-        android:layout_marginRight="@dimen/app_logo_margin_right"
-        android:layout_marginLeft="@dimen/app_logo_margin_left"
+        android:layout_marginEnd="@dimen/app_logo_margin_end"
+        android:layout_marginStart="@dimen/app_logo_margin_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
