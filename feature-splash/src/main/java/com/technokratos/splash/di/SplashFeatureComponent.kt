@@ -16,7 +16,7 @@ import dagger.Component
     ]
 )
 @FeatureScope
-interface SplashFeatureComponent : SplashFeatureApi {
+interface SplashFeatureComponent : SplashFeatureKey {
 
     fun splashComponentFactory(): SplashComponent.Factory
 

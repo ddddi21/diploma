@@ -1,8 +1,8 @@
 package com.technokratos.splash.presentation.di
 
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.technokratos.common.di.scope.ScreenScope
-import com.technokratos.splash.presentation.SplashActivity
+import com.technokratos.splash.presentation.SplashFragment
 import dagger.BindsInstance
 import dagger.Subcomponent
 
@@ -18,9 +18,9 @@ interface SplashComponent {
     interface Factory {
 
         fun create(
-            @BindsInstance activity: AppCompatActivity
+            @BindsInstance fragment: Fragment
         ): SplashComponent
     }
 
-    fun inject(activity: SplashActivity)
+    fun inject(fragment: SplashFragment)
 }
