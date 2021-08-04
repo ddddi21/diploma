@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@id/barrier">
 
         <TextView
-            android:id="@+id/haventRegistrationYetTextView"
+            android:id="@+id/notRegisteredYetTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/not_registered_yet_text"
@@ -102,7 +102,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/RegistrationClickedTextView"
+            android:id="@+id/registrationTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/blueAccent"

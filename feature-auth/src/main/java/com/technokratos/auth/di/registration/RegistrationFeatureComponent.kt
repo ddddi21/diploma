@@ -1,9 +1,10 @@
 package com.technokratos.auth.di.registration
 
 import com.technokratos.auth.presentation.di.RegistrationComponent
-import com.technokratos.auth.router.RegistrationRouter
+import com.technokratos.auth.router.AuthRouter
 import com.technokratos.common.di.CommonApi
 import com.technokratos.common.di.scope.FeatureScope
+import com.technokratos.common.router.NavigateBackRouter
 import dagger.BindsInstance
 import dagger.Component
 
@@ -24,7 +25,10 @@ interface RegistrationFeatureComponent {
     interface Builder {
 
         @BindsInstance
-        fun router(registrationRouter: RegistrationRouter): Builder
+        fun authRouter(authRouter: AuthRouter): Builder
+
+        @BindsInstance
+        fun navigateBackRouter(navigateBackRouter: NavigateBackRouter): Builder
 
         fun withDependencies(deps: RegistrationFeatureDependencies): Builder
 

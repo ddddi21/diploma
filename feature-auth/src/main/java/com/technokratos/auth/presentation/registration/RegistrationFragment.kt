@@ -16,6 +16,11 @@ class RegistrationFragment : BaseFragment<RegistrationViewModel>() {
 
     private lateinit var binding: FragmentRegistrationBinding
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentRegistrationBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
     override fun inject() {
         FeatureUtils.getFeature<RegistrationFeatureComponent>(this, RegistrationFeatureKey::class.java)
             .registrationComponentFactory()
@@ -24,9 +29,9 @@ class RegistrationFragment : BaseFragment<RegistrationViewModel>() {
     }
 
     override fun initViews() {
-        binding.registrationToolbar.apply {
+        with(binding.registrationToolbar) {
             setBackgroundColor(ContextCompat.getColor(context!!, R.color.white))
-            setNavigationIcon(R.drawable.back_iv)
+            setNavigationIcon(R.drawable.ic_navigate_back_arrow)
             setNavigationOnClickListener {
                 viewModel.onBackToLoginScreenClicked()
             }
@@ -35,10 +40,5 @@ class RegistrationFragment : BaseFragment<RegistrationViewModel>() {
 
     override fun subscribe(viewModel: RegistrationViewModel) {
 //        TODO("Not yet implemented")
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentRegistrationBinding.inflate(layoutInflater)
-        return binding.root
     }
 }

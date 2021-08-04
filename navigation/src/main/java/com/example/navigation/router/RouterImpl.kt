@@ -35,8 +35,8 @@ class RouterImpl @Inject constructor(
         navigateTo(R.id.registrationFragment)
     }
 
-    override fun navigateToLogin() {
-        navigateTo(R.id.authFragment)
+    override fun goToPreviousScreen() {
+        navControllerProvider.get()?.popBackStack()
     }
 
     private fun navigateTo(actionId: Int, bundle: Bundle? = null) {
