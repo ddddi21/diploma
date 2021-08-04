@@ -10,7 +10,7 @@
         <item name="android:textColorHint">@color/lightGrey</item>
         <item name="hintTextColor">@color/lightGrey</item>
         <item name="endIconMode">clear_text</item>
-        <item name="endIconTint">@color/endIconMode</item>
+        <item name="endIconTint">@color/endIconModeDarkGrey</item>
     </style>
 
     <style name="Auth.TextInputEditText" parent="Widget.Design.TextInputLayout">

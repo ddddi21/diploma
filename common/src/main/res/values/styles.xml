@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-
-        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
-
-        <item name="android:colorEdgeEffect">@color/colorPrimary</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-    </style>
-
     <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -25,9 +12,4 @@
         <item name="android:colorControlActivated">@color/blueAccent</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.ActionBar"/>
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light"/>
-
 </resources>
