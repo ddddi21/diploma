@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Auth.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="errorEnabled">true</item>
+        <item name="android:layout_marginStart">@dimen/email_input_edit_text_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/email_input_edit_text_margin_end</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/lightGrey</item>
+        <item name="android:textColorHint">@color/lightGrey</item>
+        <item name="hintTextColor">@color/lightGrey</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconTint">@color/endIconModeDarkGrey</item>
+    </style>
+
+    <style name="Auth.TextInputEditText" parent="Widget.Design.TextInputLayout">
+        <item name="android:maxLines">1</item>
+        <item name="singleLine">true</item>
+        <item name="android:layout_width">@dimen/email_input_edit_text_width</item>
+        <item name="android:layout_height">@dimen/email_input_edit_text_height</item>
+        <item name="android:layout_marginBottom">@dimen/email_input_edit_text_margin_bottom</item>
+        <item name="android:layout_marginTop">@dimen/email_input_edit_text_margin_top</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColorHint">@color/lightGrey</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

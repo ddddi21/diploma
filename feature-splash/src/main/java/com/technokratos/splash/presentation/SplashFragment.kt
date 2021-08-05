@@ -32,15 +32,15 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
     }
 
     override fun initViews() {
-        animation()
-        viewModel.onAnimationFinished()
+        startSplashAnimation()
     }
 
-    private fun animation() {
+    private fun startSplashAnimation() {
         val endActionTwo = Runnable {
             binding.eyeIconImageView.animate()
                 .translationX(THIRD_TRANSLATION_X_VALUE)
-                .duration = ANIMATION_DURATION
+                .setDuration(ANIMATION_DURATION)
+                .withEndAction(viewModel::onAnimationFinished)
         }
 
         val endActionOne = Runnable {

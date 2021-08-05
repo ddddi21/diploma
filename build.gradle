@@ -36,6 +36,8 @@ buildscript {
 
         fragmentVersion = '1.3.3'
 
+        materialVersion = '1.4.0'
+
         kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
         fragmentDep = "androidx.fragment:fragment-ktx:$fragmentVersion"
@@ -44,7 +46,7 @@ buildscript {
         cardViewDep = "androidx.cardview:cardview:$supportVersion"
         recyclerViewDep = "androidx.recyclerview:recyclerview:$supportVersion"
         constraintDep = "androidx.constraintlayout:constraintlayout:$constraintVersion"
-        materialDep = "com.google.android.material:material:$supportVersion"
+        materialDep = "com.google.android.material:material:$materialVersion"
 
         rxJavaDep = "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
         rxAndroidDep = "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
