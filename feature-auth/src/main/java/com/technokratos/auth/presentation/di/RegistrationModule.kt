@@ -5,9 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.technokratos.auth.presentation.registration.RegistrationViewModel
-import com.technokratos.auth.router.RegistrationRouter
+import com.technokratos.auth.router.AuthRouter
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule
+import com.technokratos.common.router.NavigateBackRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
@@ -27,7 +28,7 @@ class RegistrationModule {
     @Provides
     @IntoMap
     @ViewModelKey(RegistrationViewModel::class)
-    fun provideRegistrationViewModelFromStore(router: RegistrationRouter): ViewModel {
-        return RegistrationViewModel(router)
+    fun provideRegistrationViewModelFromStore(authRouter: AuthRouter, navigateBackRouter: NavigateBackRouter): ViewModel {
+        return RegistrationViewModel(authRouter, navigateBackRouter)
     }
 }

@@ -1,8 +1,8 @@
 package com.example.navigation.router
 
 import com.technokratos.auth.router.AuthRouter
-import com.technokratos.auth.router.RegistrationRouter
 import com.technokratos.common.di.scope.ApplicationScope
+import com.technokratos.common.router.NavigateBackRouter
 import com.technokratos.splash.SplashRouter
 import com.technokratos.users.UsersRouter
 import dagger.Binds
@@ -25,5 +25,5 @@ abstract class RouterModule {
 
     @ApplicationScope
     @Binds
-    abstract fun provideRegistrationRouter(routerImpl: RouterImpl): RegistrationRouter
+    abstract fun provideNavigateBackRouter(routerImpl: RouterImpl): NavigateBackRouter
 }

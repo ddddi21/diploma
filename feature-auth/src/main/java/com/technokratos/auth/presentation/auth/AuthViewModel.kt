@@ -5,4 +5,9 @@ import com.technokratos.common.base.BaseViewModel
 
 class AuthViewModel(
     private val router: AuthRouter
-) : BaseViewModel()
+) : BaseViewModel() {
+
+    fun onRegistrationClicked() {
+        router.navigateToRegistration()
+    }
+}
