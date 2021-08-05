@@ -1,10 +1,10 @@
 package com.technokratos.app.presentation
 
-import android.content.Context
-import android.content.Intent
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.navigation.navigation.NavControllerProvider
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.technokratos.app.R
 import com.technokratos.app.di.deps.findComponentDependencies
 import com.technokratos.app.di.main.MainComponent
@@ -13,20 +13,12 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity<MainViewModel>() {
 
-    companion object {
-
-        fun start(context: Context) {
-            val intent = Intent(context, MainActivity::class.java)
-            context.startActivity(intent)
-        }
-    }
-
     @Inject
     lateinit var navigator: NavControllerProvider
 
     private var navController = NavController(this)
 
-    override fun layoutResource() = R.layout.activity_launch
+    override fun layoutResource() = R.layout.activity_main
 
     override fun inject() {
         MainComponent
@@ -36,10 +28,14 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     override fun initViews() {
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.launch_nav_host_fragment) as NavHostFragment? ?: return
+            supportFragmentManager.findFragmentById(R.id.main_nav_host_fragment) as NavHostFragment? ?: return
         navController = navHostFragment.navController
-        navigator.attachNavController(navController, R.navigation.auth_nav_graph)
+        navigator.attachNavController(navController, R.navigation.main_nav_graph)
+        val bottomNavView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        NavigationUI.setupWithNavController(bottomNavView, navController)
+        viewModel.onSplashAnimationFinished()
     }
+    // вынесу мейн штуки в отдельный модуль в другом пр и там же буду настраивать visibility y bottomNav
 
     override fun subscribe(viewModel: MainViewModel) {
         // TODO

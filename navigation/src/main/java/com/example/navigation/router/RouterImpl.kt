@@ -1,6 +1,5 @@
 package com.example.navigation.router
 
-import android.content.Context
 import android.os.Bundle
 import com.technokratos.splash.R
 import com.example.navigation.navigation.NavControllerProvider
@@ -10,10 +9,6 @@ import javax.inject.Inject
 class RouterImpl @Inject constructor(
     private val navControllerProvider: NavControllerProvider
 ) : Router {
-
-    override fun openMain(context: Context) {
-        TODO("Not yet implemented")
-    }
 
     override fun toLogin() {
         navigateTo(R.id.action_splashFragment_to_authFragment)
@@ -28,11 +23,15 @@ class RouterImpl @Inject constructor(
     }
 
     override fun navigateToMain() {
-        TODO("Not yet implemented")
+        navigateTo(R.id.collectionFragment)
     }
 
     override fun navigateToRegistration() {
         navigateTo(R.id.registrationFragment)
+    }
+
+    override fun navigateToAuthNavGraph() {
+        navigateTo(R.id.auth_nav_graph)
     }
 
     override fun goToPreviousScreen() {

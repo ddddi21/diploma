@@ -12,4 +12,8 @@ class RegistrationViewModel(
     fun onBackToLoginScreenClicked() {
         navigateBackRouter.goToPreviousScreen()
     }
+
+    fun onEnterButtonClicked() { // пока оставлю так, дальше надо будет еще добавлять проверку введенных данных
+        authRouter.navigateToMain()
+    }
 }

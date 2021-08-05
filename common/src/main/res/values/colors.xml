@@ -11,4 +11,5 @@
     <color name="loginEnterButtonLightGrey">#f4f4f5</color>
     <color name="lightGrey">#c5c5c7</color>
     <color name="colorError">#EB5757</color>
+    <color name="black">#000000</color>
 </resources>

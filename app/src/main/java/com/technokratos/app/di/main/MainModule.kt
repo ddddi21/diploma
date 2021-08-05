@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.example.navigation.router.MainRouter
 import com.technokratos.app.presentation.MainViewModel
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule
@@ -21,8 +22,8 @@ class MainModule {
     @Provides
     @IntoMap
     @ViewModelKey(MainViewModel::class)
-    fun provideViewModel(): ViewModel {
-        return MainViewModel()
+    fun provideViewModel(mainRouter: MainRouter): ViewModel {
+        return MainViewModel(mainRouter)
     }
 
     @Provides

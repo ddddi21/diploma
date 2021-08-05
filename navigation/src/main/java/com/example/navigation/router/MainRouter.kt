@@ -1,3 +1,6 @@
 package com.example.navigation.router
 
-interface MainRouter
+interface MainRouter {
+
+    fun navigateToAuthNavGraph()
+}
