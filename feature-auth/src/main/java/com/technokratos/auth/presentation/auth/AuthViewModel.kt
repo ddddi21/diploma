@@ -10,4 +10,8 @@ class AuthViewModel(
     fun onRegistrationClicked() {
         router.navigateToRegistration()
     }
+
+    fun onEnterButtonClicked() { // пока оставлю так, дальше надо будет еще добавлять проверку введенных данных
+        router.navigateToMain()
+    }
 }

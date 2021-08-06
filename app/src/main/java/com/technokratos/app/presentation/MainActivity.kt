@@ -1,32 +1,26 @@
 package com.technokratos.app.presentation
 
-import android.content.Context
-import android.content.Intent
+import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.navigation.navigation.NavControllerProvider
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.technokratos.app.R
 import com.technokratos.app.di.deps.findComponentDependencies
 import com.technokratos.app.di.main.MainComponent
 import com.technokratos.common.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.bottomNavigationView
 import javax.inject.Inject
 
 class MainActivity : BaseActivity<MainViewModel>() {
-
-    companion object {
-
-        fun start(context: Context) {
-            val intent = Intent(context, MainActivity::class.java)
-            context.startActivity(intent)
-        }
-    }
 
     @Inject
     lateinit var navigator: NavControllerProvider
 
     private var navController = NavController(this)
 
-    override fun layoutResource() = R.layout.activity_launch
+    override fun layoutResource() = R.layout.activity_main
 
     override fun inject() {
         MainComponent
@@ -35,11 +29,10 @@ class MainActivity : BaseActivity<MainViewModel>() {
     }
 
     override fun initViews() {
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.launch_nav_host_fragment) as NavHostFragment? ?: return
-        navController = navHostFragment.navController
-        navigator.attachNavController(navController, R.navigation.auth_nav_graph)
+        setUpNavigation()
+        viewModel.onViewCreated()
     }
+    // вынесу мейн штуки в отдельный модуль в другом пр
 
     override fun subscribe(viewModel: MainViewModel) {
         // TODO
@@ -48,5 +41,28 @@ class MainActivity : BaseActivity<MainViewModel>() {
     override fun onDestroy() {
         super.onDestroy()
         navigator.detachNavController(navController)
+    }
+
+    private fun setUpBottomNavVisibility() {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.splashFragment,
+                R.id.authFragment,
+                R.id.registrationFragment -> bottomNavigationView.visibility = View.GONE
+
+                else -> bottomNavigationView.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun setUpNavigation() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.main_nav_host_fragment) as NavHostFragment?
+                ?: return
+        navController = navHostFragment.navController
+        navigator.attachNavController(navController, R.navigation.main_nav_graph)
+        val bottomNavView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        NavigationUI.setupWithNavController(bottomNavView, navController)
+        setUpBottomNavVisibility()
     }
 }

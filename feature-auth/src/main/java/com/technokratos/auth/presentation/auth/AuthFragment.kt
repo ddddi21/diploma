@@ -16,9 +16,6 @@ class AuthFragment : BaseFragment<AuthViewModel>() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentLoginBinding.inflate(layoutInflater)
-        binding.registrationTextView.setOnClickListener {
-            viewModel.onRegistrationClicked()
-        }
         return binding.root
     }
 
@@ -30,7 +27,14 @@ class AuthFragment : BaseFragment<AuthViewModel>() {
     }
 
     override fun initViews() {
-        // TODO
+        with(binding) {
+            registrationTextView.setOnClickListener {
+                viewModel.onRegistrationClicked()
+            }
+            loginEnterButton.setOnClickListener {
+                viewModel.onEnterButtonClicked()
+            }
+        }
     }
 
     override fun subscribe(viewModel: AuthViewModel) {

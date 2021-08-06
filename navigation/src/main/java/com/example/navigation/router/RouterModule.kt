@@ -26,4 +26,8 @@ abstract class RouterModule {
     @ApplicationScope
     @Binds
     abstract fun provideNavigateBackRouter(routerImpl: RouterImpl): NavigateBackRouter
+
+    @ApplicationScope
+    @Binds
+    abstract fun provideMainRouter(routerImpl: RouterImpl): MainRouter
 }

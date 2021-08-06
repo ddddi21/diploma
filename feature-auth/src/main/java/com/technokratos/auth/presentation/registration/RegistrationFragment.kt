@@ -36,6 +36,9 @@ class RegistrationFragment : BaseFragment<RegistrationViewModel>() {
                 viewModel.onBackToLoginScreenClicked()
             }
         }
+        binding.registrationEnterButton.setOnClickListener {
+            viewModel.onEnterButtonClicked()
+        }
     }
 
     override fun subscribe(viewModel: RegistrationViewModel) {

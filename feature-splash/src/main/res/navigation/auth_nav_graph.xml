@@ -5,8 +5,6 @@
     android:id="@+id/auth_nav_graph"
     app:startDestination="@id/splashFragment">
 
-    <include app:graph="@navigation/main_nav_graph" />
-
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.technokratos.splash.presentation.SplashFragment"
