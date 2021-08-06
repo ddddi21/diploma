@@ -7,7 +7,7 @@ class MainViewModel(
     private val mainRouter: MainRouter
 ) : BaseViewModel() {
 
-    fun onSplashAnimationFinished() {
+    fun onViewCreated() {
         mainRouter.navigateToAuthNavGraph()
     }
 }

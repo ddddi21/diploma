@@ -30,7 +30,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     override fun initViews() {
         setUpNavigation()
-        viewModel.onSplashAnimationFinished()
+        viewModel.onViewCreated()
     }
     // вынесу мейн штуки в отдельный модуль в другом пр
 
@@ -48,11 +48,9 @@ class MainActivity : BaseActivity<MainViewModel>() {
             when (destination.id) {
                 R.id.splashFragment,
                 R.id.authFragment,
-                R.id.registrationFragment -> {
-                    bottomNavigationView.visibility = View.GONE
-                }
-                else ->
-                    bottomNavigationView.visibility = View.VISIBLE
+                R.id.registrationFragment -> bottomNavigationView.visibility = View.GONE
+
+                else -> bottomNavigationView.visibility = View.VISIBLE
             }
         }
     }
