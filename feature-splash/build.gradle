@@ -36,8 +36,8 @@ dependencies {
     implementation androidDep
 
     implementation daggerDep
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.navigation:navigation-runtime-ktx:2.3.5'
+    implementation constraintDep
+    implementation navigationFragmentDep
     kapt daggerKapt
 
     implementation lifecycleDep
