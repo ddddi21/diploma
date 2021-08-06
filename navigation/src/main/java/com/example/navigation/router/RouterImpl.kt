@@ -3,7 +3,6 @@ package com.example.navigation.router
 import android.os.Bundle
 import com.technokratos.splash.R
 import com.example.navigation.navigation.NavControllerProvider
-import com.technokratos.users.presentation.details.UserFragment
 import javax.inject.Inject
 
 class RouterImpl @Inject constructor(
@@ -12,14 +11,6 @@ class RouterImpl @Inject constructor(
 
     override fun toLogin() {
         navigateTo(R.id.action_splashFragment_to_authFragment)
-    }
-
-    override fun openUser(userId: Int) {
-        navigateTo(R.id.userFragment, UserFragment.createBundle(userId))
-    }
-
-    override fun returnToUsers() {
-        navControllerProvider.get()?.popBackStack()
     }
 
     override fun navigateToMain() {
