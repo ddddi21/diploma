@@ -29,17 +29,16 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
-    implementation project(':feature-user-api')
-    implementation project(':feature-user-impl')
     implementation project(':feature-auth')
+    implementation project(':feature-collection')
 
     implementation kotlinDep
 
     implementation androidDep
 
     implementation daggerDep
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.navigation:navigation-runtime-ktx:2.3.5'
+    implementation constraintDep
+    implementation navigationFragmentDep
     kapt daggerKapt
 
     implementation lifecycleDep

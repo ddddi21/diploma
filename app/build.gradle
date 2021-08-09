@@ -26,10 +26,9 @@ dependencies {
     implementation project(':core-db')
     implementation project(':common')
     implementation project(':feature-splash')
-    implementation project(':feature-user-api')
-    implementation project(':feature-user-impl')
     implementation project(':feature-auth')
     implementation project(':navigation')
+    implementation project(':feature-collection')
 
     implementation kotlinDep
 

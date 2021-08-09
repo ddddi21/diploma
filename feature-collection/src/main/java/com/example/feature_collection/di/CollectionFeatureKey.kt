@@ -1,0 +1,3 @@
+package com.example.feature_collection.di
+
+interface CollectionFeatureKey
