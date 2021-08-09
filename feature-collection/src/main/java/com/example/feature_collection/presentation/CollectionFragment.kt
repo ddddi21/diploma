@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.feature_collection.databinding.CollectionFragmentBinding
+import com.example.feature_collection.di.CollectionFeatureComponent
+import com.example.feature_collection.di.CollectionFeatureKey
 import com.technokratos.common.base.BaseFragment
+import com.technokratos.common.di.FeatureUtils
 
 class CollectionFragment : BaseFragment<CollectionViewModel> () {
 
@@ -17,7 +20,10 @@ class CollectionFragment : BaseFragment<CollectionViewModel> () {
     }
 
     override fun inject() {
-//        TODO("Not yet implemented")
+        FeatureUtils.getFeature<CollectionFeatureComponent>(this, CollectionFeatureKey::class.java)
+            .collectionComponentFactory()
+            .create(this)
+            .inject(this)
     }
 
     override fun initViews() {
