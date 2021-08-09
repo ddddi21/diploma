@@ -38,9 +38,13 @@ buildscript {
 
         materialVersion = '1.4.0'
 
+        viewPager2Version = '1.0.0'
+
         kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
         fragmentDep = "androidx.fragment:fragment-ktx:$fragmentVersion"
+
+        viewPager2Dep = "androidx.viewpager2:viewpager2:$viewPager2Version"
 
         androidDep = "androidx.appcompat:appcompat:$supportVersion"
         cardViewDep = "androidx.cardview:cardview:$supportVersion"

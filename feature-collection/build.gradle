@@ -53,4 +53,6 @@ dependencies {
     testImplementation mockitoDep
 
     implementation fragmentDep
+    implementation materialDep
+    implementation viewPager2Dep
 }

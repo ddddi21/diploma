@@ -10,7 +10,7 @@ import com.example.feature_collection.di.CollectionFeatureKey
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
 
-class CollectionFragment : BaseFragment<CollectionViewModel> () {
+class CollectionFragment : BaseFragment<CollectionViewModel>() {
 
     private lateinit var binding: CollectionFragmentBinding
 
@@ -27,7 +27,7 @@ class CollectionFragment : BaseFragment<CollectionViewModel> () {
     }
 
     override fun initViews() {
-//        TODO("Not yet implemented")
+        setHasOptionsMenu(true)
     }
 
     override fun subscribe(viewModel: CollectionViewModel) {
