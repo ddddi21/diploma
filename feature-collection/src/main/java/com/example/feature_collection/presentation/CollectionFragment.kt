@@ -12,7 +12,7 @@ import com.example.feature_collection.databinding.CollectionFragmentBinding
 import com.example.feature_collection.di.CollectionFeatureComponent
 import com.example.feature_collection.di.CollectionFeatureKey
 import com.example.feature_collection.presentation.filmCollection.WatchedCollectionFilmsFragment
-import com.example.feature_collection.presentation.watchLater.WillWatchLaterListFragment
+import com.example.feature_collection.presentation.watchLater.WillWatchLaterFilmsFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
@@ -65,7 +65,7 @@ class DemoCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment)
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> WatchedCollectionFilmsFragment()
-            else -> WillWatchLaterListFragment()
+            else -> WillWatchLaterFilmsFragment()
         }
     }
 }

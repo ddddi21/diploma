@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.feature_collection.databinding.WillWatchFilmListFragmentBinding
+import com.example.feature_collection.databinding.WillWatchLaterFilmsFragmentBinding
 
-class WillWatchLaterListFragment : Fragment() {
+class WillWatchLaterFilmsFragment : Fragment() {
 
-    private lateinit var binding: WillWatchFilmListFragmentBinding
+    private lateinit var binding: WillWatchLaterFilmsFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = WillWatchFilmListFragmentBinding.inflate(layoutInflater)
+        binding = WillWatchLaterFilmsFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
 }
