@@ -1,3 +1,4 @@
+include ':feature-collection'
 include ':navigation'
 include ':feature-auth'
 include ':app'

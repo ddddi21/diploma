@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/collectionFragment"
-        android:name="com.technokratos.splash.presentation.CollectionFragment"
+        android:name="com.example.feature_collection.presentation.CollectionFragment"
         android:label="fragment_collection"
         tools:layout="@layout/collection_fragment" />
 
