@@ -2,4 +2,19 @@
 <resources>
     <dimen name="card_view_corner_radius">20dp</dimen>
     <dimen name="card_view_margin">8dp</dimen>
+
+    <dimen name="film_poster_width">104dp</dimen>
+    <dimen name="film_poster_height">160dp</dimen>
+
+    <dimen name="film_item_padding">16dp</dimen>
+
+    <dimen name="film_rating_corner_radius">16dp</dimen>
+    <dimen name="film_rating_corner_width">1dp</dimen>
+
+    <dimen name="film_rating_width">24dp</dimen>
+    <dimen name="film_rating_height">16dp</dimen>
+    <dimen name="film_rating_text_size">8sp</dimen>
+    <dimen name="film_rating_padding_end_and_top">8dp</dimen>
+    
+    <dimen name="recycler_view_margin_bottom">72dp</dimen>
 </resources>

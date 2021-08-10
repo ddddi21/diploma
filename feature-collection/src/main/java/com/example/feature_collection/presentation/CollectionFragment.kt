@@ -11,8 +11,8 @@ import com.example.feature_collection.R
 import com.example.feature_collection.databinding.CollectionFragmentBinding
 import com.example.feature_collection.di.CollectionFeatureComponent
 import com.example.feature_collection.di.CollectionFeatureKey
-import com.example.feature_collection.presentation.filmCollection.WatchedCollectionFilmsFragment
-import com.example.feature_collection.presentation.watchLater.WillWatchLaterFilmsFragment
+import com.example.feature_collection.presentation.watchedFilmCollection.WatchedCollectionFilmsFragment
+import com.example.feature_collection.presentation.watchLaterFilmCollection.WillWatchLaterFilmsFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
@@ -35,8 +35,8 @@ class CollectionFragment : BaseFragment<CollectionViewModel>() {
         viewPager.adapter = demoCollectionAdapter
         val tabLayout = binding.tabLayout
         val tabNames: Array<String> = arrayOf(
-            resources.getString(R.string.collection_tab_already_watched_tab),
-            resources.getString(R.string.collection_tab_will_watch_tab)
+            resources.getString(R.string.collection_tab_will_watch_tab),
+                resources.getString(R.string.collection_tab_already_watched_tab)
         )
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabNames[position]
@@ -64,8 +64,8 @@ class DemoCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment)
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> WatchedCollectionFilmsFragment()
-            else -> WillWatchLaterFilmsFragment()
+            0 -> WillWatchLaterFilmsFragment()
+            else -> WatchedCollectionFilmsFragment()
         }
     }
 }

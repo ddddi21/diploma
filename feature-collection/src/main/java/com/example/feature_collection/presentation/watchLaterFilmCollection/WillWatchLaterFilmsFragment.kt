@@ -1,4 +1,4 @@
-package com.example.feature_collection.presentation.watchLater
+package com.example.feature_collection.presentation.watchLaterFilmCollection
 
 import android.os.Bundle
 import android.view.LayoutInflater

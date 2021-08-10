@@ -12,12 +12,6 @@
         android:layout_height="wrap_content"
         app:menu="@menu/collection_toolbar_menu" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/card_view_margin"
-        app:cardCornerRadius="@dimen/card_view_corner_radius">
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
@@ -25,8 +19,6 @@
         app:tabBackground="@drawable/tab_selector"
         app:tabIndicatorColor="@color/black"
         app:tabTextColor="@color/black"/>
-
-    </com.google.android.material.card.MaterialCardView>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"

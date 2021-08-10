@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.feature_collection.model.FilmItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/film_item_padding">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/filmPoster"
+            android:scaleType="centerCrop"
+            android:layout_width="@dimen/film_poster_width"
+            android:layout_height="@dimen/film_poster_height"
+            android:src="@drawable/ic_film_poster_template" />
+
+        <TextView
+            android:id="@+id/filmRating"
+            android:layout_width="@dimen/film_rating_width"
+            android:layout_height="@dimen/film_rating_height"
+            android:layout_marginEnd="@dimen/film_rating_padding_end_and_top"
+            android:layout_marginTop="@dimen/film_rating_padding_end_and_top"
+            android:background="@drawable/ic_film_rating"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:layout_gravity="end"
+            android:text="@string/film_item_view_rating"
+            android:textColor="@color/blueAccent"
+            android:textSize="@dimen/film_rating_text_size" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/filmTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/film_item_view_title" />
+
+</com.example.feature_collection.model.FilmItemView>

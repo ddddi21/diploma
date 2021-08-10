@@ -40,6 +40,10 @@ buildscript {
 
         viewPager2Version = '1.0.0'
 
+        swipeRefreshLayoutVersion = '1.1.0'
+
+        swipeRefreshLayoutDep = "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
+
         kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
         fragmentDep = "androidx.fragment:fragment-ktx:$fragmentVersion"

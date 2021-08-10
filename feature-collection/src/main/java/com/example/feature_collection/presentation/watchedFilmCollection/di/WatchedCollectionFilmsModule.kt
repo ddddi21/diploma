@@ -1,11 +1,11 @@
-package com.example.feature_collection.presentation.filmCollection.di
+package com.example.feature_collection.presentation.watchedFilmCollection.di
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.feature_collection.CollectionRouter
-import com.example.feature_collection.presentation.filmCollection.WatchedCollectionFilmsViewModel
+import com.example.feature_collection.presentation.watchedFilmCollection.WatchedCollectionFilmsViewModel
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule
 import dagger.Module
