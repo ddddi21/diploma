@@ -9,7 +9,6 @@ import com.example.feature_collection.databinding.WillWatchLaterFilmsFragmentBin
 import com.example.feature_collection.di.CollectionFeatureComponent
 import com.example.feature_collection.di.CollectionFeatureKey
 import com.example.feature_collection.model.Film
-import com.example.feature_collection.presentation.watchedFilmCollection.WatchedCollectionFilmsAdapter
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
 
@@ -60,15 +59,28 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     }
 
     override fun initViews() {
-        val gridLayoutManager = GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT)
-        with(binding.filmsRecyclerView) {
-            adapter = filmsAdapter
-            layoutManager = gridLayoutManager
-        }
-        filmsAdapter.update(testedFilms)
+        initRecyclerView()
+        filmsAdapter.update(testedFilms) // знаю, что должно быть во вью модели. пока тестовый вариант, все равно нет обращения в сеть
+        swipeOnRefreshListener()
     }
 
     override fun subscribe(viewModel: WillWatchLaterFilmsViewModel) {
 //        TODO("Not yet implemented")
     }
+
+    private fun initRecyclerView() {
+        val gridLayoutManager = GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT)
+        with(binding.filmsRecyclerView) {
+            adapter = filmsAdapter
+            layoutManager = gridLayoutManager
+        }
+    }
+
+    private fun swipeOnRefreshListener() {
+        binding.swipeToRefreshFilmsList.setOnRefreshListener {
+            binding.swipeToRefreshFilmsList.isRefreshing = false
+            filmsAdapter.update(testedFilms)
+        }
+    }
+    // временный вариант
 }
