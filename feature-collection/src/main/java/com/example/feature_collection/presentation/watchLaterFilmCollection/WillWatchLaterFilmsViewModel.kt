@@ -7,8 +7,4 @@ import com.technokratos.common.base.BaseViewModel
 
 class WillWatchLaterFilmsViewModel(
     private var router: CollectionRouter
-) : BaseViewModel() {
-
-    private var _isVisibleProgress = MutableLiveData<Boolean>()
-    val isVisibleProgress: LiveData<Boolean> = _isVisibleProgress
-}
+) : BaseViewModel()

@@ -19,4 +19,5 @@
             tools:listitem="@layout/film_item_view" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
