@@ -26,19 +26,16 @@ class CollectionFragment : BaseFragment<CollectionViewModel>() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val tabNames = arrayOf(
-            resources.getString(R.string.collection_will_watch_tab),
-            resources.getString(R.string.collection_already_watched_tab)
+        val collectionList = listOf(
+            resources.getString(R.string.collection_will_watch_tab) to WillWatchLaterFilmsFragment(),
+            resources.getString(R.string.collection_already_watched_tab) to WatchedCollectionFilmsFragment()
         )
         binding.viewPager.adapter = CollectionAdapter(
-            collectionList = listOf(
-                tabNames[0] to WillWatchLaterFilmsFragment(),
-                tabNames[1] to WatchedCollectionFilmsFragment()
-            ),
+            collectionList = collectionList,
             fragment = this
         )
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = tabNames[position]
+            tab.text = collectionList[position].first
         }.attach()
     }
 
