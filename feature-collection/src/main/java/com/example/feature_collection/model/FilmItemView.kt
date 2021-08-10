@@ -18,10 +18,10 @@ class FilmItemView @JvmOverloads constructor(
     }
 
     override fun fill(model: Film) = with(binding) {
-            filmTitle.text = model.title
-            Glide.with(context)
-                .load(model.posterUrl)
-                .into(filmPoster)
-            filmRating.text = model.rating.toString()
-        }
+        filmTitle.text = model.title
+        Glide.with(context)
+            .load(model.posterUrl)
+            .into(filmPoster)
+        filmRating.text = model.rating.toString()
+    }
 }

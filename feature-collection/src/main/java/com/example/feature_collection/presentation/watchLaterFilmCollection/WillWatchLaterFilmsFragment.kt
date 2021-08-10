@@ -60,7 +60,6 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
 
     override fun initViews() {
         initRecyclerView()
-        filmsAdapter.update(testedFilms) // знаю, что должно быть во вью модели. пока тестовый вариант, все равно нет обращения в сеть
         swipeOnRefreshListener()
     }
 
