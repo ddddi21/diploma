@@ -7,7 +7,8 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/collectionToolbar"
-        style="@style/Collection.ToolBar"
+        style="@style/Collection.Toolbar"
+        app:title="@string/collection_toolbar_title_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/collection_toolbar_menu" />
@@ -16,8 +17,12 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabBackground="@drawable/tab_selector"
-        app:tabIndicatorColor="@color/black"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/blueAccent"
+        app:tabTextAppearance="@style/Collection.TabLayout.Text"
+        app:tabSelectedTextColor="@color/blueAccent"
+        app:tabMode="scrollable"
+        app:tabGravity="center"
         app:tabTextColor="@color/black"/>
 
     <androidx.viewpager2.widget.ViewPager2

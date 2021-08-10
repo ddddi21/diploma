@@ -23,7 +23,7 @@ class CollectionModule {
     @Provides
     @IntoMap
     @ViewModelKey(CollectionViewModel::class)
-    fun provideCollectionViewModelFromStore(router: CollectionRouter): ViewModel {
+    fun provideCollectionViewModel(router: CollectionRouter): ViewModel {
         return CollectionViewModel(router)
     }
 }

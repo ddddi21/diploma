@@ -12,4 +12,11 @@
         <item name="android:colorControlActivated">@color/blueAccent</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="Collection.Toolbar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="backgroundColor">@color/white</item>
+        <item name="navigationIcon">@drawable/ic_search</item>
+        <item name="titleCentered">true</item>
+        <item name="titleTextColor">@color/black</item>
+    </style>
 </resources>

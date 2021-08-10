@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
 import com.example.feature_collection.R
 import com.example.feature_collection.databinding.CollectionFragmentBinding
 import com.example.feature_collection.di.CollectionFeatureComponent
@@ -21,27 +20,25 @@ class CollectionFragment : BaseFragment<CollectionViewModel>() {
 
     private lateinit var binding: CollectionFragmentBinding
 
-    private lateinit var demoCollectionAdapter: DemoCollectionAdapter
-    private lateinit var viewPager: ViewPager2
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = CollectionFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        demoCollectionAdapter = DemoCollectionAdapter(this)
-        viewPager = binding.viewPager
-        viewPager.adapter = demoCollectionAdapter
-        val tabLayout = binding.tabLayout
-        val tabNames: Array<String> = arrayOf(
-            resources.getString(R.string.collection_tab_will_watch_tab),
-                resources.getString(R.string.collection_tab_already_watched_tab)
+        val collectionList = listOf(
+            resources.getString(R.string.collection_will_watch_tab) to WillWatchLaterFilmsFragment(),
+            resources.getString(R.string.collection_already_watched_tab) to WatchedCollectionFilmsFragment()
         )
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = tabNames[position]
+        binding.viewPager.adapter = CollectionAdapter(
+            collectionList = collectionList,
+            fragment = this
+        )
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            tab.text = collectionList[position].first
         }.attach()
     }
+
     override fun inject() {
         FeatureUtils.getFeature<CollectionFeatureComponent>(this, CollectionFeatureKey::class.java)
             .collectionComponentFactory()
@@ -58,14 +55,12 @@ class CollectionFragment : BaseFragment<CollectionViewModel>() {
     }
 }
 
-class DemoCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class CollectionAdapter(
+    private val collectionList: List<Pair<String, Fragment>>,
+    fragment: Fragment
+) : FragmentStateAdapter(fragment) {
 
-    override fun getItemCount(): Int = 2
+    override fun getItemCount() = collectionList.size
 
-    override fun createFragment(position: Int): Fragment {
-        return when (position) {
-            0 -> WillWatchLaterFilmsFragment()
-            else -> WatchedCollectionFilmsFragment()
-        }
-    }
+    override fun createFragment(position: Int) = collectionList[position].second
 }
