@@ -4,12 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_collection.databinding.WillWatchLaterFilmsFragmentBinding
 import com.example.feature_collection.di.CollectionFeatureComponent
 import com.example.feature_collection.di.CollectionFeatureKey
 import com.example.feature_collection.model.Film
+import com.example.feature_collection.model.FilmMini
+import com.example.feature_collection.presentation.CollectionViewModel
+import com.example.feature_collection.presentation.watchLaterFilmCollection.adapter.WillWatchLaterFilmAdapter
+import com.example.feature_collection.presentation.watchLaterFilmCollection.adapter.WillWatchLaterFilmsMiniListAdapter
 import com.technokratos.common.base.BaseFragment
+import com.technokratos.common.base.adapter.BaseAdapter
 import com.technokratos.common.di.FeatureUtils
 
 private const val GRID_LAYOUT_SPAN_COUNT = 3
@@ -18,11 +27,19 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
 
     private lateinit var binding: WillWatchLaterFilmsFragmentBinding
 
+    private val viewModelParent by viewModels<CollectionViewModel>({ requireParentFragment() })
+
     private val film: Film = Film(
         id = 1,
         title = "Money Heist",
         rating = 9.7,
         posterUrl = "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/f1c8eee6-4d0d-4808-9cec-3d1e21e4b5a0/600x900"
+    )
+    // временный вариант
+
+    private val filmMini: FilmMini = FilmMini(
+        id = 1,
+        title = "Money Heist"
     )
     // временный вариант
 
@@ -44,7 +61,18 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     )
     // временный вариант
 
+    private var testedMiniFilms = arrayListOf(
+        filmMini,
+        filmMini,
+        filmMini,
+        filmMini,
+        filmMini
+    )
+    // временный вариант
+
     private val filmsAdapter: WillWatchLaterFilmAdapter = WillWatchLaterFilmAdapter(testedFilms)
+
+    private val miniFilmsAdapter: WillWatchLaterFilmsMiniListAdapter = WillWatchLaterFilmsMiniListAdapter(testedMiniFilms)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = WillWatchLaterFilmsFragmentBinding.inflate(layoutInflater)
@@ -59,20 +87,28 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     }
 
     override fun initViews() {
-        initRecyclerView()
+        initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
         filmsAdapter.update(testedFilms) // знаю, что должно быть во вью модели. пока тестовый вариант, все равно нет обращения в сеть
         swipeOnRefreshListener()
+        setUpRecyclerViewWithoutPoster()
     }
 
     override fun subscribe(viewModel: WillWatchLaterFilmsViewModel) {
 //        TODO("Not yet implemented")
     }
 
-    private fun initRecyclerView() {
-        val gridLayoutManager = GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT)
+    private fun initRecyclerView(requiredLayoutManager: RecyclerView.LayoutManager, requiredAdapter: BaseAdapter) {
         with(binding.filmsRecyclerView) {
-            adapter = filmsAdapter
-            layoutManager = gridLayoutManager
+            adapter = requiredAdapter
+            layoutManager = requiredLayoutManager
+        }
+    }
+
+    private fun setUpRecyclerViewWithoutPoster() {
+        viewModelParent.isMiniListClicked.observe(viewLifecycleOwner) {
+            if (it) {
+                initRecyclerView(LinearLayoutManager(context), miniFilmsAdapter)
+            }
         }
     }
 
