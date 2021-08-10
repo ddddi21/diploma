@@ -18,7 +18,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
 
     private lateinit var binding: WillWatchLaterFilmsFragmentBinding
 
-    private val film: Film = Film(
+    private val film = Film(
         id = 1,
         title = "Money Heist",
         rating = 9.7,
@@ -26,7 +26,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     )
     // временный вариант
 
-    private var testedFilms: List<Film> = arrayListOf(
+    private var testedFilms = arrayListOf(
         film,
         film,
         film,
@@ -44,7 +44,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     )
     // временный вариант
 
-    private val filmsAdapter: WillWatchLaterFilmAdapter = WillWatchLaterFilmAdapter(testedFilms)
+    private val filmsAdapter = WillWatchLaterFilmAdapter(testedFilms)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = WillWatchLaterFilmsFragmentBinding.inflate(layoutInflater)
@@ -68,10 +68,9 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     }
 
     private fun initRecyclerView() {
-        val gridLayoutManager = GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT)
         with(binding.filmsRecyclerView) {
             adapter = filmsAdapter
-            layoutManager = gridLayoutManager
+            layoutManager = GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT)
         }
     }
 
