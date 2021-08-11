@@ -22,7 +22,7 @@
             android:id="@+id/filmArrowImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="right|center"
             app:srcCompat="@drawable/ic_grey_arrow" />
 
     </FrameLayout>

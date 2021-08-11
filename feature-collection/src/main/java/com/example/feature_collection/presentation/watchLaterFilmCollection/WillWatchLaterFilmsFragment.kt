@@ -18,6 +18,7 @@ import com.example.feature_collection.model.FilmMini
 import com.example.feature_collection.presentation.CollectionViewModel
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.base.adapter.BaseAdapter
+import com.technokratos.common.base.adapter.ViewType
 import com.technokratos.common.di.FeatureUtils
 import com.technokratos.common.utils.removeItemDecorations
 import com.technokratos.common.utils.setDivider
@@ -48,7 +49,6 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     private var testedFilms = List(10) { film } // временный вариант
 
     private val filmsAdapter = BaseAdapter()
-    private val miniFilmsAdapter = BaseAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = WillWatchLaterFilmsFragmentBinding.inflate(layoutInflater)
@@ -63,42 +63,46 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     }
 
     override fun initViews() {
-        initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
+        initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), testedFilms)
         setUpRecyclerViewWithoutPoster()
-        setSwipeOnRefreshListener()
     }
 
     override fun subscribe(viewModel: WillWatchLaterFilmsViewModel) {
 //        TODO("Not yet implemented")
     }
 
-    private fun initRecyclerView(requiredLayoutManager: RecyclerView.LayoutManager, requiredAdapter: BaseAdapter) {
+    private fun initRecyclerView(requiredLayoutManager: RecyclerView.LayoutManager, list: List<ViewType>) {
         with(binding.filmsRecyclerView) {
-            adapter = requiredAdapter
             layoutManager = requiredLayoutManager
-            if (requiredAdapter == miniFilmsAdapter) {
-                requiredAdapter.update(testedMiniFilms)
+            if (list == testedMiniFilms) {
+                setSwipeOnRefreshListener(testedMiniFilms)
+                filmsAdapter.update(testedMiniFilms)
                 setDivider(R.drawable.film_list_item_divider)
             } else {
+                setSwipeOnRefreshListener(testedFilms)
                 removeItemDecorations()
-                requiredAdapter.update(testedFilms)
+                filmsAdapter.update(testedFilms)
             }
+            adapter = filmsAdapter
         }
     }
 
     private fun setUpRecyclerViewWithoutPoster() {
         viewModelParent.isNeedToChangeList.observe(viewLifecycleOwner) { isNeedToSwitchToGridLayout ->
             when (isNeedToSwitchToGridLayout) {
-                false -> initRecyclerView(LinearLayoutManager(context), miniFilmsAdapter)
-                true -> initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
+                false -> initRecyclerView(LinearLayoutManager(context), testedMiniFilms)
+                true -> initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), testedFilms)
             }
         }
     }
 
-    private fun setSwipeOnRefreshListener() {
+    private fun setSwipeOnRefreshListener(list: List<ViewType>) {
         binding.swipeToRefreshFilmsList.setOnRefreshListener {
             binding.swipeToRefreshFilmsList.isRefreshing = false
-            filmsAdapter.update(testedFilms)
+            when (list) {
+                testedFilms -> filmsAdapter.update(testedFilms)
+                testedMiniFilms -> filmsAdapter.update(testedMiniFilms)
+            }
         }
     }
     // временный вариант
