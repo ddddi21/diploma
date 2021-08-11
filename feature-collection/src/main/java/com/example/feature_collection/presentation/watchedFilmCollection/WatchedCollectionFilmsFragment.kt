@@ -15,8 +15,6 @@ import com.example.feature_collection.di.CollectionFeatureKey
 import com.example.feature_collection.model.Film
 import com.example.feature_collection.model.FilmMini
 import com.example.feature_collection.presentation.CollectionViewModel
-import com.example.feature_collection.presentation.watchedFilmCollection.adapter.WatchedCollectionFilmsAdapter
-import com.example.feature_collection.presentation.watchedFilmCollection.adapter.WatchedCollectionFilmsMiniListAdapter
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
 
@@ -28,7 +26,7 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
 
     private val viewModelParent by viewModels<CollectionViewModel> ({ requireParentFragment() })
 
-    private val film: Film = Film(
+    private val film = Film(
         id = 0,
         title = "Peaky Blinders",
         rating = 9.9,
@@ -36,13 +34,13 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
     )
     // временный вариант
 
-    private val filmMini: FilmMini = FilmMini(
+    private val filmMini = FilmMini(
         id = 0,
         title = "Peaky Blinders"
     )
     // временный вариант
 
-    private var testedFilms: List<Film> = arrayListOf(
+    private var testedFilms = arrayListOf(
         film,
         film,
         film,
@@ -69,9 +67,9 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
     )
     // временный вариант
 
-    private val filmsAdapter: WatchedCollectionFilmsAdapter = WatchedCollectionFilmsAdapter(testedFilms)
+    private val filmsAdapter = BaseAdapter(testedFilms)
 
-    private val miniFilmsAdapter: WatchedCollectionFilmsMiniListAdapter = WatchedCollectionFilmsMiniListAdapter(testedMiniFilms)
+    private val miniFilmsAdapter = BaseAdapter(testedMiniFilms)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = WatchedFilmCollectionFragmentBinding.inflate(layoutInflater)

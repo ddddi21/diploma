@@ -15,8 +15,6 @@ import com.example.feature_collection.di.CollectionFeatureKey
 import com.example.feature_collection.model.Film
 import com.example.feature_collection.model.FilmMini
 import com.example.feature_collection.presentation.CollectionViewModel
-import com.example.feature_collection.presentation.watchLaterFilmCollection.adapter.WillWatchLaterFilmAdapter
-import com.example.feature_collection.presentation.watchLaterFilmCollection.adapter.WillWatchLaterFilmsMiniListAdapter
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.base.adapter.BaseAdapter
 import com.technokratos.common.di.FeatureUtils
@@ -29,7 +27,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
 
     private val viewModelParent by viewModels<CollectionViewModel>({ requireParentFragment() })
 
-    private val film: Film = Film(
+    private val film = Film(
         id = 1,
         title = "Money Heist",
         rating = 9.7,
@@ -37,13 +35,13 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     )
     // временный вариант
 
-    private val filmMini: FilmMini = FilmMini(
+    private val filmMini = FilmMini(
         id = 1,
         title = "Money Heist"
     )
     // временный вариант
 
-    private var testedFilms: List<Film> = arrayListOf(
+    private var testedFilms = arrayListOf(
         film,
         film,
         film,
@@ -70,9 +68,9 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     )
     // временный вариант
 
-    private val filmsAdapter: WillWatchLaterFilmAdapter = WillWatchLaterFilmAdapter(testedFilms)
+    private val filmsAdapter = BaseAdapter(testedFilms)
 
-    private val miniFilmsAdapter: WillWatchLaterFilmsMiniListAdapter = WillWatchLaterFilmsMiniListAdapter(testedMiniFilms)
+    private val miniFilmsAdapter = BaseAdapter(testedMiniFilms)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = WillWatchLaterFilmsFragmentBinding.inflate(layoutInflater)
