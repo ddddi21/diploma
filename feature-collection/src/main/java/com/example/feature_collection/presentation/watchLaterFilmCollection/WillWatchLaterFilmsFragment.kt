@@ -27,22 +27,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     )
     // временный вариант
 
-    private var testedFilms = arrayListOf(
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film
-    )
+    private var testedFilms = List(10) { film }
     // временный вариант
 
     private val filmsAdapter = BaseAdapter(testedFilms)
@@ -61,7 +46,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
 
     override fun initViews() {
         initRecyclerView()
-        swipeOnRefreshListener()
+        setSwipeOnRefreshListener()
     }
 
     override fun subscribe(viewModel: WillWatchLaterFilmsViewModel) {
@@ -75,7 +60,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
         }
     }
 
-    private fun swipeOnRefreshListener() {
+    private fun setSwipeOnRefreshListener() {
         binding.swipeToRefreshFilmsList.setOnRefreshListener {
             binding.swipeToRefreshFilmsList.isRefreshing = false
             filmsAdapter.update(testedFilms)

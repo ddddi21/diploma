@@ -10,33 +10,33 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/filmPoster"
+            android:id="@+id/posterImageView"
             android:scaleType="centerCrop"
-            android:layout_width="@dimen/film_poster_width"
-            android:layout_height="@dimen/film_poster_height"
+            android:layout_width="@dimen/film_item_poster_width"
+            android:layout_height="@dimen/film_item_poster_height"
             android:src="@drawable/ic_film_poster_template" />
 
         <TextView
-            android:id="@+id/filmRating"
-            android:layout_width="@dimen/film_rating_width"
-            android:layout_height="@dimen/film_rating_height"
-            android:layout_marginEnd="@dimen/film_rating_padding_end_and_top"
-            android:layout_marginTop="@dimen/film_rating_padding_end_and_top"
+            android:id="@+id/rateTextView"
+            android:layout_width="@dimen/film_item_rating_width"
+            android:layout_height="@dimen/film_item_rating_height"
+            android:layout_marginEnd="@dimen/film_item_rating_margin_end"
+            android:layout_marginTop="@dimen/film_item_rating_margin_top"
             android:background="@drawable/ic_film_rating"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
             android:layout_gravity="end"
-            android:text="@string/film_item_view_rating"
+            android:text="@string/film_item_rating"
             android:textColor="@color/blueAccent"
-            android:textSize="@dimen/film_rating_text_size" />
+            android:textSize="@dimen/film_item_rating_text_size" />
 
     </FrameLayout>
 
     <TextView
-        android:id="@+id/filmTitle"
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/film_item_view_title" />
+        android:text="@string/film_item_title" />
 
 </com.example.feature_collection.model.FilmItemView>

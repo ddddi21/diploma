@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="film_poster_width">104dp</dimen>
-    <dimen name="film_poster_height">160dp</dimen>
+    <dimen name="film_item_poster_width">104dp</dimen>
+    <dimen name="film_item_poster_height">160dp</dimen>
 
     <dimen name="film_item_padding">16dp</dimen>
 
-    <dimen name="film_rating_corner_radius">16dp</dimen>
-    <dimen name="film_rating_corner_width">1dp</dimen>
+    <dimen name="film_item_rating_corner_radius">16dp</dimen>
+    <dimen name="film_item_rating_corner_width">1dp</dimen>
 
-    <dimen name="film_rating_width">24dp</dimen>
-    <dimen name="film_rating_height">16dp</dimen>
-    <dimen name="film_rating_text_size">8sp</dimen>
-    <dimen name="film_rating_padding_end_and_top">8dp</dimen>
+    <dimen name="film_item_rating_width">24dp</dimen>
+    <dimen name="film_item_rating_height">16dp</dimen>
+    <dimen name="film_item_rating_margin_end">8dp</dimen>
+    <dimen name="film_item_rating_margin_top">8dp</dimen>
 
-    <dimen name="recycler_view_margin_bottom">72dp</dimen>
+    <dimen name="films_recycler_view_margin_bottom">72dp</dimen>
 </resources>

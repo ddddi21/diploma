@@ -9,7 +9,7 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/fragment_container_view_margin_bottom"
+        android:layout_marginBottom="@dimen/bottom_navigation_view_height"
         app:defaultNavHost="false"
         app:navGraph="@navigation/main_nav_graph" />
 
