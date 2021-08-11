@@ -2,6 +2,7 @@ package com.example.feature_collection.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -19,6 +20,8 @@ import com.technokratos.common.di.FeatureUtils
 class CollectionFragment : BaseFragment<CollectionViewModel>() {
 
     private lateinit var binding: CollectionFragmentBinding
+
+    private lateinit var menu: MenuItem
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = CollectionFragmentBinding.inflate(layoutInflater)
@@ -48,15 +51,28 @@ class CollectionFragment : BaseFragment<CollectionViewModel>() {
 
     override fun initViews() {
         setHasOptionsMenu(true)
-        var isLinearLayout = false
-        binding.collectionToolbar.menu.findItem(R.id.list).setOnMenuItemClickListener {
-            viewModel.onMiniListClicked()
+        menu = binding.collectionToolbar.menu.findItem(R.id.list)
+        menu.setOnMenuItemClickListener {
+            when (viewModel.isNeedToChangeList.value) {
+                true -> changeListToLinearLayout()
+                false -> changeListToGridLayout()
+            }
             false
         }
     }
 
     override fun subscribe(viewModel: CollectionViewModel) {
 //        TODO("Not yet implemented")
+    }
+
+    private fun changeListToLinearLayout() {
+        viewModel.onMiniListClicked()
+        menu.icon = resources.getDrawable(R.drawable.ic_full_film_list)
+    }
+
+    private fun changeListToGridLayout() {
+        viewModel.onFullListClicked()
+        menu.icon = resources.getDrawable(R.drawable.ic_mini_films_list)
     }
 }
 

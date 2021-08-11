@@ -86,7 +86,6 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
 
     override fun initViews() {
         initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
-        filmsAdapter.update(testedFilms) // знаю, что должно быть во вью модели. пока тестовый вариант, все равно нет обращения в сеть
         swipeOnRefreshListener()
         setUpRecyclerViewWithoutPoster()
     }
@@ -103,9 +102,10 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     }
 
     private fun setUpRecyclerViewWithoutPoster() {
-        viewModelParent.isMiniListClicked.observe(viewLifecycleOwner) { isMiniListClicked ->
-            if (isMiniListClicked) {
-                initRecyclerView(LinearLayoutManager(context), miniFilmsAdapter)
+        viewModelParent.isNeedToChangeList.observe(viewLifecycleOwner) { isNeedToSwitchToGridLayout ->
+            when (isNeedToSwitchToGridLayout) {
+                false -> initRecyclerView(LinearLayoutManager(context), miniFilmsAdapter)
+                true -> initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
             }
         }
     }

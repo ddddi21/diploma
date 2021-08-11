@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
 import com.technokratos.common.base.adapter.BaseAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -85,7 +86,6 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
 
     override fun initViews() {
         initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
-        filmsAdapter.update(testedFilms) // знаю, что должно быть во вью модели. пока тестовый вариант, все равно нет обращения в сеть
         swipeOnRefreshListener()
         setUpRecyclerViewWithoutPoster()
     }
@@ -102,8 +102,11 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
     }
 
     private fun setUpRecyclerViewWithoutPoster() {
-        if (viewModelParent.isMiniListClicked.value == true) {
-            initRecyclerView(LinearLayoutManager(context), miniFilmsAdapter)
+        viewModelParent.isNeedToChangeList.observe(viewLifecycleOwner) { isNeedToSwitchToGridLayout ->
+            when (isNeedToSwitchToGridLayout) {
+                false -> initRecyclerView(LinearLayoutManager(context), miniFilmsAdapter)
+                true -> initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
+            }
         }
     }
 

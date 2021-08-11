@@ -9,10 +9,14 @@ class CollectionViewModel(
     private var router: CollectionRouter
 ) : BaseViewModel() {
 
-    private var _isMiniListClicked = MutableLiveData<Boolean>()
-    val isMiniListClicked: LiveData<Boolean> = _isMiniListClicked
+    private var _isNeedToChangeList = MutableLiveData<Boolean>(true)
+    val isNeedToChangeList: LiveData<Boolean> = _isNeedToChangeList
 
     fun onMiniListClicked() {
-        _isMiniListClicked.value = true
+        _isNeedToChangeList.value = false
+    }
+
+    fun onFullListClicked() {
+        _isNeedToChangeList.value = true
     }
 }
