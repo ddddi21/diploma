@@ -10,6 +10,7 @@ import com.example.feature_collection.di.CollectionFeatureComponent
 import com.example.feature_collection.di.CollectionFeatureKey
 import com.example.feature_collection.model.Film
 import com.technokratos.common.base.BaseFragment
+import com.technokratos.common.base.adapter.BaseAdapter
 import com.technokratos.common.di.FeatureUtils
 
 private const val GRID_LAYOUT_SPAN_COUNT = 3
@@ -44,7 +45,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     )
     // временный вариант
 
-    private val filmsAdapter = WillWatchLaterFilmAdapter(testedFilms)
+    private val filmsAdapter = BaseAdapter(testedFilms)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = WillWatchLaterFilmsFragmentBinding.inflate(layoutInflater)
