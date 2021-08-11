@@ -30,7 +30,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     private var testedFilms = List(10) { film }
     // временный вариант
 
-    private val filmsAdapter = BaseAdapter(testedFilms)
+    private val filmsAdapter = BaseAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = WillWatchLaterFilmsFragmentBinding.inflate(layoutInflater)
@@ -45,6 +45,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     }
 
     override fun initViews() {
+        filmsAdapter.update(testedFilms)
         initRecyclerView()
         setSwipeOnRefreshListener()
     }
