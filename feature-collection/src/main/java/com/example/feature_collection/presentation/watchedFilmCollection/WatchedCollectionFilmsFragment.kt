@@ -38,42 +38,19 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
     )
     // временный вариант
 
+    private var testedFilms = List(10) { film }
     private val filmMini = FilmMini(
         id = 0,
         title = "Peaky Blinders"
     )
     // временный вариант
 
-    private var testedFilms = arrayListOf(
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film
-    )
+    private var testedMiniFilms = List(10) { filmMini }
     // временный вариант
 
-    private var testedMiniFilms = arrayListOf(
-        filmMini,
-        filmMini,
-        filmMini,
-        filmMini,
-        filmMini
-    )
-    // временный вариант
+    private val filmsAdapter = BaseAdapter()
 
-    private val filmsAdapter = BaseAdapter(testedFilms)
-
-    private val miniFilmsAdapter = BaseAdapter(testedMiniFilms)
+    private val miniFilmsAdapter = BaseAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = WatchedFilmCollectionFragmentBinding.inflate(layoutInflater)
@@ -88,8 +65,9 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
     }
 
     override fun initViews() {
+        filmsAdapter.update(testedFilms)
         initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
-        swipeOnRefreshListener()
+        setSwipeOnRefreshListener()
         setUpRecyclerViewWithoutPoster()
     }
 
@@ -118,7 +96,7 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
         }
     }
 
-    private fun swipeOnRefreshListener() {
+    private fun setSwipeOnRefreshListener() {
         binding.swipeToRefreshFilmsList.setOnRefreshListener {
             binding.swipeToRefreshFilmsList.isRefreshing = false
             filmsAdapter.update(testedFilms)

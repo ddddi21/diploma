@@ -44,34 +44,12 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     )
     // временный вариант
 
-    private var testedFilms = arrayListOf(
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film,
-        film
-    )
+    private val filmsAdapter = BaseAdapter()
+
+    private var testedMiniFilms = List(10) { filmMini }
     // временный вариант
 
-    private var testedMiniFilms = arrayListOf(
-        filmMini,
-        filmMini,
-        filmMini,
-        filmMini,
-        filmMini
-    )
-    // временный вариант
-
-    private val filmsAdapter = BaseAdapter(testedFilms)
+    private var testedFilms = List(10) { film } // временный вариант
 
     private val miniFilmsAdapter = BaseAdapter(testedMiniFilms)
 
@@ -89,8 +67,9 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
 
     override fun initViews() {
         initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
-        swipeOnRefreshListener()
+        filmsAdapter.update(testedFilms)
         setUpRecyclerViewWithoutPoster()
+        setSwipeOnRefreshListener()
     }
 
     override fun subscribe(viewModel: WillWatchLaterFilmsViewModel) {
@@ -118,7 +97,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
         }
     }
 
-    private fun swipeOnRefreshListener() {
+    private fun setSwipeOnRefreshListener() {
         binding.swipeToRefreshFilmsList.setOnRefreshListener {
             binding.swipeToRefreshFilmsList.isRefreshing = false
             filmsAdapter.update(testedFilms)

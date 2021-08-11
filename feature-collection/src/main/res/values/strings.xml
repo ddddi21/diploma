@@ -3,6 +3,4 @@
     <string name="collection_toolbar_title_text">Коллекция</string>
     <string name="collection_will_watch_tab">Буду смотреть</string>
     <string name="collection_already_watched_tab">Просмотрено</string>
-    <string name="film_item_view_title">Movie</string>
-    <string name="film_item_view_rating">8.9</string>
 </resources>
