@@ -105,8 +105,8 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     }
 
     private fun setUpRecyclerViewWithoutPoster() {
-        viewModelParent.isMiniListClicked.observe(viewLifecycleOwner) {
-            if (it) {
+        viewModelParent.isMiniListClicked.observe(viewLifecycleOwner) { isMiniListClicked ->
+            if (isMiniListClicked) {
                 initRecyclerView(LinearLayoutManager(context), miniFilmsAdapter)
             }
         }
