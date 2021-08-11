@@ -9,6 +9,7 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.feature_collection.R
 import com.example.feature_collection.databinding.WillWatchLaterFilmsFragmentBinding
 import com.example.feature_collection.di.CollectionFeatureComponent
 import com.example.feature_collection.di.CollectionFeatureKey
@@ -18,6 +19,8 @@ import com.example.feature_collection.presentation.CollectionViewModel
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.base.adapter.BaseAdapter
 import com.technokratos.common.di.FeatureUtils
+import com.technokratos.common.utils.removeItemDecorations
+import com.technokratos.common.utils.setDivider
 
 private const val GRID_LAYOUT_SPAN_COUNT = 3
 
@@ -98,6 +101,11 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
         with(binding.filmsRecyclerView) {
             adapter = requiredAdapter
             layoutManager = requiredLayoutManager
+            if (requiredAdapter == miniFilmsAdapter) {
+                setDivider(R.drawable.film_list_item_divider)
+            } else {
+                removeItemDecorations()
+            }
         }
     }
 

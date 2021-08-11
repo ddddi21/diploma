@@ -4,9 +4,12 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
 
 fun Activity.showShortToast(msg: String) {
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
@@ -39,4 +42,25 @@ fun View.makeInvisible() {
 
 fun View.makeGone() {
     this.visibility = View.GONE
+}
+
+fun RecyclerView.setDivider(@DrawableRes drawableRes: Int) {
+    val divider = DividerItemDecoration(
+        this.context,
+        DividerItemDecoration.VERTICAL
+    )
+    val drawable = ContextCompat.getDrawable(
+        this.context,
+        drawableRes
+    )
+    drawable?.let {
+        divider.setDrawable(it)
+        addItemDecoration(divider)
+    }
+}
+
+fun <T : RecyclerView> T.removeItemDecorations() {
+    while (itemDecorationCount > 0) {
+        removeItemDecorationAt(0)
+    }
 }
