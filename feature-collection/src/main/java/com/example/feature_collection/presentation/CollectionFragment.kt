@@ -10,8 +10,8 @@ import com.example.feature_collection.R
 import com.example.feature_collection.databinding.CollectionFragmentBinding
 import com.example.feature_collection.di.CollectionFeatureComponent
 import com.example.feature_collection.di.CollectionFeatureKey
-import com.example.feature_collection.presentation.filmCollection.WatchedCollectionFilmsFragment
-import com.example.feature_collection.presentation.watchLater.WillWatchLaterFilmsFragment
+import com.example.feature_collection.presentation.watchedFilmCollection.WatchedCollectionFilmsFragment
+import com.example.feature_collection.presentation.watchLaterFilmCollection.WillWatchLaterFilmsFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils

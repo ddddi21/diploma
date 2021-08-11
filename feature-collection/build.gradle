@@ -55,4 +55,6 @@ dependencies {
     implementation fragmentDep
     implementation materialDep
     implementation viewPager2Dep
+    implementation swipeRefreshLayoutDep
+    implementation glideDep
 }
