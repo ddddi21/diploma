@@ -1,8 +1,8 @@
 <inset xmlns:android="http://schemas.android.com/apk/res/android"
-    android:insetLeft="@dimen/linear_layout_divider_margin_start">
+    android:insetLeft="@dimen/films_linear_layout_divider_margin_start">
     <shape
         android:shape="rectangle">
         <solid android:color="@color/lightGrey" />
-        <size android:height="@dimen/linear_layout_divider_height" />
+        <size android:height="@dimen/films_linear_layout_divider_height" />
     </shape>
 </inset>

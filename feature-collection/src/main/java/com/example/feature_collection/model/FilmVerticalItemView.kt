@@ -17,6 +17,6 @@ class FilmVerticalItemView @JvmOverloads constructor(
     }
 
     override fun fill(model: FilmMini) = with(binding) {
-        filmTitle.text = model.title
+        filmTitleTextView.text = model.title
     }
 }

@@ -38,18 +38,16 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
     )
     // временный вариант
 
-    private var testedFilms = List(10) { film }
     private val filmMini = FilmMini(
         id = 0,
         title = "Peaky Blinders"
     )
     // временный вариант
 
-    private var testedMiniFilms = List(10) { filmMini }
-    // временный вариант
+    private var testedFilms = List(10) { film }
+    private var testedMiniFilms = List(10) { filmMini } // временный вариант
 
     private val filmsAdapter = BaseAdapter()
-
     private val miniFilmsAdapter = BaseAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -65,7 +63,6 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
     }
 
     override fun initViews() {
-        filmsAdapter.update(testedFilms)
         initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
         setSwipeOnRefreshListener()
         setUpRecyclerViewWithoutPoster()
@@ -80,8 +77,10 @@ class WatchedCollectionFilmsFragment : BaseFragment<WatchedCollectionFilmsViewMo
             adapter = requiredAdapter
             layoutManager = requiredLayoutManager
             if (requiredAdapter == miniFilmsAdapter) {
+                requiredAdapter.update(testedMiniFilms)
                 setDivider(R.drawable.film_list_item_divider)
             } else {
+                requiredAdapter.update(testedFilms)
                 removeItemDecorations()
             }
         }

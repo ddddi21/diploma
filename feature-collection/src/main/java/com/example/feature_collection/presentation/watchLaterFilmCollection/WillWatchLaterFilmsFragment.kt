@@ -44,14 +44,11 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     )
     // временный вариант
 
-    private val filmsAdapter = BaseAdapter()
-
-    private var testedMiniFilms = List(10) { filmMini }
-    // временный вариант
-
+    private var testedMiniFilms = List(10) { filmMini } // временный вариант
     private var testedFilms = List(10) { film } // временный вариант
 
-    private val miniFilmsAdapter = BaseAdapter(testedMiniFilms)
+    private val filmsAdapter = BaseAdapter()
+    private val miniFilmsAdapter = BaseAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = WillWatchLaterFilmsFragmentBinding.inflate(layoutInflater)
@@ -67,7 +64,6 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
 
     override fun initViews() {
         initRecyclerView(GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT), filmsAdapter)
-        filmsAdapter.update(testedFilms)
         setUpRecyclerViewWithoutPoster()
         setSwipeOnRefreshListener()
     }
@@ -81,9 +77,11 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
             adapter = requiredAdapter
             layoutManager = requiredLayoutManager
             if (requiredAdapter == miniFilmsAdapter) {
+                requiredAdapter.update(testedMiniFilms)
                 setDivider(R.drawable.film_list_item_divider)
             } else {
                 removeItemDecorations()
+                requiredAdapter.update(testedFilms)
             }
         }
     }
