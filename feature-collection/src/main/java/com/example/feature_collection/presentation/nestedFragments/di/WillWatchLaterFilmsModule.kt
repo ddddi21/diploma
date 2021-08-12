@@ -1,11 +1,11 @@
-package com.example.feature_collection.presentation.watchLaterFilmCollection.di
+package com.example.feature_collection.presentation.nestedFragments.di
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.feature_collection.CollectionRouter
-import com.example.feature_collection.presentation.watchLaterFilmCollection.WillWatchLaterFilmsViewModel
+import com.example.feature_collection.presentation.nestedFragments.WillWatchLaterFilmsViewModel
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule
 import dagger.Module
