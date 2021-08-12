@@ -1,8 +1,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <corners android:radius="@dimen/film_item_rating_corner_radius" />
+    <corners android:radius="@dimen/rounded_shape_corner_radius" />
     <stroke
-        android:width="@dimen/film_item_rating_corner_width"
+        android:width="@dimen/rounded_shape_corner_width"
         android:color="@color/blueAccent" />
     <solid android:color="@color/white" />
 </shape>

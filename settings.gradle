@@ -1,3 +1,4 @@
+include ':feature-film-details'
 include ':feature-collection'
 include ':navigation'
 include ':feature-auth'

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Button.OutlinedBlack" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/black</item>
+        <item name="icon">@drawable/ic_add</item>
+        <item name="iconPadding">@dimen/add_icon_padding</item>
+        <item name="iconTint">@color/black</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/rounded_shape_corner_radius</item>
+        <item name="strokeWidth">@dimen/rounded_shape_corner_width</item>
+    </style>
+
+    <style name="Button.OutlinedGray" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+        <item name="android:textColor">@drawable/watch_buttons_selector</item>
+        <item name="strokeColor">@drawable/watch_buttons_selector</item>
+        <item name="cornerRadius">@dimen/rounded_shape_corner_radius</item>
+        <item name="strokeWidth">@dimen/rounded_shape_corner_width</item>
+    </style>
+</resources>

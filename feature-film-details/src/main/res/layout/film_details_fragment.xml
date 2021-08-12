@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/collectionToolbar"
+            style="@style/NavigateBack.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/film_details_toolbar_menu"
+            app:title="@string/film_details_toolbar_title" />
+
+        <!--    <Space-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_weight="1" />-->
+
+        <ImageView
+            android:id="@+id/posterImageView"
+            android:layout_width="@dimen/film_detail_poster_width"
+            android:layout_height="@dimen/film_detail_poster_height"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_film_poster_template" />
+
+        <!--    <Space-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_weight="0.5" />-->
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="@dimen/text_size_36sp"
+            tools:text="Movie" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/film_detail_rate_margin_start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/yearTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/film_details_year"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/rateTextView"
+                android:layout_width="@dimen/film_detail_rate_width"
+                android:layout_height="@dimen/film_detail_rate_height"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/film_detail_rate_margin_start"
+                android:background="@drawable/blue_rounded_shape"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="@string/film_details_rate"
+                android:textColor="@color/blueAccent"
+                android:textSize="@dimen/text_size_12sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/addToWillWatchButton"
+            style="@style/Button.OutlinedBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/film_detail_add_to_will_watch_margin_top"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/film_details_will_watch_button"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/willWatchButton"
+                style="@style/Button.OutlinedGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/film_detail_will_watch_margin_end"
+                android:text="@string/film_details_will_watch_button" />
+
+            <Button
+                android:id="@+id/watchedButton"
+                style="@style/Button.OutlinedGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/film_details_watched" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

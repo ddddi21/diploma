@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="film_detail_poster_width">128dp</dimen>
+    <dimen name="film_detail_poster_height">200dp</dimen>
+
+    <dimen name="film_detail_rate_width">36dp</dimen>
+    <dimen name="film_detail_rate_height">24dp</dimen>
+
+    <dimen name="film_detail_rate_margin_start">12dp</dimen>
+    <dimen name="film_detail_add_to_will_watch_margin_top">20dp</dimen>
+
+    <dimen name="film_detail_will_watch_margin_end">24dp</dimen>
+</resources>
