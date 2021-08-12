@@ -3,8 +3,8 @@ package com.example.feature_collection.presentation.nestedFragments
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.feature_collection.CollectionRouter
-import com.example.feature_collection.model.Film
-import com.example.feature_collection.model.FilmMini
+import com.example.feature_collection.model.FilmGrid
+import com.example.feature_collection.model.FilmLinear
 import com.technokratos.common.base.BaseViewModel
 import com.technokratos.common.base.adapter.ViewType
 
@@ -18,7 +18,7 @@ class WillWatchLaterFilmsViewModel(
     private var _linearList = MutableLiveData<List<ViewType>>()
     val linearList: LiveData<List<ViewType>> = _linearList
 
-    private val filmWatched = Film(
+    private val filmWatched = FilmGrid(
         id = 1,
         title = "Money Heist",
         rating = 9.7,
@@ -26,13 +26,13 @@ class WillWatchLaterFilmsViewModel(
     )
     // временный вариант
 
-    private val filmMiniWatched = FilmMini(
+    private val filmMiniWatched = FilmLinear(
         id = 1,
         title = "Money Heist"
     )
     // временный вариант
 
-    private val filmWillWatch = Film(
+    private val filmWillWatch = FilmGrid(
         id = 0,
         title = "Peaky Blinders",
         rating = 9.9,
@@ -40,7 +40,7 @@ class WillWatchLaterFilmsViewModel(
     )
     // временный вариант
 
-    private val filmMiniWillWatch = FilmMini(
+    private val filmMiniWillWatch = FilmLinear(
         id = 0,
         title = "Peaky Blinders"
     )
