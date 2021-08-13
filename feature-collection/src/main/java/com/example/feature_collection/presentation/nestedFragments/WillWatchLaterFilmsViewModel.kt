@@ -18,7 +18,7 @@ class WillWatchLaterFilmsViewModel(
     private var _linearList = MutableLiveData<List<ViewType>>()
     val linearList: LiveData<List<ViewType>> = _linearList
 
-    private val _fragmentType = MutableLiveData<ViewPagerFragmentType>()
+    private lateinit var fragmentType: ViewPagerFragmentType
 
     private val filmWatched = FilmGridItem(
         id = 1,
@@ -55,13 +55,13 @@ class WillWatchLaterFilmsViewModel(
     private var testedFilmsWillWatch = List(10) { filmWillWatch } // временный вариант
 
     fun onViewInited(fragmentType: ViewPagerFragmentType) {
-        _fragmentType.value = fragmentType
+        this.fragmentType = fragmentType
         loadList()
     }
 
     private fun loadList() {
         // TODO
-        when (_fragmentType.value) {
+        when (fragmentType) {
             ViewPagerFragmentType.WATCHED -> {
                 _gridList.value = testedFilmsWatched
                 _linearList.value = testedMiniFilmsWatched
