@@ -9,14 +9,19 @@ class CollectionViewModel(
     private var router: CollectionRouter
 ) : BaseViewModel() {
 
-    private var _isNeedToChangeList = MutableLiveData<Boolean>(true)
-    val isNeedToChangeList: LiveData<Boolean> = _isNeedToChangeList
+    private var _collectionMenuItemMode = MutableLiveData<CollectionMenuItemMode>(CollectionMenuItemMode.GRID_LIST)
+    val collectionMenuItemMode: LiveData<CollectionMenuItemMode> = _collectionMenuItemMode
 
-    fun onMiniListClicked() {
-        _isNeedToChangeList.value = false
-    }
+    fun onMenuItemClick() {
+        _collectionMenuItemMode.value = when (collectionMenuItemMode.value) {
+            CollectionMenuItemMode.GRID_LIST -> CollectionMenuItemMode.LINEAR_LIST
 
-    fun onFullListClicked() {
-        _isNeedToChangeList.value = true
+            else -> CollectionMenuItemMode.GRID_LIST
+        }
     }
+}
+
+enum class CollectionMenuItemMode {
+    GRID_LIST,
+    LINEAR_LIST
 }
