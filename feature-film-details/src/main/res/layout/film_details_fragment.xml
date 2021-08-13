@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,32 +17,24 @@
             app:menu="@menu/film_details_toolbar_menu"
             app:title="@string/film_details_toolbar_title" />
 
-        <!--    <Space-->
-        <!--        android:layout_width="0dp"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_weight="1" />-->
-
         <ImageView
             android:id="@+id/posterImageView"
             android:layout_width="@dimen/film_detail_poster_width"
             android:layout_height="@dimen/film_detail_poster_height"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_36dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_film_poster_template" />
-
-        <!--    <Space-->
-        <!--        android:layout_width="0dp"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_weight="0.5" />-->
 
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_12dp"
             android:fontFamily="@font/roboto_bold"
-            android:textSize="@dimen/text_size_36sp"
-            tools:text="Movie" />
+            android:text="@string/film_details_title"
+            android:textSize="@dimen/text_size_36sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -84,31 +74,90 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/film_detail_add_to_will_watch_margin_top"
-            android:fontFamily="@font/roboto_bold"
             android:text="@string/film_details_will_watch_button"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_12sp" />
+            android:textSize="@dimen/text_size_16sp" />
 
-        <LinearLayout
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/watchedChipGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginTop="@dimen/film_detail_add_to_will_watch_margin_top"
+            android:visibility="gone"
+            app:selectionRequired="true"
+            app:singleSelection="true">
 
-            <Button
-                android:id="@+id/willWatchButton"
-                style="@style/Button.OutlinedGray"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/willWatchSelectedChip"
+                style="@style/FilmDetails.WatchChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/film_detail_will_watch_margin_end"
+                android:checked="true"
                 android:text="@string/film_details_will_watch_button" />
 
-            <Button
-                android:id="@+id/watchedButton"
-                style="@style/Button.OutlinedGray"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/watchedSelectedChip"
+                style="@style/FilmDetails.WatchChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/film_details_watched" />
-        </LinearLayout>
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/filmDescriptionTextView"
+            android:layout_width="@dimen/film_detail_desc_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_32dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/film_details_desc"
+            android:textAlignment="center" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/genreChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/film_detail_genres_chip_group_margin_start"
+            android:layout_marginTop="@dimen/dimen_28dp"
+            android:layout_marginEnd="@dimen/film_detail_genres_chip_group_margin_start">
+            <!--            буду добавлять чипы программно через код, после запроса в сеть, пока такой вариант верстки-->
+
+            <com.google.android.material.chip.Chip
+                style="@style/FilmDetails.GenreChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/film_detail_genres_chip_margin"
+                android:layout_marginEnd="@dimen/film_detail_will_watch_margin_end"
+                android:checked="true"
+                android:text="@string/film_details_genre_action" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/FilmDetails.GenreChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/film_detail_genres_chip_margin"
+                android:text="@string/film_details_genre_criminal" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/FilmDetails.GenreChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/film_detail_genres_chip_margin"
+                android:text="@string/film_details_genre_thriller" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/FilmDetails.GenreChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/film_detail_genres_chip_margin"
+                android:text="@string/film_details_genre_detective" />
+
+        </com.google.android.material.chip.ChipGroup>
     </LinearLayout>
 </ScrollView>
+

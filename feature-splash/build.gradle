@@ -49,4 +49,7 @@ dependencies {
     testImplementation mockitoDep
 
     implementation fragmentDep
+
+    implementation supportDep
+    implementation designDep // перемещу вместе с версткой в нужный модуль
 }

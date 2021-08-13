@@ -2,7 +2,13 @@
 <resources>
     <string name="film_details_toolbar_title">О фильме</string>
     <string name="film_details_will_watch_button">Буду смотреть</string>
-    <string name="film_details_year">2020</string>
-    <string name="film_details_rate">7.7</string>
+    <string name="film_details_year">2017</string>
+    <string name="film_details_rate">8.0</string>
+    <string name="film_details_title">Бумажный дом</string>
     <string name="film_details_watched">Просмотрено</string>
+    <string name="film_details_desc">Восемь воров берут заложников и запираются в Королевском монетном дворе Испании, пока криминальный авторитет манипулирует полицией, чтобы реализовать свой план. Прекрасный сериал!!! 10/10 !!</string>
+    <string name="film_details_genre_action">Боевик</string>
+    <string name="film_details_genre_thriller">Триллер</string>
+    <string name="film_details_genre_criminal">Криминал</string>
+    <string name="film_details_genre_detective">Детектив</string>
 </resources>

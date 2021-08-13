@@ -26,4 +26,9 @@
         <item name="titleCentered">true</item>
         <item name="titleTextColor">@color/black</item>
     </style>
+
+    <style name="ChipTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
 </resources>

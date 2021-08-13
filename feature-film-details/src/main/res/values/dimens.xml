@@ -9,5 +9,10 @@
     <dimen name="film_detail_rate_margin_start">12dp</dimen>
     <dimen name="film_detail_add_to_will_watch_margin_top">20dp</dimen>
 
-    <dimen name="film_detail_will_watch_margin_end">24dp</dimen>
+    <dimen name="film_detail_will_watch_margin_end">8dp</dimen>
+
+    <dimen name="film_detail_desc_width">292dp</dimen>
+
+    <dimen name="film_detail_genres_chip_group_margin_start">40dp</dimen>
+    <dimen name="film_detail_genres_chip_margin">4dp</dimen>
 </resources>
