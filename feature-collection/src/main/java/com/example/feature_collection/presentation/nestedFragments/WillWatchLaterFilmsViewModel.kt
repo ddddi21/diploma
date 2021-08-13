@@ -3,8 +3,8 @@ package com.example.feature_collection.presentation.nestedFragments
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.feature_collection.CollectionRouter
-import com.example.feature_collection.model.FilmGrid
-import com.example.feature_collection.model.FilmLinear
+import com.example.feature_collection.model.FilmGridItem
+import com.example.feature_collection.model.FilmLinearItem
 import com.technokratos.common.base.BaseViewModel
 import com.technokratos.common.base.adapter.ViewType
 
@@ -18,7 +18,9 @@ class WillWatchLaterFilmsViewModel(
     private var _linearList = MutableLiveData<List<ViewType>>()
     val linearList: LiveData<List<ViewType>> = _linearList
 
-    private val filmWatched = FilmGrid(
+    private val _fragmentType = MutableLiveData<ViewPagerFragmentType>()
+
+    private val filmWatched = FilmGridItem(
         id = 1,
         title = "Money Heist",
         rating = 9.7,
@@ -26,13 +28,13 @@ class WillWatchLaterFilmsViewModel(
     )
     // временный вариант
 
-    private val filmMiniWatched = FilmLinear(
+    private val filmMiniWatched = FilmLinearItem(
         id = 1,
         title = "Money Heist"
     )
     // временный вариант
 
-    private val filmWillWatch = FilmGrid(
+    private val filmWillWatch = FilmGridItem(
         id = 0,
         title = "Peaky Blinders",
         rating = 9.9,
@@ -40,7 +42,7 @@ class WillWatchLaterFilmsViewModel(
     )
     // временный вариант
 
-    private val filmMiniWillWatch = FilmLinear(
+    private val filmMiniWillWatch = FilmLinearItem(
         id = 0,
         title = "Peaky Blinders"
     )
@@ -52,9 +54,14 @@ class WillWatchLaterFilmsViewModel(
     private var testedMiniFilmsWillWatch = List(10) { filmMiniWillWatch } // временный вариант
     private var testedFilmsWillWatch = List(10) { filmWillWatch } // временный вариант
 
-    fun loadList(fragmentType: ViewPagerFragmentType) {
+    fun onViewInited(fragmentType: ViewPagerFragmentType) {
+        _fragmentType.value = fragmentType
+        loadList()
+    }
+
+    private fun loadList() {
         // TODO
-        when (fragmentType) {
+        when (_fragmentType.value) {
             ViewPagerFragmentType.WATCHED -> {
                 _gridList.value = testedFilmsWatched
                 _linearList.value = testedMiniFilmsWatched
@@ -65,5 +72,10 @@ class WillWatchLaterFilmsViewModel(
                 _linearList.value = testedMiniFilmsWillWatch
             }
         }
+    }
+
+    fun onRefreshSwiped() {
+        // TODO
+        loadList()
     }
 }

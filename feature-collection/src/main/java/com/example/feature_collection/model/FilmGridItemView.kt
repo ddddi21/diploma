@@ -9,17 +9,17 @@ import com.example.feature_collection.databinding.FilmItemViewGridBinding
 import com.technokratos.common.base.adapter.Fillable
 import com.technokratos.common.base.adapter.ViewType
 
-class FilmItemView @JvmOverloads constructor(
+class FilmGridItemView @JvmOverloads constructor(
     context: Context,
     attributes: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : LinearLayoutCompat(context, attributes, defStyleAttr), Fillable<FilmGrid> {
+) : LinearLayoutCompat(context, attributes, defStyleAttr), Fillable<FilmGridItem> {
 
     private val binding by lazy {
         FilmItemViewGridBinding.bind(this)
     }
 
-    override fun fill(model: FilmGrid) = with(binding) {
+    override fun fill(model: FilmGridItem) = with(binding) {
         titleTextView.text = model.title
         Glide.with(context)
             .load(model.posterUrl)
@@ -28,7 +28,7 @@ class FilmItemView @JvmOverloads constructor(
     }
 }
 
-data class FilmGrid(
+data class FilmGridItem(
     val id: Int,
     val title: String,
     val rating: Double,

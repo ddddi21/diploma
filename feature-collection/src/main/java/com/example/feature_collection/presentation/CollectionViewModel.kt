@@ -12,7 +12,7 @@ class CollectionViewModel(
     private var _collectionMenuItemMode = MutableLiveData<CollectionMenuItemMode>(CollectionMenuItemMode.GRID_LIST)
     val collectionMenuItemMode: LiveData<CollectionMenuItemMode> = _collectionMenuItemMode
 
-    fun onMenuItemClick() {
+    fun onMenuItemClicked() {
         _collectionMenuItemMode.value = when (collectionMenuItemMode.value) {
             CollectionMenuItemMode.GRID_LIST -> CollectionMenuItemMode.LINEAR_LIST
 

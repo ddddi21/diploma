@@ -33,11 +33,13 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
         }
     }
 
-    private lateinit var fragmentType: ViewPagerFragmentType
-
     private lateinit var binding: WillWatchLaterFilmsFragmentBinding
 
     private val collectionViewModel by viewModels<CollectionViewModel>({ requireParentFragment() })
+
+    private val fragmentType by lazy {
+        arguments?.getSerializable(VIEW_PAGER_FRAGMENT_TYPE_KEY) as ViewPagerFragmentType
+    }
 
     private val linearFilmsAdapter = BaseAdapter()
     private val gridFilmsAdapter = BaseAdapter()
@@ -55,8 +57,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     }
 
     override fun initViews() {
-        fragmentType = arguments?.getSerializable(VIEW_PAGER_FRAGMENT_TYPE_KEY) as ViewPagerFragmentType
-        viewModel.loadList(fragmentType)
+        viewModel.onViewInited(fragmentType)
         setGridLayout()
         setSwipeOnRefreshListener()
     }
@@ -78,26 +79,22 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
         }
     }
 
-    private fun setGridLayout() {
-        with(binding.filmsRecyclerView) {
-            layoutManager = GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT)
-            adapter = gridFilmsAdapter
-            removeItemDecorations()
-        }
+    private fun setGridLayout() = with(binding.filmsRecyclerView) {
+        layoutManager = GridLayoutManager(context, GRID_LAYOUT_SPAN_COUNT)
+        adapter = gridFilmsAdapter
+        removeItemDecorations()
     }
 
-    private fun setLinearLayout() {
-        with(binding.filmsRecyclerView) {
-            layoutManager = LinearLayoutManager(context)
-            adapter = linearFilmsAdapter
-            setDivider(R.drawable.film_list_item_divider)
-        }
+    private fun setLinearLayout() = with(binding.filmsRecyclerView) {
+        layoutManager = LinearLayoutManager(context)
+        adapter = linearFilmsAdapter
+        setDivider(R.drawable.film_list_item_divider)
     }
 
     private fun setSwipeOnRefreshListener() {
         binding.swipeToRefreshFilmsList.setOnRefreshListener {
             binding.swipeToRefreshFilmsList.isRefreshing = false
-            // viewModel.setSwipeRefresh()
+            // viewModel.onRefreshSwiped()
         }
     }
     // временный вариант

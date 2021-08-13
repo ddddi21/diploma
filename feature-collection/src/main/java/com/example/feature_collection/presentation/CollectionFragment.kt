@@ -57,7 +57,7 @@ class CollectionFragment : BaseFragment<CollectionViewModel>() {
         setHasOptionsMenu(true)
         menu = binding.collectionToolbar.menu.findItem(R.id.list)
         menu.setOnMenuItemClickListener {
-            viewModel.onMenuItemClick()
+            viewModel.onMenuItemClicked()
             false
         }
     }
