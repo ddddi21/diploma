@@ -18,7 +18,7 @@ class WillWatchLaterFilmsViewModel(
     private var _linearList = MutableLiveData<List<ViewType>>()
     val linearList: LiveData<List<ViewType>> = _linearList
 
-    private lateinit var fragmentType: ViewPagerFragmentType
+    private var fragmentType = ViewPagerFragmentType.WILL_WATCH
 
     private val filmWatched = FilmGridItem(
         id = 1,
