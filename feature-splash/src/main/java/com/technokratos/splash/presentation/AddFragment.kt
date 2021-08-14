@@ -21,7 +21,7 @@ class AddFragment : Fragment() {
             addToWillWatchButton.visibility = View.GONE
             binding.watchedChipGroup.visibility = View.VISIBLE
         }
-        return binding.root
+        return binding.root.rootView
     }
 
     private fun setChips() {
