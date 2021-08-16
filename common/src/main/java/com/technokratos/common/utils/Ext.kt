@@ -68,7 +68,7 @@ fun <T : RecyclerView> T.removeItemDecorations() {
     }
 }
 
-fun View.setChip(text: String, chipGroup: ChipGroup) {
+fun ChipGroup.setChip(text: String, chipGroup: ChipGroup) {
     val chip = Chip(context).apply {
         isCheckable = false
         chipStrokeColor = ContextCompat.getColorStateList(context, R.color.black)
