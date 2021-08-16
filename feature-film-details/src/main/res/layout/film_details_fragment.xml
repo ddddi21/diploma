@@ -118,7 +118,6 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/dimen_32dp"
                 android:gravity="center_horizontal|top"
-                android:lineSpacingExtra="0sp"
                 android:text="@string/film_details_desc"
                 android:textAlignment="center" />
 

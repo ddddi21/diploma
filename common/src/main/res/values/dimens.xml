@@ -12,4 +12,6 @@
     <dimen name="dimen_28dp">28dp</dimen>
     <dimen name="dimen_32dp">32dp</dimen>
     <dimen name="dimen_36dp">36dp</dimen>
+
+    <dimen name="chip_stroke_width">2dp</dimen>
 </resources>
