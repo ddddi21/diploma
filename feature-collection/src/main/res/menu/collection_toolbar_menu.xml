@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/list"
-        android:icon="@drawable/ic_films_list"
+        android:icon="@drawable/ic_mini_films_list"
         app:showAsAction="always"
         tools:ignore="MenuTitle" />
 </menu>

@@ -31,6 +31,7 @@ dependencies {
     implementation project(':common')
     implementation project(':feature-auth')
     implementation project(':feature-collection')
+    implementation project(':feature-film-details')
 
     implementation kotlinDep
 
@@ -48,4 +49,7 @@ dependencies {
     testImplementation mockitoDep
 
     implementation fragmentDep
+
+    implementation supportDep
+    implementation designDep // перемещу вместе с версткой в нужный модуль
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Button.OutlinedBlack" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/black</item>
+        <item name="icon">@drawable/ic_add</item>
+        <item name="iconPadding">@dimen/dimen_8dp</item>
+        <item name="iconTint">@color/black</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/dimen_16dp</item>
+        <item name="strokeWidth">@dimen/dimen_2dp</item>
+    </style>
+
+    <style name="Button.OutlinedGray" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+        <item name="android:textColor">@drawable/watch_buttons_selector</item>
+        <item name="strokeColor">@drawable/watch_buttons_selector</item>
+        <item name="cornerRadius">@dimen/dimen_16dp</item>
+        <item name="strokeWidth">@dimen/dimen_2dp</item>
+    </style>
+
+    <style name="FilmDetails.WatchChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipStrokeColor">@drawable/watch_buttons_selector</item>
+        <item name="chipStrokeWidth">@dimen/chip_stroke_width</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:textColor">@drawable/watch_buttons_selector</item>
+        <item name="chipBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="FilmDetails.GenreChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:checkable">false</item>
+        <item name="chipStrokeColor">@color/black</item>
+        <item name="chipStrokeWidth">@dimen/chip_stroke_width</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="chipBackgroundColor">@color/white</item>
+    </style>
+</resources>

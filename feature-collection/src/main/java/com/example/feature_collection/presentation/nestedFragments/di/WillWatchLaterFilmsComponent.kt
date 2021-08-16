@@ -1,7 +1,7 @@
-package com.example.feature_collection.presentation.watchLaterFilmCollection.di
+package com.example.feature_collection.presentation.nestedFragments.di
 
 import androidx.fragment.app.Fragment
-import com.example.feature_collection.presentation.watchLaterFilmCollection.WillWatchLaterFilmsFragment
+import com.example.feature_collection.presentation.nestedFragments.WillWatchLaterFilmsFragment
 import com.technokratos.common.di.scope.ScreenScope
 import dagger.BindsInstance
 import dagger.Subcomponent

@@ -3,18 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion rootProject.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
-
     buildFeatures {
         viewBinding = true
     }
@@ -36,7 +33,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
-    implementation project(':feature-film-details') // удалю потом
 
     implementation kotlinDep
 
@@ -44,13 +40,16 @@ dependencies {
 
     implementation daggerDep
     implementation constraintDep
+    implementation navigationFragmentDep
     kapt daggerKapt
 
     implementation lifecycleDep
     kapt lifecycleKapt
 
-    implementation materialDep
-
     testImplementation jUnitDep
     testImplementation mockitoDep
+
+    implementation materialDep
+    implementation swipeRefreshLayoutDep
+    implementation glideDep
 }
