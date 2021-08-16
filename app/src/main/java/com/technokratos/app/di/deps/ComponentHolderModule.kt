@@ -2,6 +2,8 @@ package com.technokratos.app.di.deps
 
 import com.example.feature_collection.di.CollectionFeatureHolder
 import com.example.feature_collection.di.CollectionFeatureKey
+import com.example.feature_film_details.di.FilmDetailsFeatureHolder
+import com.example.feature_film_details.di.FilmDetailsFeatureKey
 import com.technokratos.app.App
 import com.technokratos.auth.di.auth.AuthFeatureHolder
 import com.technokratos.auth.di.auth.AuthFeatureKey
@@ -55,4 +57,10 @@ interface ComponentHolderModule {
     @ClassKey(CollectionFeatureKey::class)
     @IntoMap
     fun provideCollectionFeatureHolder(collectionFeatureHolder: CollectionFeatureHolder): FeatureApiHolder
+
+    @ApplicationScope
+    @Binds
+    @ClassKey(FilmDetailsFeatureKey::class)
+    @IntoMap
+    fun provideFilmDetailsFeatureHolder(filmDetailsFeatureHolder: FilmDetailsFeatureHolder): FeatureApiHolder
 }

@@ -36,4 +36,10 @@
         android:label="fragment_profile"
         tools:layout="@layout/profile_fragment" />
 
+    <fragment
+        android:id="@+id/filmDetailsFragment"
+        android:name="com.example.feature_film_details.presentation.FilmDetailsFragment"
+        android:label="fragment_film_details"
+        tools:layout="@layout/film_details_fragment" />
+
 </navigation>

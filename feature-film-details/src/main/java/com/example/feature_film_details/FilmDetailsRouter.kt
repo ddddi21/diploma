@@ -1,0 +1,3 @@
+package com.example.feature_film_details
+
+interface FilmDetailsRouter
