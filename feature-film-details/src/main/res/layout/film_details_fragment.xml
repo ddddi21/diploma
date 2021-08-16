@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/collectionToolbar"
+        style="@style/NavigateBack.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/film_details_toolbar_menu"
+        app:title="@string/film_details_toolbar_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/posterImageView"
+                android:layout_width="@dimen/film_detail_poster_width"
+                android:layout_height="@dimen/film_detail_poster_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_36dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_film_poster_template" />
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/film_details_title"
+                android:textSize="@dimen/text_size_36sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/film_detail_rate_margin_start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/yearTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/film_details_year"
+                    android:textSize="@dimen/text_size_16sp" />
+
+                <TextView
+                    android:id="@+id/rateTextView"
+                    android:layout_width="@dimen/film_detail_rate_width"
+                    android:layout_height="@dimen/film_detail_rate_height"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/film_detail_rate_margin_start"
+                    android:background="@drawable/blue_rounded_shape"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="@string/film_details_rate"
+                    android:textColor="@color/blueAccent"
+                    android:textSize="@dimen/text_size_12sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/addToWillWatchButton"
+                style="@style/Button.OutlinedBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/film_detail_add_to_will_watch_margin_top"
+                android:text="@string/film_details_will_watch_button"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/watchedChipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/film_detail_add_to_will_watch_margin_top"
+                android:visibility="gone"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/willWatchSelectedChip"
+                    style="@style/FilmDetails.WatchChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/film_detail_will_watch_margin_end"
+                    android:checked="true"
+                    android:text="@string/film_details_will_watch_button" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/watchedSelectedChip"
+                    style="@style/FilmDetails.WatchChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/film_details_watched" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/filmDescriptionTextView"
+                android:layout_width="@dimen/film_detail_desc_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_32dp"
+                android:gravity="center_horizontal|top"
+                android:text="@string/film_details_desc"
+                android:textAlignment="center" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/genreChipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/film_detail_genres_chip_group_margin_start"
+                android:layout_marginTop="@dimen/dimen_28dp"
+                android:layout_marginEnd="@dimen/film_detail_genres_chip_group_margin_start">
+                <!--            буду добавлять чипы программно через код, после запроса в сеть, пока такой вариант верстки-->
+
+                <com.google.android.material.chip.Chip
+                    style="@style/FilmDetails.GenreChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/film_detail_genres_chip_margin"
+                    android:layout_marginEnd="@dimen/film_detail_will_watch_margin_end"
+                    android:checked="true"
+                    android:text="@string/film_details_genre_action" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/FilmDetails.GenreChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/film_detail_genres_chip_margin"
+                    android:text="@string/film_details_genre_criminal" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/FilmDetails.GenreChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/film_detail_genres_chip_margin"
+                    android:text="@string/film_details_genre_thriller" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/FilmDetails.GenreChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/film_detail_genres_chip_margin"
+                    android:text="@string/film_details_genre_detective" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

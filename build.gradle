@@ -58,6 +58,9 @@ buildscript {
         constraintDep = "androidx.constraintlayout:constraintlayout:$constraintVersion"
         materialDep = "com.google.android.material:material:$materialVersion"
 
+        supportDep = "com.android.support:support-v4:$supportVersion"
+        designDep = "com.android.support:design:$supportVersion"
+
         rxJavaDep = "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
         rxAndroidDep = "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
 

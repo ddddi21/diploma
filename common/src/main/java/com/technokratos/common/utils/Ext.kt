@@ -10,6 +10,9 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
+import com.technokratos.common.R
 
 fun Activity.showShortToast(msg: String) {
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
@@ -63,4 +66,20 @@ fun <T : RecyclerView> T.removeItemDecorations() {
     while (itemDecorationCount > 0) {
         removeItemDecorationAt(0)
     }
+}
+
+fun ChipGroup.setChip(text: String) {
+    val chip = Chip(context).apply {
+        isCheckable = false
+        chipStrokeColor = ContextCompat.getColorStateList(context, R.color.black)
+        chipStrokeWidth = resources.getDimension(R.dimen.chip_stroke_width)
+        setText(text)
+        setTextAppearanceResource(R.style.ChipTextStyle)
+        chipBackgroundColor = ContextCompat.getColorStateList(context, R.color.white)
+    }
+    this.addView(chip)
+    val parameter = chip.layoutParams as ChipGroup.LayoutParams
+    val marginValue = resources.getDimension(R.dimen.dimen_4dp).toInt()
+    parameter.setMargins(marginValue, marginValue, marginValue, marginValue)
+    chip.layoutParams = parameter
 }

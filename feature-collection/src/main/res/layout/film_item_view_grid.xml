@@ -23,13 +23,13 @@
             android:layout_height="@dimen/film_item_rating_height"
             android:layout_marginEnd="@dimen/film_item_rating_margin_end"
             android:layout_marginTop="@dimen/film_item_rating_margin_top"
-            android:background="@drawable/ic_film_rating"
+            android:background="@drawable/blue_rounded_shape"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
             android:layout_gravity="end"
             tools:text="5.5"
             android:textColor="@color/blueAccent"
-            android:textSize="@dimen/film_item_rating_text_size" />
+            android:textSize="@dimen/text_size_12sp" />
 
     </FrameLayout>
 
