@@ -25,13 +25,13 @@ class AddFragment : Fragment() {
     }
 
     private fun setChips() {
-        binding.genreChipGroup.setChip("Test", binding.genreChipGroup) // будем брать текст из вью модели
-        binding.genreChipGroup.setChip("Testttt", binding.genreChipGroup)
-        binding.genreChipGroup.setChip("Testklmbklml", binding.genreChipGroup)
-        binding.genreChipGroup.setChip("Testggg", binding.genreChipGroup)
-        binding.genreChipGroup.setChip("Test", binding.genreChipGroup)
-        binding.genreChipGroup.setChip("Test", binding.genreChipGroup)
-        binding.genreChipGroup.setChip("Test", binding.genreChipGroup)
+        binding.genreChipGroup.setChip("Test") // будем брать текст из вью модели
+        binding.genreChipGroup.setChip("Testttt")
+        binding.genreChipGroup.setChip("Testklmbklml")
+        binding.genreChipGroup.setChip("Testggg")
+        binding.genreChipGroup.setChip("Test")
+        binding.genreChipGroup.setChip("Test")
+        binding.genreChipGroup.setChip("Test")
     } // временный вариант
 }
 // не ругайся на кривой фрагмент, это просто чтобы bottom nav протестить

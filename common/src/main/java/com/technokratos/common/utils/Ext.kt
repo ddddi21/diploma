@@ -68,7 +68,7 @@ fun <T : RecyclerView> T.removeItemDecorations() {
     }
 }
 
-fun ChipGroup.setChip(text: String, chipGroup: ChipGroup) {
+fun ChipGroup.setChip(text: String) {
     val chip = Chip(context).apply {
         isCheckable = false
         chipStrokeColor = ContextCompat.getColorStateList(context, R.color.black)
@@ -77,7 +77,7 @@ fun ChipGroup.setChip(text: String, chipGroup: ChipGroup) {
         setTextAppearanceResource(R.style.ChipTextStyle)
         chipBackgroundColor = ContextCompat.getColorStateList(context, R.color.white)
     }
-    chipGroup.addView(chip)
+    this.addView(chip)
     val parameter = chip.layoutParams as ChipGroup.LayoutParams
     val marginValue = resources.getDimension(R.dimen.dimen_4dp).toInt()
     parameter.setMargins(marginValue, marginValue, marginValue, marginValue)
