@@ -4,12 +4,14 @@ import com.example.feature_film_details.FilmDetailsRouter
 import com.technokratos.common.di.FeatureApiHolder
 import com.technokratos.common.di.FeatureContainer
 import com.technokratos.common.di.scope.ApplicationScope
+import com.technokratos.common.router.NavigateBackRouter
 import javax.inject.Inject
 
 @ApplicationScope
 class FilmDetailsFeatureHolder @Inject constructor(
     featureContainer: FeatureContainer,
-    private val filmDetailsRouter: FilmDetailsRouter
+    private val filmDetailsRouter: FilmDetailsRouter,
+    private val navigateBackRouter: NavigateBackRouter
 ) : FeatureApiHolder(featureContainer) {
 
     override fun initializeDependencies(): Any {
@@ -19,6 +21,7 @@ class FilmDetailsFeatureHolder @Inject constructor(
         return DaggerFilmDetailsFeatureComponent.builder()
             .withDependencies(collectionFeatureDependencies)
             .router(filmDetailsRouter)
+            .navigateBackRouter(navigateBackRouter)
             .build()
     }
 }

@@ -29,6 +29,10 @@ class RouterImpl @Inject constructor(
         navControllerProvider.get()?.popBackStack()
     }
 
+    override fun navigateToFilmDetailsScreen() {
+        navigateTo(R.id.filmDetailsFragment)
+    }
+
     private fun navigateTo(actionId: Int, bundle: Bundle? = null) {
         navControllerProvider.get()
             ?.navigate(actionId, bundle)

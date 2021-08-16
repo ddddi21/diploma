@@ -52,4 +52,5 @@ dependencies {
     implementation materialDep
     implementation swipeRefreshLayoutDep
     implementation glideDep
+    implementation designDep
 }

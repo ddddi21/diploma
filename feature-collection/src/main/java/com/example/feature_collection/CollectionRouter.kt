@@ -1,3 +1,6 @@
 package com.example.feature_collection
 
-interface CollectionRouter
+interface CollectionRouter {
+
+    fun navigateToFilmDetailsScreen()
+}

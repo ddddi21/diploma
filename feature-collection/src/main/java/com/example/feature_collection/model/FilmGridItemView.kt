@@ -25,6 +25,9 @@ class FilmGridItemView @JvmOverloads constructor(
             .load(model.posterUrl)
             .into(posterImageView)
         rateTextView.text = model.rating.toString()
+        setOnClickListener {
+            model.onItemClicked?.invoke(model.id)
+        }
     }
 }
 
