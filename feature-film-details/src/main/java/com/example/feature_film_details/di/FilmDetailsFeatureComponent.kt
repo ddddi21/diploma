@@ -4,7 +4,6 @@ import com.example.feature_film_details.FilmDetailsRouter
 import com.example.feature_film_details.presentation.di.FilmDetailsComponent
 import com.technokratos.common.di.CommonApi
 import com.technokratos.common.di.scope.FeatureScope
-import com.technokratos.common.router.NavigateBackRouter
 import dagger.BindsInstance
 import dagger.Component
 
@@ -26,9 +25,6 @@ interface FilmDetailsFeatureComponent : FilmDetailsFeatureKey {
 
         @BindsInstance
         fun router(filmDetailsRouter: FilmDetailsRouter): Builder
-
-        @BindsInstance
-        fun navigateBackRouter(navigateBackRouter: NavigateBackRouter): Builder
 
         fun withDependencies(deps: FilmDetailsFeatureDependencies): Builder
 

@@ -8,7 +8,6 @@ import com.example.feature_film_details.FilmDetailsRouter
 import com.example.feature_film_details.presentation.FilmDetailsViewModel
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule
-import com.technokratos.common.router.NavigateBackRouter
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
@@ -24,7 +23,7 @@ class FilmDetailsModule {
     @Provides
     @IntoMap
     @ViewModelKey(FilmDetailsViewModel::class)
-    fun provideFilmDetailsViewModel(router: FilmDetailsRouter, navigateBackRouter: NavigateBackRouter): ViewModel {
-        return FilmDetailsViewModel(router, navigateBackRouter)
+    fun provideFilmDetailsViewModel(router: FilmDetailsRouter): ViewModel {
+        return FilmDetailsViewModel(router)
     }
 }
