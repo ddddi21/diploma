@@ -20,6 +20,9 @@ class FilmLinearItemView @JvmOverloads constructor(
 
     override fun fill(model: FilmLinearItem) = with(binding) {
         filmTitleTextView.text = model.title
+        setOnClickListener {
+            model.onItemClicked?.invoke(model.id)
+        }
     }
 }
 

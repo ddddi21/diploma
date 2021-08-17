@@ -24,13 +24,15 @@ class WillWatchLaterFilmsViewModel(
         id = 1,
         title = "Money Heist",
         rating = 9.7,
-        posterUrl = "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/f1c8eee6-4d0d-4808-9cec-3d1e21e4b5a0/600x900"
+        posterUrl = "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/f1c8eee6-4d0d-4808-9cec-3d1e21e4b5a0/600x900",
+        onItemClicked = { router.navigateToFilmDetailsScreen() }
     )
     // временный вариант
 
     private val filmMiniWatched = FilmLinearItem(
         id = 1,
-        title = "Money Heist"
+        title = "Money Heist",
+        onItemClicked = { router.navigateToFilmDetailsScreen() }
     )
     // временный вариант
 
@@ -38,13 +40,15 @@ class WillWatchLaterFilmsViewModel(
         id = 0,
         title = "Peaky Blinders",
         rating = 9.9,
-        posterUrl = "https://upload.wikimedia.org/wikipedia/ru/thumb/6/6e/%D0%9E%D1%81%D1%82%D1%80%D0%9A%D0%BE%D0%B7.jpg/274px-%D0%9E%D1%81%D1%82%D1%80%D0%9A%D0%BE%D0%B7.jpg"
+        posterUrl = "https://upload.wikimedia.org/wikipedia/ru/thumb/6/6e/%D0%9E%D1%81%D1%82%D1%80%D0%9A%D0%BE%D0%B7.jpg/274px-%D0%9E%D1%81%D1%82%D1%80%D0%9A%D0%BE%D0%B7.jpg",
+        onItemClicked = { router.navigateToFilmDetailsScreen() }
     )
     // временный вариант
 
     private val filmMiniWillWatch = FilmLinearItem(
         id = 0,
-        title = "Peaky Blinders"
+        title = "Peaky Blinders",
+        onItemClicked = { router.navigateToFilmDetailsScreen() }
     )
     // временный вариант
 

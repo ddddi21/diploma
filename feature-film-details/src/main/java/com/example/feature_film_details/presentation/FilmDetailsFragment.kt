@@ -9,8 +9,9 @@ import com.example.feature_film_details.di.FilmDetailsFeatureComponent
 import com.example.feature_film_details.di.FilmDetailsFeatureKey
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
+import com.technokratos.common.utils.setChip
 
-class FilmDetailsFragment : BaseFragment<FilmDetailsViewModel> () {
+class FilmDetailsFragment : BaseFragment<FilmDetailsViewModel>() {
 
     private lateinit var binding: FilmDetailsFragmentBinding
 
@@ -27,10 +28,30 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsViewModel> () {
     }
 
     override fun initViews() {
-//        TODO("Not yet implemented")
+        setChips()
+        binding.addToWillWatchButton.setOnClickListener { addToWillWatchButton ->
+            addToWillWatchButton.visibility = View.GONE
+            binding.watchedChipGroup.visibility = View.VISIBLE
+        }
+
+        with(binding.collectionToolbar) {
+            setNavigationOnClickListener {
+                viewModel.onBackToCollectionScreenClicked()
+            }
+        }
     }
 
     override fun subscribe(viewModel: FilmDetailsViewModel) {
 //        TODO("Not yet implemented")
     }
+
+    private fun setChips() {
+        binding.genreChipGroup.setChip("Test") // будем брать текст из вью модели
+        binding.genreChipGroup.setChip("Testttt")
+        binding.genreChipGroup.setChip("Testklmbklml")
+        binding.genreChipGroup.setChip("Testggg")
+        binding.genreChipGroup.setChip("Test")
+        binding.genreChipGroup.setChip("Test")
+        binding.genreChipGroup.setChip("Test")
+    } // временный вариант
 }

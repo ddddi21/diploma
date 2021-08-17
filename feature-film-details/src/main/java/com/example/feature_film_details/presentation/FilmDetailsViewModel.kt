@@ -5,4 +5,9 @@ import com.technokratos.common.base.BaseViewModel
 
 class FilmDetailsViewModel(
     private var router: FilmDetailsRouter
-) : BaseViewModel()
+) : BaseViewModel() {
+
+    fun onBackToCollectionScreenClicked() {
+        router.goToPreviousScreen()
+    }
+}
