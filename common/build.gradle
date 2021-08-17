@@ -17,6 +17,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            buildConfigField('String', 'AGONA_BACKEND_BASE_URL', "\"https://watchlater.cloud.technokratos.com/\"")
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -24,6 +25,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":feature-auth")
 
     implementation kotlinDep
 
@@ -42,7 +44,7 @@ dependencies {
 
     implementation retrofitDep
     implementation gsonConvertedDep
-    implementation rxCallAdapterDep
+    implementation loggingInterceptorDep
 
     implementation materialDep
 

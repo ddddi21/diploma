@@ -22,7 +22,7 @@ buildscript {
 
         architectureComponentVersion = '2.0.0'
 
-        retrofitVersion = '2.4.0'
+        retrofitVersion = '2.9.0'
         okhttpVersion = '3.8.0'
         gsonVersion = '2.8.2'
 
@@ -43,6 +43,10 @@ buildscript {
         swipeRefreshLayoutVersion = '1.1.0'
 
         glideVersion = '4.12.0'
+
+        loggingInterceptorVersion = '4.9.1'
+
+        coroutinesVerstion = '1.5.1'
 
         swipeRefreshLayoutDep = "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
 
@@ -74,13 +78,15 @@ buildscript {
         rxRoomDep = "androidx.room:room-rxjava2:$architectureComponentVersion"
         roomKapt = "androidx.room:room-compiler:$architectureComponentVersion"
 
+        coroutinesDep = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVerstion"
+
         navigationFragmentDep = "androidx.navigation:navigation-fragment:$navControllerVersion"
         navigationUiDep = "androidx.navigation:navigation-ui:$navControllerVersion"
 
         retrofitDep = "com.squareup.retrofit2:retrofit:$retrofitVersion"
-        rxCallAdapterDep = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
         gsonConvertedDep = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
         gsonDep = "com.google.code.gson:gson:$gsonVersion"
+        loggingInterceptorDep = "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion"
 
         jUnitDep = "junit:junit:$junitVersion"
         mockitoDep = "org.mockito:mockito-inline:$mockitoVersion"

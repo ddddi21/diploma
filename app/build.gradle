@@ -49,7 +49,6 @@ dependencies {
 
     implementation retrofitDep
     implementation gsonConvertedDep
-    implementation rxCallAdapterDep
 
     implementation fragmentDep
     implementation constraintDep // удалю потом, когда разнесу мейн штуки по модулям
