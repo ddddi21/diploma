@@ -1,6 +1,8 @@
 package com.technokratos.auth.router
 
-interface AuthRouter {
+import com.technokratos.common.router.NavigateBackRouter
+
+interface AuthRouter : NavigateBackRouter {
 
     fun navigateToMain()
 

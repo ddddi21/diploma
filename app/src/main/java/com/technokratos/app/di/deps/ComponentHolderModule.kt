@@ -5,10 +5,8 @@ import com.example.feature_collection.di.CollectionFeatureKey
 import com.example.feature_film_details.di.FilmDetailsFeatureHolder
 import com.example.feature_film_details.di.FilmDetailsFeatureKey
 import com.technokratos.app.App
-import com.technokratos.auth.di.auth.AuthFeatureHolder
-import com.technokratos.auth.di.auth.AuthFeatureKey
-import com.technokratos.auth.di.registration.RegistrationFeatureHolder
-import com.technokratos.auth.di.registration.RegistrationFeatureKey
+import com.technokratos.auth.di.AuthFeatureHolder
+import com.technokratos.auth.di.AuthFeatureKey
 import com.technokratos.common.di.FeatureApiHolder
 import com.technokratos.common.di.FeatureContainer
 import com.technokratos.common.di.scope.ApplicationScope
@@ -45,12 +43,6 @@ interface ComponentHolderModule {
     @ClassKey(AuthFeatureKey::class)
     @IntoMap
     fun provideAuthFeatureHolder(authFeatureHolder: AuthFeatureHolder): FeatureApiHolder
-
-    @ApplicationScope
-    @Binds
-    @ClassKey(RegistrationFeatureKey::class)
-    @IntoMap
-    fun provideRegistrationFeatureHolder(registrationFeatureHolder: RegistrationFeatureHolder): FeatureApiHolder
 
     @ApplicationScope
     @Binds

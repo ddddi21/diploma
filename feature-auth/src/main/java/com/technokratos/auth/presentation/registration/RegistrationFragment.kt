@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.example.feature_auth.R
 import com.example.feature_auth.databinding.FragmentRegistrationBinding
-import com.technokratos.auth.di.registration.RegistrationFeatureKey
-import com.technokratos.auth.di.registration.RegistrationFeatureComponent
+import com.technokratos.auth.di.AuthFeatureComponent
+import com.technokratos.auth.di.AuthFeatureKey
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
 
@@ -22,7 +22,7 @@ class RegistrationFragment : BaseFragment<RegistrationViewModel>() {
     }
 
     override fun inject() {
-        FeatureUtils.getFeature<RegistrationFeatureComponent>(this, RegistrationFeatureKey::class.java)
+        FeatureUtils.getFeature<AuthFeatureComponent>(this, AuthFeatureKey::class.java)
             .registrationComponentFactory()
             .create(this)
             .inject(this)

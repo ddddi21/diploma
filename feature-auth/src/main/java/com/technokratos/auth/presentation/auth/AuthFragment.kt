@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.feature_auth.databinding.FragmentLoginBinding
-import com.technokratos.auth.di.auth.AuthFeatureKey
-import com.technokratos.auth.di.auth.AuthFeatureComponent
+import com.technokratos.auth.di.AuthFeatureKey
+import com.technokratos.auth.di.AuthFeatureComponent
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
 
@@ -32,7 +32,7 @@ class AuthFragment : BaseFragment<AuthViewModel>() {
                 viewModel.onRegistrationClicked()
             }
             loginEnterButton.setOnClickListener {
-                viewModel.onEnterButtonClicked()
+                viewModel.onEnterButtonClicked("test@gmail.com", "12345") // временный вариант, потом дата биндинг подключу
             }
         }
     }

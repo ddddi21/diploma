@@ -1,4 +1,4 @@
-package com.technokratos.app.di.deps
+package com.technokratos.common.base
 
 import android.app.Activity
 import dagger.MapKey

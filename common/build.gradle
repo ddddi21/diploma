@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -14,18 +13,30 @@ android {
 
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs = ["-Xallow-result-return-type"]
+    }
+
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField('String', 'AGONA_BACKEND_BASE_URL', "\"https://watchlater.cloud.technokratos.com/\"")
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildTypes.each {
+        it.buildConfigField('String', 'AGONA_BACKEND_BASE_URL', "\"https://watchlater.cloud.technokratos.com/\"")
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(":feature-auth")
 
     implementation kotlinDep
 

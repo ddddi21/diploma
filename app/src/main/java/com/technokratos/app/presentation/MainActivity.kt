@@ -7,9 +7,9 @@ import androidx.navigation.ui.NavigationUI
 import com.example.navigation.navigation.NavControllerProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.technokratos.app.R
-import com.technokratos.app.di.deps.findComponentDependencies
 import com.technokratos.app.di.main.MainComponent
 import com.technokratos.common.base.BaseActivity
+import com.technokratos.common.base.findComponentDependencies
 import kotlinx.android.synthetic.main.activity_main.bottomNavigationView
 import javax.inject.Inject
 

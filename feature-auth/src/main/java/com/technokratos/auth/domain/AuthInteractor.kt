@@ -9,4 +9,16 @@ class AuthInteractor @Inject constructor(
     suspend fun signUp(email: String, password: String): Result<Unit> = runCatching {
         authRepository.signUp(email, password)
     }
+
+    suspend fun signIn(email: String, password: String): Result<Unit> = runCatching {
+        authRepository.signIn(email, password)
+    }
+
+    suspend fun resetPassword(email: String): Result<Unit> = runCatching {
+        authRepository.reset(email)
+    }
+
+    suspend fun updateTokens(authToken: String, refreshToken: String): Result<Unit> = runCatching {
+        authRepository.updateTokens(authToken, refreshToken)
+    }
 }

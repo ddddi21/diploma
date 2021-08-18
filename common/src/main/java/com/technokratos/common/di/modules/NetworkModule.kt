@@ -1,25 +1,22 @@
 package com.technokratos.common.di.modules
 
 import android.content.Context
-import com.technokratos.auth.data.network.AuthApi
 import com.technokratos.common.BuildConfig
 import com.technokratos.common.data.network.NetworkApiCreator
 import com.technokratos.common.di.AuthTokenInterceptor
-import com.technokratos.common.di.AuthorizedCoroutinesRetrofit
 import com.technokratos.common.di.AuthorizedRetrofit
 import com.technokratos.common.di.BaseUrlString
 import com.technokratos.common.di.LoggingInterceptor
 import com.technokratos.common.di.OkHttpAuthorizedClient
+import com.technokratos.common.di.OkHttpUnauthorizedClient
+import com.technokratos.common.di.UnauthorizedRetrofit
 import com.technokratos.common.di.scope.ApplicationScope
 import com.technokratos.common.local.sp.UserSharedPreferences
-import com.technokratos.common.resources.ResourceManager
 import dagger.Module
 import dagger.Provides
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Converter
-import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 
 private const val CONNECT_TIMEOUT_SECONDS = 10L
@@ -59,7 +56,7 @@ class NetworkModule {
     @Provides
     @ApplicationScope
     @OkHttpAuthorizedClient
-    fun provideOkHttpClient(
+    fun provideAuthOkHttpClient(
         context: Context,
         @AuthTokenInterceptor authTokenInterceptor: Interceptor,
         @LoggingInterceptor httpLoggingInterceptor: Interceptor
@@ -76,17 +73,36 @@ class NetworkModule {
 
     @Provides
     @ApplicationScope
-    @AuthorizedRetrofit
-    fun provideAuthorizedCoroutinesRetrofit(
+    @OkHttpUnauthorizedClient
+    fun provideUnauthOkHttpClient(
+        @LoggingInterceptor httpLoggingInterceptor: Interceptor
+    ): OkHttpClient {
+        return OkHttpClient.Builder()
+            .connectTimeout(CONNECT_TIMEOUT_SECONDS, TimeUnit.SECONDS)
+            .writeTimeout(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS)
+            .readTimeout(READ_TIMEOUT_SECONDS, TimeUnit.SECONDS)
+            .retryOnConnectionFailure(true)
+            .addInterceptor(httpLoggingInterceptor)
+            .build()
+    }
+
+    @Provides
+    @ApplicationScope
+    @UnauthorizedRetrofit
+    fun provideUnauthNetworkApiCreator(
         @BaseUrlString baseUrl: String,
-        @OkHttpAuthorizedClient okHttpClient: OkHttpClient
+        @OkHttpUnauthorizedClient okHttpClient: OkHttpClient
     ): NetworkApiCreator {
         return NetworkApiCreator(okHttpClient, baseUrl)
     }
 
     @Provides
     @ApplicationScope
-    fun provideAuthApi(@AuthorizedRetrofit retrofit: Retrofit): AuthApi {
-        return retrofit.create(AuthApi::class.java)
+    @AuthorizedRetrofit
+    fun provideAuthNetworkApiCreator(
+        @BaseUrlString baseUrl: String,
+        @OkHttpAuthorizedClient okHttpClient: OkHttpClient
+    ): NetworkApiCreator {
+        return NetworkApiCreator(okHttpClient, baseUrl)
     }
 }

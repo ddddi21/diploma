@@ -1,4 +1,4 @@
-package com.technokratos.auth.data.network.request
+package com.technokratos.auth.data.network.model
 
 data class Tokens(
     val authToken: String,

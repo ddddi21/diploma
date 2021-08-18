@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.technokratos.auth.domain.AuthInteractor
 import com.technokratos.auth.router.AuthRouter
 import com.technokratos.auth.presentation.auth.AuthViewModel
 import com.technokratos.common.di.viewmodel.ViewModelKey
@@ -27,7 +28,7 @@ class AuthModule {
     @Provides
     @IntoMap
     @ViewModelKey(AuthViewModel::class)
-    fun provideAuthViewModelFromStore(router: AuthRouter): ViewModel {
-        return AuthViewModel(router)
+    fun provideAuthViewModelFromStore(router: AuthRouter, interactor: AuthInteractor): ViewModel {
+        return AuthViewModel(router, interactor)
     }
 }

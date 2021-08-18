@@ -1,4 +1,4 @@
-package com.technokratos.auth.di.auth
+package com.technokratos.auth.di
 
 import com.technokratos.auth.router.AuthRouter
 import com.technokratos.common.di.FeatureApiHolder
