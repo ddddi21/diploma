@@ -9,6 +9,7 @@ import com.technokratos.auth.presentation.registration.RegistrationViewModel
 import com.technokratos.auth.router.AuthRouter
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule
+import com.technokratos.common.resources.ResourceManager
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
@@ -28,7 +29,7 @@ class RegistrationModule {
     @Provides
     @IntoMap
     @ViewModelKey(RegistrationViewModel::class)
-    fun provideRegistrationViewModelFromStore(authRouter: AuthRouter, interactor: AuthInteractor): ViewModel {
-        return RegistrationViewModel(authRouter, interactor)
+    fun provideRegistrationViewModelFromStore(authRouter: AuthRouter, interactor: AuthInteractor, resourceManager: ResourceManager): ViewModel {
+        return RegistrationViewModel(authRouter, interactor, resourceManager)
     }
 }
