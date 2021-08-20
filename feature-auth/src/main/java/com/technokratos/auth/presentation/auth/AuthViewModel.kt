@@ -28,7 +28,7 @@ class AuthViewModel(
         router.navigateToRegistration()
     }
 
-    fun onEnterButtonClicked(email: String, password: String) { // пока оставлю так, дальше надо будет еще добавлять проверку введенных данных
+    fun onEnterButtonClicked(email: String, password: String) {
         viewModelScope.launch {
             _authViewState.value = AuthViewState(email, password, isNeedToShowProgress = true)
             interactor.signIn(email, password).run {
