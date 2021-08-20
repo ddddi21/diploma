@@ -26,7 +26,7 @@ class AuthRepositoryImpl @Inject constructor(
 
     override suspend fun signIn(email: String, password: String) {
         withContext(Dispatchers.IO) {
-            authApi.signIn(AuthDto(email, password)).also { tokenDto ->
+            authApi.signIn(AuthDto(email, password)).let { tokenDto ->
                 val tokens = tokenMapper.map(tokenDto)
                 userSharedPreferences.userAuthToken = tokens.authToken
                 userSharedPreferences.userRefreshToken = tokens.refreshToken
@@ -43,7 +43,7 @@ class AuthRepositoryImpl @Inject constructor(
 
     override suspend fun updateTokens(authToken: String, refreshToken: String) {
         withContext(Dispatchers.IO) {
-            authApi.updateTokens(authToken, RefreshTokenDto(refreshToken)).also { tokenDto ->
+            authApi.updateTokens(authToken, RefreshTokenDto(refreshToken)).let { tokenDto ->
                 val tokens = tokenMapper.map(tokenDto)
                 userSharedPreferences.userAuthToken = tokens.authToken
                 userSharedPreferences.userRefreshToken = tokens.refreshToken

@@ -8,11 +8,9 @@ import javax.inject.Inject
 class TokenMapper @Inject constructor() : BaseSingleModelMapper<TokensDto, Tokens> {
 
     override fun map(model: TokensDto): Tokens {
-        with(model) {
-            return Tokens(
-                authToken = accessToken,
-                refreshToken = refreshToken
-            )
-        }
+        return Tokens(
+            authToken = model.accessToken,
+            refreshToken = model.refreshToken
+        )
     }
 }
