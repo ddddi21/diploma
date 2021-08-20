@@ -2,7 +2,10 @@ package com.technokratos.common.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -13,7 +16,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.technokratos.common.R
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.debounce
+import kotlinx.coroutines.flow.onStart
 
+private const val DEFAULT_DEBOUNCE_DELAY = 300L
 fun Activity.showShortToast(msg: String) {
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 }
@@ -35,6 +45,10 @@ fun <T> MutableLiveData<T>.postValueIfNew(newValue: T) {
     if (this.value != newValue) postValue(newValue)
 }
 
+fun View.makeVisible(visible: Boolean) {
+    this.visibility = if (visible) View.VISIBLE else View.GONE
+}
+
 fun View.makeVisible() {
     this.visibility = View.VISIBLE
 }
@@ -45,6 +59,25 @@ fun View.makeInvisible() {
 
 fun View.makeGone() {
     this.visibility = View.GONE
+}
+
+@ExperimentalCoroutinesApi
+fun EditText.textChanges(): Flow<CharSequence?> {
+    return callbackFlow<CharSequence?> {
+        val watcher = object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) = Unit
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                trySend(s)
+            }
+        }
+        addTextChangedListener(watcher)
+        awaitClose {
+            removeTextChangedListener(watcher)
+        }
+    }
+        .onStart { emit(text) }
+        .debounce(DEFAULT_DEBOUNCE_DELAY)
 }
 
 fun RecyclerView.setDivider(@DrawableRes drawableRes: Int) {

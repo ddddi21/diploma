@@ -4,11 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.coroutineScope
 import com.example.feature_auth.databinding.FragmentLoginBinding
 import com.technokratos.auth.di.AuthFeatureKey
 import com.technokratos.auth.di.AuthFeatureComponent
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
+import com.technokratos.common.utils.makeVisible
+import com.technokratos.common.utils.textChanges
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.launchIn
 
 class AuthFragment : BaseFragment<AuthViewModel>() {
 
@@ -26,18 +32,40 @@ class AuthFragment : BaseFragment<AuthViewModel>() {
             .inject(this)
     }
 
+    @ExperimentalCoroutinesApi
     override fun initViews() {
+        initChangeTextListener()
         with(binding) {
             registrationTextView.setOnClickListener {
                 viewModel.onRegistrationClicked()
             }
             loginEnterButton.setOnClickListener {
-                viewModel.onEnterButtonClicked("test@gmail.com", "12345") // временный вариант, потом дата биндинг подключу
+                val email = emailInputEditText.text.toString()
+                val password = passwordInputEditText.text.toString()
+                viewModel.onEnterButtonClicked(email, password)
             }
         }
     }
 
     override fun subscribe(viewModel: AuthViewModel) {
-        // TODO
+        viewModel.authViewState.observe(viewLifecycleOwner, this::render)
+    }
+
+    private fun render(state: AuthViewState) = with(binding) {
+        with(state) {
+            loginEnterButton.isEnabled = isLoginButtonEnabled
+            loginErrorMessageTextView.text = loginErrorMessage
+            loginErrorMessageTextView.makeVisible(isLoginErrorMessageVisible)
+        }
+    }
+
+    @ExperimentalCoroutinesApi
+    private fun initChangeTextListener() = with(binding) {
+        combine(
+            emailInputEditText.textChanges(),
+            passwordInputEditText.textChanges()
+        ) { email, password ->
+            viewModel.onTextChanged(email.toString(), password.toString())
+        }.launchIn(viewLifecycleOwner.lifecycle.coroutineScope)
     }
 }
