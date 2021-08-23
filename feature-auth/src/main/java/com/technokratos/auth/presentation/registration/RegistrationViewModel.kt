@@ -30,7 +30,7 @@ class RegistrationViewModel(
     }
 
     fun onRegistrationButtonClicked(email: String, password: String, repeatPassword: String) {
-        if (!findErrorMessage(email, password, repeatPassword).isNullOrEmpty()) {
+        if (!checkValidation(email, password, repeatPassword)) {
             return
         }
         viewModelScope.launch {
@@ -69,33 +69,32 @@ class RegistrationViewModel(
         )
     }
 
-    private fun findErrorMessage(email: String, password: String, repeatPassword: String): String? {
-        var errorMessage: String? = null
-        when {
+    private fun checkValidation(email: String, password: String, repeatPassword: String): Boolean {
+        return when {
             !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
-                errorMessage = resourceManager.getString(R.string.incorrect_email_error_message)
                 _authViewState.value = AuthViewState(
                     email,
                     password,
                     repeatPassword,
                     isLoginButtonEnabled = false,
                     isLoginErrorMessageVisible = true,
-                    loginErrorMessage = errorMessage.toString()
+                    loginErrorMessage = resourceManager.getString(R.string.incorrect_email_error_message)
                 )
+                false
             }
             password != repeatPassword -> {
-                errorMessage = resourceManager.getString(R.string.different_passwords_error_message)
                 _authViewState.value = AuthViewState(
                     email,
                     password,
                     repeatPassword,
                     isLoginButtonEnabled = false,
                     isLoginErrorMessageVisible = true,
-                    loginErrorMessage = errorMessage.toString(),
+                    loginErrorMessage = resourceManager.getString(R.string.different_passwords_error_message),
                     isSamePassword = false
                 )
+                false
             }
+            else -> true
         }
-        return errorMessage
     }
 }
