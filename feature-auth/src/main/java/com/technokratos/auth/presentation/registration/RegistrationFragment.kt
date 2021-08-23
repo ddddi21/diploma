@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.coroutineScope
 import com.example.feature_auth.R
@@ -14,7 +15,6 @@ import com.technokratos.auth.presentation.auth.AuthViewState
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
 import com.technokratos.common.utils.makeVisible
-import com.technokratos.common.utils.setColor
 import com.technokratos.common.utils.textChanges
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.combine
@@ -77,5 +77,13 @@ class RegistrationFragment : BaseFragment<RegistrationViewModel>() {
         ) { email, password, repeatPassword ->
             viewModel.onTextChanged(email.toString(), password.toString(), repeatPassword.toString())
         }.launchIn(viewLifecycleOwner.lifecycle.coroutineScope)
+    }
+}
+
+fun TextView.setColor(colorId: Int, isSame: Boolean) {
+    if (isSame) {
+        this.setTextColor(ContextCompat.getColor(context, com.technokratos.common.R.color.black))
+    } else {
+        this.setTextColor(colorId)
     }
 }

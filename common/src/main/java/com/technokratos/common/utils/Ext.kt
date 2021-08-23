@@ -6,7 +6,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -48,14 +47,6 @@ fun <T> MutableLiveData<T>.postValueIfNew(newValue: T) {
 
 fun View.makeVisible(visible: Boolean) {
     this.visibility = if (visible) View.VISIBLE else View.GONE
-}
-
-fun TextView.setColor(colorId: Int, isSame: Boolean) {
-    if (isSame) {
-        this.setTextColor(ContextCompat.getColor(context, R.color.black))
-    } else {
-        this.setTextColor(colorId)
-    }
 }
 
 fun View.makeVisible() {
