@@ -1,6 +1,5 @@
 package com.technokratos.auth.presentation.registration
 
-import android.util.Log
 import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -30,8 +29,8 @@ class RegistrationViewModel(
         authRouter.goToPreviousScreen()
     }
 
-    fun onEnterButtonClicked(email: String, password: String, repeatPassword: String) {
-        if (!checkValidation(email, password, repeatPassword).isNullOrEmpty()) {
+    fun onRegistrationButtonClicked(email: String, password: String, repeatPassword: String) {
+        if (!findErrorMessage(email, password, repeatPassword).isNullOrEmpty()) {
             return
         }
         viewModelScope.launch {
@@ -40,7 +39,6 @@ class RegistrationViewModel(
                 if (isSuccess) {
                     onSuccessfulRegistration(email, password)
                 } else {
-                    Log.d("POZOR", "login failed cause ${exceptionOrNull()}")
                     onFailedRegistrationError(email, password, exceptionOrNull()!!)
                 }
             }
@@ -49,8 +47,6 @@ class RegistrationViewModel(
 
     private fun onSuccessfulRegistration(email: String, password: String) {
         _authViewState.value = AuthViewState(email, password)
-        Log.d("AWESOME", "Change auth view state from VM: state=${_authViewState.value}")
-
         authRouter.navigateToMain()
     }
 
@@ -61,7 +57,6 @@ class RegistrationViewModel(
             isLoginButtonEnabled = false,
             isLoginErrorMessageVisible = true,
             loginErrorMessage = resourceManager.getString(R.string.login_error_message))
-        Log.d("AWESOME", "Change auth view state: state=${_authViewState.value}")
     }
 
     fun onTextChanged(email: String, password: String, repeatPassword: String) {
@@ -74,7 +69,7 @@ class RegistrationViewModel(
         )
     }
 
-    private fun checkValidation(email: String, password: String, repeatPassword: String): String? {
+    private fun findErrorMessage(email: String, password: String, repeatPassword: String): String? {
         var errorMessage: String? = null
         when {
             !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {

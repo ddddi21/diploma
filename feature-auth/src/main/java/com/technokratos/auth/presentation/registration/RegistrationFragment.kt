@@ -46,28 +46,26 @@ class RegistrationFragment : BaseFragment<RegistrationViewModel>() {
                 viewModel.onBackToLoginScreenClicked()
             }
         }
-        binding.registrationEnterButton.setOnClickListener {
+        binding.registrationButton.setOnClickListener {
             val email = binding.emailInputEditText.text.toString()
             val password = binding.passwordInputEditText.text.toString()
             val repeatPassword = binding.passwordRepeatInputEditText.text.toString()
-            viewModel.onEnterButtonClicked(email, password, repeatPassword)
+            viewModel.onRegistrationButtonClicked(email, password, repeatPassword)
         }
     }
 
     override fun subscribe(viewModel: RegistrationViewModel) {
-        viewModel.authViewState.observe(viewLifecycleOwner, this::render)
+        viewModel.authViewState.observe(viewLifecycleOwner, ::render)
     }
 
     private fun render(state: AuthViewState) = with(binding) {
-        with(state) {
-            registrationEnterButton.isEnabled = isLoginButtonEnabled
-            registrationErrorMessageTextView.text = loginErrorMessage
-            registrationErrorMessageTextView.makeVisible(isLoginErrorMessageVisible)
-            passwordInputEditText.setColor(ContextCompat.getColor(requireContext(), R.color.colorError), isSamePassword)
-            passwordRepeatInputEditText.setColor(ContextCompat.getColor(requireContext(), R.color.colorError), isSamePassword)
-            progressBar.makeVisible(isNeedToShowProgress)
-            registrationEnterButton.makeVisible(!isNeedToShowProgress)
-        }
+            registrationButton.isEnabled = state.isLoginButtonEnabled
+            registrationErrorMessageTextView.text = state.loginErrorMessage
+            registrationErrorMessageTextView.makeVisible(state.isLoginErrorMessageVisible)
+            passwordInputEditText.setColor(ContextCompat.getColor(requireContext(), R.color.colorError), state.isSamePassword)
+            passwordRepeatInputEditText.setColor(ContextCompat.getColor(requireContext(), R.color.colorError), state.isSamePassword)
+            progressBar.makeVisible(state.isNeedToShowProgress)
+            registrationButton.makeVisible(!state.isNeedToShowProgress)
     }
 
     @ExperimentalCoroutinesApi
