@@ -10,7 +10,7 @@ import retrofit2.http.POST
 
 interface AuthApi {
 
-    @POST("user")
+    @POST("users")
     suspend fun signUp(@Body singUpBody: AuthDto)
 
     @POST("auth/login")
