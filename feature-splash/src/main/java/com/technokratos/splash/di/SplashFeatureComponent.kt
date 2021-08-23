@@ -1,5 +1,6 @@
 package com.technokratos.splash.di
 
+import com.technokratos.auth.di.AuthFeatureKey
 import com.technokratos.common.di.CommonApi
 import com.technokratos.common.di.scope.FeatureScope
 import com.technokratos.splash.SplashRouter
@@ -33,7 +34,8 @@ interface SplashFeatureComponent : SplashFeatureKey {
 
     @Component(
         dependencies = [
-            CommonApi::class
+            CommonApi::class,
+            AuthFeatureKey::class
         ]
     )
     interface SplashFeatureDependenciesComponent : SplashFeatureDependencies
