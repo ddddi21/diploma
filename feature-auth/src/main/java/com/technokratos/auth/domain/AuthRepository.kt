@@ -10,7 +10,7 @@ interface AuthRepository {
 
     suspend fun updateTokens(authToken: String, refreshToken: String)
 
-    suspend fun getUserAuthToken(): String?
+    fun getUserAuthToken(): String?
 
-    suspend fun getUserRefreshToken(): String?
+    fun getUserRefreshToken(): String?
 }

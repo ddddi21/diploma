@@ -24,12 +24,10 @@ class SplashViewModel(
 
     fun onAnimationFinished() {
         viewModelScope.launch {
-            val result = splashInteractor.getUserAuthToken()
-            Log.d("AWESOME", "user auth token = ${result.getOrNull()}")
-            if (result.getOrNull() == null) {
+            val isUserLoggedIn = splashInteractor.isUserLoggedIn()
+            if (!isUserLoggedIn) {
                 router.toLogin()
             } else {
-                // TODO(подгружаем данные пользователя)
                 router.navigateToMain()
             }
         }

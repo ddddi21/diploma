@@ -7,11 +7,11 @@ class SplashInteractor @Inject constructor(
     private val authRepository: AuthRepository
 ) {
 
-    suspend fun getUserAuthToken(): Result<String?> = runCatching {
-        authRepository.getUserAuthToken()
+    fun isUserLoggedIn(): Boolean {
+        return !authRepository.getUserAuthToken().isNullOrEmpty()
     }
 
-    suspend fun getUserRefreshToken(): Result<String?> = runCatching {
-        authRepository.getUserRefreshToken()
+    fun getUserRefreshToken(): String? {
+        return authRepository.getUserRefreshToken()
     }
 }
