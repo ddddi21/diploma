@@ -24,6 +24,7 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.onStart
 
 private const val DEFAULT_DEBOUNCE_DELAY = 300L
+
 fun Activity.showShortToast(msg: String) {
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 }
@@ -45,7 +46,7 @@ fun <T> MutableLiveData<T>.postValueIfNew(newValue: T) {
     if (this.value != newValue) postValue(newValue)
 }
 
-fun View.makeVisible(visible: Boolean) {
+fun View.changeVisibility(visible: Boolean) {
     this.visibility = if (visible) View.VISIBLE else View.GONE
 }
 

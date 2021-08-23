@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
     <Button
-        android:id="@+id/loginEnterButton"
+        android:id="@+id/loginButton"
         style="@style/Auth.EnterButton"
         android:layout_width="@dimen/login_enter_button_width"
         android:layout_height="@dimen/login_enter_button_height"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="loginEnterButton" />
+        app:constraint_referenced_ids="loginButton" />
 
     <LinearLayout
         android:id="@+id/toRegistrationLinerLayout"

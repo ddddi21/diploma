@@ -10,7 +10,7 @@ import com.technokratos.auth.di.AuthFeatureKey
 import com.technokratos.auth.di.AuthFeatureComponent
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
-import com.technokratos.common.utils.makeVisible
+import com.technokratos.common.utils.changeVisibility
 import com.technokratos.common.utils.textChanges
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.combine
@@ -39,24 +39,22 @@ class AuthFragment : BaseFragment<AuthViewModel>() {
             registrationTextView.setOnClickListener {
                 viewModel.onRegistrationClicked()
             }
-            loginEnterButton.setOnClickListener {
+            loginButton.setOnClickListener {
                 val email = emailInputEditText.text.toString()
                 val password = passwordInputEditText.text.toString()
-                viewModel.onEnterButtonClicked(email, password)
+                viewModel.onLoginButtonClicked(email, password)
             }
         }
     }
 
     override fun subscribe(viewModel: AuthViewModel) {
-        viewModel.authViewState.observe(viewLifecycleOwner, this::render)
+        viewModel.authViewState.observe(viewLifecycleOwner, ::render)
     }
 
     private fun render(state: AuthViewState) = with(binding) {
-        with(state) {
-            loginEnterButton.isEnabled = isLoginButtonEnabled
-            loginErrorMessageTextView.text = loginErrorMessage
-            loginErrorMessageTextView.makeVisible(isLoginErrorMessageVisible)
-        }
+        loginButton.isEnabled = state.isLoginButtonEnabled
+        loginErrorMessageTextView.text = state.loginErrorMessage
+        loginErrorMessageTextView.changeVisibility(state.isLoginErrorMessageVisible)
     }
 
     @ExperimentalCoroutinesApi

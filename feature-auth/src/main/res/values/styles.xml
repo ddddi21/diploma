@@ -32,7 +32,7 @@
         <item name="cornerRadius">@dimen/auth_enter_button_radius</item>
         <item name="strokeColor">@color/auth_enter_button_corner_color</item>
         <item name="strokeWidth">@dimen/dimen_2dp</item>
-        <item name="android:backgroundTint">@color/auth_enter_button_bg_color</item>
+        <item name="android:backgroundTint">@color/auth_enter_button_color</item>
         <item name="android:textColor">@color/auth_enter_button_text_color</item>
     </style>
 </resources>

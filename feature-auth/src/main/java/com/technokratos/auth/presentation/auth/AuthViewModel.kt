@@ -1,6 +1,5 @@
 package com.technokratos.auth.presentation.auth
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -28,14 +27,13 @@ class AuthViewModel(
         router.navigateToRegistration()
     }
 
-    fun onEnterButtonClicked(email: String, password: String) {
+    fun onLoginButtonClicked(email: String, password: String) {
         viewModelScope.launch {
             _authViewState.value = AuthViewState(email, password, isNeedToShowProgress = true)
             interactor.signIn(email, password).run {
                 if (isSuccess) {
                     onSuccessfulLogin(email, password)
                 } else {
-                    Log.d("POZOR", "login failed cause ${exceptionOrNull()}")
                     onFailedLoginError(email, password, exceptionOrNull()!!)
                 }
             }
@@ -44,8 +42,6 @@ class AuthViewModel(
 
     private fun onSuccessfulLogin(email: String, password: String) {
         _authViewState.value = AuthViewState(email, password)
-        Log.d("AWESOME", "Change auth view state from VM: state=${_authViewState.value}")
-
         router.navigateToMain()
     }
 
@@ -56,15 +52,13 @@ class AuthViewModel(
             isLoginButtonEnabled = false,
             isLoginErrorMessageVisible = true,
             loginErrorMessage = resourceManager.getString(R.string.login_error_message))
-        Log.d("AWESOME", "Change auth view state: state=${_authViewState.value}")
     }
 
     fun onTextChanged(email: String, password: String) {
-        val areEmailAndPasswordFilled = email.isNotEmpty() && password.isNotEmpty()
         _authViewState.value = AuthViewState(
             email,
             password,
-            isLoginButtonEnabled = areEmailAndPasswordFilled
+            isLoginButtonEnabled = email.isNotEmpty() && password.isNotEmpty()
         )
     }
 }
