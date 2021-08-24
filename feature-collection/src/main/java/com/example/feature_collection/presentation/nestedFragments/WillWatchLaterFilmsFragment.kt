@@ -19,8 +19,6 @@ import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.base.adapter.BaseAdapter
 import com.technokratos.common.di.FeatureUtils
 import com.technokratos.common.utils.changeVisibility
-import com.technokratos.common.utils.makeInvisible
-import com.technokratos.common.utils.makeVisible
 import com.technokratos.common.utils.removeItemDecorations
 import com.technokratos.common.utils.setDivider
 
