@@ -1,8 +1,8 @@
-package com.technokratos.splash.di
+package com.technokratos.auth.di
 
 import com.technokratos.auth.domain.AuthRepository
 
-interface SplashFeatureDependencies {
+interface AuthFeatureKey {
 
     fun provideAuthRepository(): AuthRepository
 }

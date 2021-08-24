@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule
 import com.technokratos.splash.SplashRouter
+import com.technokratos.splash.domain.SplashInteractor
 import com.technokratos.splash.presentation.SplashViewModel
 import dagger.Module
 import dagger.Provides
@@ -23,7 +24,7 @@ class SplashModule {
     @Provides
     @IntoMap
     @ViewModelKey(SplashViewModel::class)
-    fun provideSplashViewModelFromStore(router: SplashRouter): ViewModel {
-        return SplashViewModel(router)
+    fun provideSplashViewModelFromStore(router: SplashRouter, splashInteractor: SplashInteractor): ViewModel {
+        return SplashViewModel(router, splashInteractor)
     }
 }

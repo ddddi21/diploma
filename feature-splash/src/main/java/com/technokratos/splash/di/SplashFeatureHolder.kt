@@ -1,5 +1,6 @@
 package com.technokratos.splash.di
 
+import com.technokratos.auth.di.AuthFeatureKey
 import com.technokratos.common.di.FeatureApiHolder
 import com.technokratos.common.di.FeatureContainer
 import com.technokratos.common.di.scope.ApplicationScope
@@ -15,6 +16,7 @@ class SplashFeatureHolder @Inject constructor(
     override fun initializeDependencies(): Any {
         val splashFeatureDependencies = DaggerSplashFeatureComponent_SplashFeatureDependenciesComponent.builder()
             .commonApi(commonApi())
+            .authFeatureKey(getFeature(AuthFeatureKey::class.java))
             .build()
         return DaggerSplashFeatureComponent.builder()
             .withDependencies(splashFeatureDependencies)
