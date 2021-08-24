@@ -18,6 +18,9 @@ import com.example.feature_collection.presentation.CollectionViewModel
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.base.adapter.BaseAdapter
 import com.technokratos.common.di.FeatureUtils
+import com.technokratos.common.utils.changeVisibility
+import com.technokratos.common.utils.makeInvisible
+import com.technokratos.common.utils.makeVisible
 import com.technokratos.common.utils.removeItemDecorations
 import com.technokratos.common.utils.setDivider
 
@@ -76,6 +79,8 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
 
         viewModel.linearList.observe(viewLifecycleOwner) { list ->
             linearFilmsAdapter.update(list)
+            binding.filmsRecyclerView.changeVisibility(list.isNotEmpty())
+            binding.noFilmTextView.changeVisibility(list.isEmpty())
         }
     }
 

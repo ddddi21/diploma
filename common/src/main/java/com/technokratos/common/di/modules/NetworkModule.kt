@@ -47,7 +47,7 @@ class NetworkModule {
         return Interceptor { chain ->
             val request = chain.request().newBuilder()
                 .header("Accept", "application/json")
-                .header("Authorization", "Token ${userSharedPreference.userAuthToken}")
+                .header("Authorization", "${userSharedPreference.userAuthToken}")
                 .build()
             chain.proceed(request)
         }

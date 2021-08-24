@@ -5,7 +5,7 @@
 
     <dimen name="film_item_padding">16dp</dimen>
 
-    <dimen name="film_item_rating_width">24dp</dimen>
+    <dimen name="film_item_rating_width">28dp</dimen>
     <dimen name="film_item_rating_height">16dp</dimen>
     <dimen name="film_item_rating_margin_end">8dp</dimen>
     <dimen name="film_item_rating_margin_top">8dp</dimen>

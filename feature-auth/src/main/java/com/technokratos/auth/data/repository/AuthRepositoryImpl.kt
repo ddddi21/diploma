@@ -41,9 +41,9 @@ class AuthRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun updateTokens(authToken: String, refreshToken: String) {
+    override suspend fun updateTokens(refreshToken: String) {
         withContext(Dispatchers.IO) {
-            authApi.updateTokens(authToken, RefreshTokenDto(refreshToken)).let { tokenDto ->
+            authApi.updateTokens(RefreshTokenDto(refreshToken)).let { tokenDto ->
                 val tokens = tokenMapper.map(tokenDto)
                 userSharedPreferences.userAuthToken = tokens.authToken
                 userSharedPreferences.userRefreshToken = tokens.refreshToken

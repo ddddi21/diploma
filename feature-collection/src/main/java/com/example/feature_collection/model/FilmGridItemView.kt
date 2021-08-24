@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.feature_collection.R
 import com.example.feature_collection.databinding.FilmItemViewGridBinding
 import com.technokratos.common.base.adapter.Fillable
@@ -20,9 +21,13 @@ class FilmGridItemView @JvmOverloads constructor(
     }
 
     override fun fill(model: FilmGridItem) = with(binding) {
+        val option = RequestOptions()
+            .fallback(R.drawable.ic_film_poster_template)
+            .placeholder(R.drawable.ic_film_poster_template)
         titleTextView.text = model.title
         Glide.with(context)
             .load(model.posterUrl)
+            .apply(option)
             .into(posterImageView)
         rateTextView.text = model.rating.toString()
         setOnClickListener {
@@ -35,6 +40,8 @@ data class FilmGridItem(
     val id: Int,
     val title: String,
     val rating: Double,
-    val posterUrl: String,
+    val posterUrl: String?,
+    val description: String,
+    val genres: List<String>,
     val onItemClicked: ((Int) -> Unit) ? = null
 ) : ViewType(R.layout.film_item_view_grid)

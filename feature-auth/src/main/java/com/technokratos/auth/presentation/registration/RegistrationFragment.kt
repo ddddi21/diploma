@@ -14,7 +14,7 @@ import com.technokratos.auth.di.AuthFeatureKey
 import com.technokratos.auth.presentation.auth.AuthViewState
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
-import com.technokratos.common.utils.makeVisible
+import com.technokratos.common.utils.changeVisibility
 import com.technokratos.common.utils.textChanges
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.combine
@@ -61,11 +61,11 @@ class RegistrationFragment : BaseFragment<RegistrationViewModel>() {
     private fun render(state: AuthViewState) = with(binding) {
             registrationButton.isEnabled = state.isLoginButtonEnabled
             registrationErrorMessageTextView.text = state.loginErrorMessage
-            registrationErrorMessageTextView.makeVisible(state.isLoginErrorMessageVisible)
+            registrationErrorMessageTextView.changeVisibility(state.isLoginErrorMessageVisible)
             passwordInputEditText.setColor(ContextCompat.getColor(requireContext(), R.color.colorError), state.isSamePassword)
             passwordRepeatInputEditText.setColor(ContextCompat.getColor(requireContext(), R.color.colorError), state.isSamePassword)
-            progressBar.makeVisible(state.isNeedToShowProgress)
-            registrationButton.makeVisible(!state.isNeedToShowProgress)
+            progressBar.changeVisibility(state.isNeedToShowProgress)
+            registrationButton.changeVisibility(!state.isNeedToShowProgress)
     }
 
     @ExperimentalCoroutinesApi
