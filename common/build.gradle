@@ -57,6 +57,8 @@ dependencies {
     implementation gsonConvertedDep
     implementation loggingInterceptorDep
 
+    implementation coroutinesDep
+
     implementation materialDep
 
     testImplementation jUnitDep

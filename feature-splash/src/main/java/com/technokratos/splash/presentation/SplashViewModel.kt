@@ -1,13 +1,18 @@
 package com.technokratos.splash.presentation
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.technokratos.common.base.BaseViewModel
 import com.technokratos.common.utils.Event
 import com.technokratos.splash.SplashRouter
+import com.technokratos.splash.domain.SplashInteractor
+import kotlinx.coroutines.launch
 
 class SplashViewModel(
-    private val router: SplashRouter
+    private val router: SplashRouter,
+    private val splashInteractor: SplashInteractor
 ) : BaseViewModel() {
 
     private val _openUsersEvent = MutableLiveData<Event<Unit>>()
@@ -18,6 +23,12 @@ class SplashViewModel(
     }
 
     fun onAnimationFinished() {
-        router.toLogin()
+        viewModelScope.launch {
+            if (!splashInteractor.isUserLoggedIn()) {
+                router.toLogin()
+            } else {
+                router.navigateToMain()
+            }
+        }
     }
 }

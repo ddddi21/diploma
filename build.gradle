@@ -52,6 +52,8 @@ buildscript {
 
         viewModelVersion = '2.3.1'
 
+        lifecycleVersion = '2.2.0'
+
         swipeRefreshLayoutDep = "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
 
         kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
@@ -77,6 +79,7 @@ buildscript {
 
         lifecycleDep = "androidx.lifecycle:lifecycle-extensions:$architectureComponentVersion"
         lifecycleKapt = "androidx.lifecycle:lifecycle-compiler:$architectureComponentVersion"
+        lifecycleKtxDep = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
 
         roomDep = "androidx.room:room-runtime:$roomVersion"
         rxRoomDep = "androidx.room:room-rxjava2:$roomVersion"

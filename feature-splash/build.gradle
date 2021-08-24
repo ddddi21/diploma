@@ -24,6 +24,10 @@ android {
         }
     }
 
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        freeCompilerArgs = ["-Xallow-result-return-type"]
+    }
 }
 
 dependencies {
@@ -46,6 +50,9 @@ dependencies {
 
     testImplementation jUnitDep
     testImplementation mockitoDep
+    implementation lifecycleKtxDep
+    implementation coroutinesDep
+    implementation viewModelDep
 
     implementation fragmentDep
 

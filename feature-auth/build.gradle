@@ -57,6 +57,7 @@ dependencies {
     implementation loggingInterceptorDep
     implementation coroutinesDep
     implementation viewModelDep
+    implementation lifecycleKtxDep
 
     testImplementation jUnitDep
     testImplementation mockitoDep

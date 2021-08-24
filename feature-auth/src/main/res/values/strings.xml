@@ -8,4 +8,5 @@
     <string name="to_registration_text_view">Регистрация</string>
     <string name="login_error_message">Неверные логин или пароль</string>
     <string name="different_passwords_error_message">Пароли не совпадают</string>
+    <string name="incorrect_email_error_message">Введите корректную почту</string>
 </resources>
