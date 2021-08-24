@@ -24,8 +24,7 @@ class SplashViewModel(
 
     fun onAnimationFinished() {
         viewModelScope.launch {
-            val isUserLoggedIn = splashInteractor.isUserLoggedIn()
-            if (!isUserLoggedIn) {
+            if (!splashInteractor.isUserLoggedIn()) {
                 router.toLogin()
             } else {
                 router.navigateToMain()
