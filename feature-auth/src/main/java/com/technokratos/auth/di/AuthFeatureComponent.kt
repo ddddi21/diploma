@@ -17,7 +17,7 @@ import dagger.Component
     ]
 )
 @FeatureScope
-interface AuthFeatureComponent {
+interface AuthFeatureComponent : AuthFeatureKey {
 
     fun registrationComponentFactory(): RegistrationComponent.Factory
 
