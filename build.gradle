@@ -9,7 +9,9 @@ buildscript {
         minSdkVersion = 21
         targetSdkVersion = 28
 
-        kotlinVersion = '1.3.61'
+        kotlinVersion = '1.4.31'
+
+        roomVersion = '2.3.0'
 
         supportVersion = '1.0.0'
         constraintVersion = '2.0.4'
@@ -22,7 +24,7 @@ buildscript {
 
         architectureComponentVersion = '2.0.0'
 
-        retrofitVersion = '2.4.0'
+        retrofitVersion = '2.9.0'
         okhttpVersion = '3.8.0'
         gsonVersion = '2.8.2'
 
@@ -43,6 +45,14 @@ buildscript {
         swipeRefreshLayoutVersion = '1.1.0'
 
         glideVersion = '4.12.0'
+
+        loggingInterceptorVersion = '4.9.1'
+
+        coroutinesVersion = '1.5.1'
+
+        viewModelVersion = '2.3.1'
+
+        lifecycleVersion = '2.2.0'
 
         swipeRefreshLayoutDep = "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
 
@@ -69,25 +79,29 @@ buildscript {
 
         lifecycleDep = "androidx.lifecycle:lifecycle-extensions:$architectureComponentVersion"
         lifecycleKapt = "androidx.lifecycle:lifecycle-compiler:$architectureComponentVersion"
+        lifecycleKtxDep = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
 
-        roomDep = "androidx.room:room-runtime:$architectureComponentVersion"
-        rxRoomDep = "androidx.room:room-rxjava2:$architectureComponentVersion"
-        roomKapt = "androidx.room:room-compiler:$architectureComponentVersion"
+        roomDep = "androidx.room:room-runtime:$roomVersion"
+        rxRoomDep = "androidx.room:room-rxjava2:$roomVersion"
+        roomKapt = "androidx.room:room-compiler:$roomVersion"
+
+        coroutinesDep = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+        viewModelDep= "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelVersion"
 
         navigationFragmentDep = "androidx.navigation:navigation-fragment:$navControllerVersion"
         navigationUiDep = "androidx.navigation:navigation-ui:$navControllerVersion"
 
         retrofitDep = "com.squareup.retrofit2:retrofit:$retrofitVersion"
-        rxCallAdapterDep = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
         gsonConvertedDep = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
         gsonDep = "com.google.code.gson:gson:$gsonVersion"
+        loggingInterceptorDep = "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion"
 
         jUnitDep = "junit:junit:$junitVersion"
         mockitoDep = "org.mockito:mockito-inline:$mockitoVersion"
         robolectricDep = "org.robolectric:robolectric:$robolectricVersion"
         robolectricMultidexDep = "org.robolectric:shadows-multidex:$robolectricVersion"
         archCoreTestDep = "androidx.arch.core:core-testing:$architectureComponentVersion"
-        kotlin_version = '1.3.61'
+        kotlin_version = '1.3.31'
 
         glideDep = "com.github.bumptech.glide:glide:$glideVersion"
     }

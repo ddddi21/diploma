@@ -1,3 +1,0 @@
-package com.technokratos.auth.di.registration
-
-interface RegistrationFeatureKey

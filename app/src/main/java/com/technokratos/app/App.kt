@@ -3,9 +3,9 @@ package com.technokratos.app
 import android.app.Application
 import com.technokratos.app.di.app.AppComponent
 import com.technokratos.app.di.app.DaggerAppComponent
-import com.technokratos.app.di.deps.ComponentDependenciesProvider
 import com.technokratos.app.di.deps.FeatureHolderManager
-import com.technokratos.app.di.deps.HasComponentDependencies
+import com.technokratos.common.base.ComponentDependenciesProvider
+import com.technokratos.common.base.HasComponentDependencies
 import com.technokratos.common.di.CommonApi
 import com.technokratos.common.di.FeatureContainer
 import javax.inject.Inject
