@@ -100,7 +100,6 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
             viewModel.onRefreshSwiped()
         }
     }
-    // временный вариант
 }
 
 enum class ViewPagerFragmentType {
