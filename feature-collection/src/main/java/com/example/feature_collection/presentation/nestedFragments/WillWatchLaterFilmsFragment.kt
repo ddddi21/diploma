@@ -97,7 +97,7 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
     private fun setSwipeOnRefreshListener() {
         binding.swipeToRefreshFilmsList.setOnRefreshListener {
             binding.swipeToRefreshFilmsList.isRefreshing = false
-            // viewModel.onRefreshSwiped()
+            viewModel.onRefreshSwiped()
         }
     }
     // временный вариант

@@ -4,19 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.feature_collection.CollectionRouter
-import com.example.feature_collection.data.network.model.Film
 import com.example.feature_collection.domain.CollectionInteractor
-import com.example.feature_collection.model.FilmGridItem
-import com.example.feature_collection.model.FilmLinearItem
+import com.example.feature_collection.presentation.mappers.FilmIntoGridFilmMapper
+import com.example.feature_collection.presentation.mappers.FilmIntoLinearFilmMapper
 import com.technokratos.common.base.BaseViewModel
 import com.technokratos.common.base.adapter.ViewType
 import kotlinx.coroutines.launch
 
-private const val DEFAULT_POSTER_URL = "https://upload.wikimedia.org/wikipedia/ru/thumb/6/6e/%D0%9E%D1%81%D1%82%D1%80%D0%9A%D0%BE%D0%B7.jpg/274px-%D0%9E%D1%81%D1%82%D1%80%D0%9A%D0%BE%D0%B7.jpg"
-
 class WillWatchLaterFilmsViewModel(
     private val router: CollectionRouter,
-    private val interactor: CollectionInteractor
+    private val interactor: CollectionInteractor,
+    private val filmIntoGridFilmMapper: FilmIntoGridFilmMapper,
+    private val filmIntoLinearFilmMapper: FilmIntoLinearFilmMapper
 ) : BaseViewModel() {
 
     private var _gridList = MutableLiveData<List<ViewType>>()
@@ -34,54 +33,18 @@ class WillWatchLaterFilmsViewModel(
 
     private fun loadList() {
         viewModelScope.launch {
-            when (fragmentType) {
-                ViewPagerFragmentType.WATCHED -> {
-                    interactor.getUserFilms(true).onSuccess { filmList ->
-                        _gridList.value = filmList.map { item ->
-                            mapIntoGridFilm(item)
-                        }
-                        _linearList.value = filmList.map { item ->
-                            mapIntoLinearFilm(item)
-                        }
-                    }
+            interactor.getUserFilms(fragmentType).onSuccess { filmList ->
+                _gridList.value = filmList.map { item ->
+                    filmIntoGridFilmMapper.map(item) { router.navigateToFilmDetailsScreen() }
                 }
-
-                ViewPagerFragmentType.WILL_WATCH -> {
-                    interactor.getUserFilms(false).onSuccess { filmList ->
-                        _gridList.value = filmList.map { item ->
-                            mapIntoGridFilm(item)
-                        }
-                        _linearList.value = filmList.map { item ->
-                            mapIntoLinearFilm(item)
-                        }
-                    }
+                _linearList.value = filmList.map { item ->
+                    filmIntoLinearFilmMapper.map(item) { router.navigateToFilmDetailsScreen() }
                 }
             }
         }
     }
 
     fun onRefreshSwiped() {
-        // TODO
         loadList()
-    }
-
-    private fun mapIntoGridFilm(model: Film): FilmGridItem {
-        return FilmGridItem(
-            id = model.id,
-            title = model.title,
-            description = model.description ?: "",
-            genres = model.genres ?: listOf(""),
-            rating = model.rating ?: 0.0,
-            posterUrl = model.posterUrl ?: DEFAULT_POSTER_URL,
-            onItemClicked = { router.navigateToFilmDetailsScreen() }
-        )
-    }
-
-    private fun mapIntoLinearFilm(model: Film): FilmLinearItem {
-        return FilmLinearItem(
-            id = model.id,
-            title = model.title,
-            onItemClicked = { router.navigateToFilmDetailsScreen() }
-        )
     }
 }

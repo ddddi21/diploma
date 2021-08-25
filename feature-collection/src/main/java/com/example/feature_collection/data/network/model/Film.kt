@@ -6,6 +6,5 @@ data class Film(
     val rating: Double? = null,
     val posterUrl: String? = null,
     val description: String? = null,
-    val genres: List<String>? = null,
-    val onItemClicked: ((Int) -> Unit)? = null
+    val genres: List<String>? = null
 )
