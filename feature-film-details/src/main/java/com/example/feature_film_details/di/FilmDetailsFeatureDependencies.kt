@@ -1,3 +1,10 @@
 package com.example.feature_film_details.di
 
-interface FilmDetailsFeatureDependencies
+import com.technokratos.common.data.network.NetworkApiCreator
+import com.technokratos.common.di.AuthorizedRetrofit
+
+interface FilmDetailsFeatureDependencies {
+
+    @AuthorizedRetrofit
+    fun provideUnauthorizedNetworkApiCreator(): NetworkApiCreator
+}

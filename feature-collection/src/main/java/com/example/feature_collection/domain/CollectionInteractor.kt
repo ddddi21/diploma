@@ -1,7 +1,7 @@
 package com.example.feature_collection.domain
 
-import com.example.feature_collection_api.domain.Film
-import com.example.feature_collection.presentation.nestedFragments.ViewPagerFragmentType
+import com.example.feature_collection_api.domain.model.Film
+import com.example.feature_collection_api.domain.model.ViewPagerFragmentType
 import javax.inject.Inject
 
 class CollectionInteractor @Inject constructor(

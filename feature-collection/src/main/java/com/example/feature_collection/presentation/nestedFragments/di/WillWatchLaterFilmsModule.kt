@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.feature_collection.CollectionRouter
 import com.example.feature_collection.domain.CollectionInteractor
-import com.example.feature_collection.presentation.mappers.FilmIntoPresentationFilmMapper
+import com.example.feature_collection.presentation.mapper.FilmIntoPresentationFilmMapper
 import com.example.feature_collection.presentation.nestedFragments.WillWatchLaterFilmsViewModel
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule

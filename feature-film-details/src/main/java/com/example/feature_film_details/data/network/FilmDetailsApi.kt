@@ -5,6 +5,6 @@ import retrofit2.http.Path
 
 interface FilmDetailsApi {
 
-    @PUT("users/film/{film-id}")
+    @PUT("users/films/{film-id}")
     suspend fun markFilmIsWatched(@Path("film-id") filmId: Int)
 }

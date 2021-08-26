@@ -6,7 +6,7 @@ class FilmDetailsInteractor @Inject constructor(
     private val repository: FilmDetailsRepository
 ) {
 
-    suspend fun markFilmIsWatched(filmId: Int): Result<Unit> = runCatching {
-        repository.markFilmIsWatched(filmId)
+    suspend fun markFilmAsWatched(filmId: Int): Result<Unit> = runCatching {
+        repository.markFilmAsWatched(filmId)
     }
 }

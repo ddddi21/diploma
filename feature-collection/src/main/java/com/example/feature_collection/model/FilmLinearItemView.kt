@@ -21,7 +21,7 @@ class FilmLinearItemView @JvmOverloads constructor(
     override fun fill(model: FilmLinearItem) = with(binding) {
         filmTitleTextView.text = model.title
         setOnClickListener {
-            model.onItemClicked?.invoke(model.id)
+            model.onItemClicked?.invoke()
         }
     }
 }
@@ -29,5 +29,5 @@ class FilmLinearItemView @JvmOverloads constructor(
 data class FilmLinearItem(
     val id: Int,
     val title: String,
-    val onItemClicked: ((Int) -> Unit)? = null
+    val onItemClicked: (() -> Unit)? = null
 ) : ViewType(R.layout.film_item_view_linear)

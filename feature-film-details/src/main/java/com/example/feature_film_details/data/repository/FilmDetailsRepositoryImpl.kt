@@ -7,16 +7,12 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class FilmDetailsRepositoryImpl @Inject constructor(
-    private val filmDetailsApi: FilmDetailsApi
-) : FilmDetailsRepository{
+    private val api: FilmDetailsApi
+) : FilmDetailsRepository {
 
-    override suspend fun markFilmIsWatched(filmId: Int) {
+    override suspend fun markFilmAsWatched(filmId: Int) {
         return withContext(Dispatchers.IO) {
-            filmDetailsApi.markFilmIsWatched(filmId)
+            api.markFilmIsWatched(filmId)
         }
-    }
-
-    override suspend fun getFilmDetails(filmId: Int) {
-
     }
 }

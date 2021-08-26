@@ -4,5 +4,5 @@ import android.os.Bundle
 
 interface CollectionRouter {
 
-    fun navigateToFilmDetailsScreen(bundle: Bundle? = null)
+    fun navigateToFilmDetailsScreen(bundle: Bundle)
 }

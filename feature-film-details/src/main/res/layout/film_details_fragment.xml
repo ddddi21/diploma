@@ -128,40 +128,8 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/film_detail_genres_chip_group_margin_start"
                 android:layout_marginTop="@dimen/dimen_28dp"
-                android:layout_marginEnd="@dimen/film_detail_genres_chip_group_margin_start">
-                <!--            буду добавлять чипы программно через код, после запроса в сеть, пока такой вариант верстки-->
+                android:layout_marginEnd="@dimen/film_detail_genres_chip_group_margin_start"/>
 
-                <com.google.android.material.chip.Chip
-                    style="@style/FilmDetails.GenreChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/film_detail_genres_chip_margin"
-                    android:layout_marginEnd="@dimen/film_detail_will_watch_margin_end"
-                    android:checked="true"
-                    android:text="@string/film_details_genre_action" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/FilmDetails.GenreChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/film_detail_genres_chip_margin"
-                    android:text="@string/film_details_genre_criminal" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/FilmDetails.GenreChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/film_detail_genres_chip_margin"
-                    android:text="@string/film_details_genre_thriller" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/FilmDetails.GenreChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/film_detail_genres_chip_margin"
-                    android:text="@string/film_details_genre_detective" />
-
-            </com.google.android.material.chip.ChipGroup>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

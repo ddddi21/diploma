@@ -6,7 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.feature_collection.CollectionRouter
 import com.example.feature_collection.domain.CollectionInteractor
-import com.example.feature_collection.presentation.mappers.FilmIntoPresentationFilmMapper
+import com.example.feature_collection.presentation.mapper.FilmIntoPresentationFilmMapper
+import com.example.feature_collection_api.domain.model.ViewPagerFragmentType
 import com.technokratos.common.base.BaseViewModel
 import com.technokratos.common.base.adapter.ViewType
 import kotlinx.coroutines.launch
@@ -36,12 +37,14 @@ class WillWatchLaterFilmsViewModel(
         viewModelScope.launch {
             interactor.getUserFilms(fragmentType).onSuccess { filmList ->
                 _gridList.value = filmList.map { item ->
-                    filmIntoPresentationFilmMapper.map(item) {
+                    filmIntoPresentationFilmMapper.mapIntoGridFilm(item) {
+                        item.status = fragmentType
                         router.navigateToFilmDetailsScreen(bundleOf(FILM_INSTANCE to item))
                     }
                 }
                 _linearList.value = filmList.map { item ->
-                    filmIntoPresentationFilmMapper.map(item) {
+                    filmIntoPresentationFilmMapper.mapIntoLinearFilm(item) {
+                        item.status = fragmentType
                         router.navigateToFilmDetailsScreen(bundleOf(FILM_INSTANCE to item))
                     }
                 }
