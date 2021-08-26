@@ -6,8 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.feature_collection.CollectionRouter
 import com.example.feature_collection.domain.CollectionInteractor
-import com.example.feature_collection.presentation.mappers.FilmIntoGridFilmMapper
-import com.example.feature_collection.presentation.mappers.FilmIntoLinearFilmMapper
+import com.example.feature_collection.presentation.mappers.FilmIntoPresentationFilmMapper
 import com.example.feature_collection.presentation.nestedFragments.WillWatchLaterFilmsViewModel
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule
@@ -29,9 +28,8 @@ class WillWatchLaterFilmsModule {
     fun provideWillWatchLaterFilmsViewModel(
         router: CollectionRouter,
         interactor: CollectionInteractor,
-        filmIntoGridFilmMapper: FilmIntoGridFilmMapper,
-        filmIntoLinearFilmMapper: FilmIntoLinearFilmMapper
+        filmIntoGridFilmMapper: FilmIntoPresentationFilmMapper
     ): ViewModel {
-        return WillWatchLaterFilmsViewModel(router, interactor, filmIntoGridFilmMapper, filmIntoLinearFilmMapper)
+        return WillWatchLaterFilmsViewModel(router, interactor, filmIntoGridFilmMapper)
     }
 }
