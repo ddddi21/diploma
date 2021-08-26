@@ -1,6 +1,8 @@
 package com.example.feature_collection
 
+import android.os.Bundle
+
 interface CollectionRouter {
 
-    fun navigateToFilmDetailsScreen()
+    fun navigateToFilmDetailsScreen(bundle: Bundle? = null)
 }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.feature_collection_api.domain.Film
 import com.example.feature_film_details.databinding.FilmDetailsFragmentBinding
 import com.example.feature_film_details.di.FilmDetailsFeatureComponent
 import com.example.feature_film_details.di.FilmDetailsFeatureKey
@@ -11,7 +12,13 @@ import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils
 import com.technokratos.common.utils.setChip
 
+private const val FILM_INSTANCE = "FILM_INSTANCE"
+
 class FilmDetailsFragment : BaseFragment<FilmDetailsViewModel>() {
+
+    private val film by lazy {
+        arguments?.getSerializable(FILM_INSTANCE) as Film
+    }
 
     private lateinit var binding: FilmDetailsFragmentBinding
 
@@ -54,4 +61,8 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsViewModel>() {
         binding.genreChipGroup.setChip("Test")
         binding.genreChipGroup.setChip("Test")
     } // временный вариант
+
+    private fun setFilm() = with(binding) {
+        posterImageView.background = film.posterUrl
+    }
 }

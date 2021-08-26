@@ -1,4 +1,4 @@
-package com.example.feature_collection.data.network.model
+package com.example.feature_collection_api.domain
 
 data class Film(
     val id: Int,

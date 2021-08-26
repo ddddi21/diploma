@@ -1,6 +1,6 @@
 package com.example.feature_collection.presentation.mappers
 
-import com.example.feature_collection.data.network.model.Film
+import com.example.feature_collection_api.domain.Film
 import com.example.feature_collection.model.FilmGridItem
 import javax.inject.Inject
 
@@ -8,7 +8,7 @@ private const val DEFAULT_POSTER_URL = "https://upload.wikimedia.org/wikipedia/r
 
 class FilmIntoGridFilmMapper @Inject constructor() {
 
-    fun map(model: Film, onItemClicked: ((Int) -> Unit)? = null): FilmGridItem {
+    fun map(model: com.example.feature_collection_api.domain.Film, onItemClicked: ((Int) -> Unit)? = null): FilmGridItem {
         return FilmGridItem(
             id = model.id,
             title = model.title,
