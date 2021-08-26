@@ -1,3 +1,10 @@
 package com.example.feature_collection.di
 
-interface CollectionFeatureDependencies
+import com.technokratos.common.data.network.NetworkApiCreator
+import com.technokratos.common.di.AuthorizedRetrofit
+
+interface CollectionFeatureDependencies {
+
+    @AuthorizedRetrofit
+    fun provideUnauthorizedNetworkApiCreator(): NetworkApiCreator
+}

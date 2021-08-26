@@ -18,7 +18,7 @@ class AuthInteractor @Inject constructor(
         authRepository.reset(email)
     }
 
-    suspend fun updateTokens(authToken: String, refreshToken: String): Result<Unit> = runCatching {
-        authRepository.updateTokens(authToken, refreshToken)
+    suspend fun updateTokens(refreshToken: String): Result<Unit> = runCatching {
+        authRepository.updateTokens(refreshToken)
     }
 }
