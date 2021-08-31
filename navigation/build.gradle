@@ -38,6 +38,7 @@ dependencies {
     implementation project(':feature-auth')
     implementation project(':feature-collection')
     implementation project(':feature-film-details')
+    implementation project(':feature-collection-api')
 
     implementation kotlinDep
 

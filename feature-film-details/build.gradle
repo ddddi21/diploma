@@ -65,4 +65,5 @@ dependencies {
     implementation coroutinesDep
     implementation viewModelDep
     implementation lifecycleKtxDep
+    implementation ktxCoreDep
 }

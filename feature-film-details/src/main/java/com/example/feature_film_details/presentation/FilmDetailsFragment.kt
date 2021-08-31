@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.feature_collection_api.domain.model.Film
@@ -18,12 +19,16 @@ import com.technokratos.common.utils.makeGone
 import com.technokratos.common.utils.makeVisible
 import com.technokratos.common.utils.setChip
 
-private const val FILM_INSTANCE = "FILM_INSTANCE"
+private const val FILM_KEY = "FILM_KEY"
 
 class FilmDetailsFragment : BaseFragment<FilmDetailsViewModel>() {
 
+    companion object {
+        fun buildArgs(film: Film) = bundleOf(FILM_KEY to film)
+    }
+
     private val film by lazy {
-        arguments?.getSerializable(FILM_INSTANCE) as Film
+        arguments?.getSerializable(FILM_KEY) as Film
     }
 
     private lateinit var binding: FilmDetailsFragmentBinding
@@ -41,10 +46,18 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsViewModel>() {
     }
 
     override fun initViews() {
+        viewModel.setFilm(film)
+        viewModel.initChipsState(film.status)
+
         setFilm()
-        addFilmToCollection()
         binding.addToWillWatchButton.setOnClickListener {
             makeWatchedChipGroupVisible()
+        }
+        binding.willWatchSelectedChip.setOnClickListener {
+            viewModel.onWillWatchChipClicked()
+        }
+        binding.watchedSelectedChip.setOnClickListener {
+            viewModel.onWatchedChipClicked()
         }
         with(binding.collectionToolbar) {
             setNavigationOnClickListener {
@@ -80,18 +93,5 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsViewModel>() {
     private fun makeWatchedChipGroupVisible() {
         binding.addToWillWatchButton.makeGone()
         binding.watchedChipGroup.makeVisible()
-    }
-
-    private fun addFilmToCollection() {
-        if (!binding.watchedSelectedChip.isChecked) {
-            binding.watchedSelectedChip.setOnClickListener {
-                viewModel.onFilmCollectionAdded(film.id)
-            }
-        }
-        if (!binding.willWatchSelectedChip.isChecked) {
-            binding.willWatchSelectedChip.setOnClickListener {
-                viewModel.onFilmCollectionAdded(film.id)
-            }
-        }
     }
 }

@@ -1,6 +1,5 @@
 package com.example.feature_collection.presentation.nestedFragments
 
-import androidx.core.os.bundleOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -11,8 +10,6 @@ import com.example.feature_collection_api.domain.model.ViewPagerFragmentType
 import com.technokratos.common.base.BaseViewModel
 import com.technokratos.common.base.adapter.ViewType
 import kotlinx.coroutines.launch
-
-private const val FILM_INSTANCE = "FILM_INSTANCE"
 
 class WillWatchLaterFilmsViewModel(
     private val router: CollectionRouter,
@@ -39,13 +36,13 @@ class WillWatchLaterFilmsViewModel(
                 _gridList.value = filmList.map { item ->
                     filmIntoPresentationFilmMapper.mapIntoGridFilm(item) {
                         item.status = fragmentType
-                        router.navigateToFilmDetailsScreen(bundleOf(FILM_INSTANCE to item))
+                        router.navigateToFilmDetailsScreen(item)
                     }
                 }
                 _linearList.value = filmList.map { item ->
                     filmIntoPresentationFilmMapper.mapIntoLinearFilm(item) {
                         item.status = fragmentType
-                        router.navigateToFilmDetailsScreen(bundleOf(FILM_INSTANCE to item))
+                        router.navigateToFilmDetailsScreen(item)
                     }
                 }
             }
