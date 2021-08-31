@@ -46,9 +46,7 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsViewModel>() {
     }
 
     override fun initViews() {
-        viewModel.setFilm(film)
-        viewModel.initChipsState(film.status)
-
+        viewModel.init(film)
         setFilm()
         binding.addToWillWatchButton.setOnClickListener {
             makeWatchedChipGroupVisible()

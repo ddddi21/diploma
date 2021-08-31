@@ -18,12 +18,9 @@ class FilmDetailsViewModel(
 
     private lateinit var film: Film
 
-    fun setFilm(film: Film) {
+    fun init(film: Film) {
         this.film = film
-    }
-
-    fun initChipsState(fragmentType: ViewPagerFragmentType?) {
-        when (fragmentType) {
+        when (film.status) {
             ViewPagerFragmentType.WILL_WATCH -> isWillWatchChipChecked = true
 
             ViewPagerFragmentType.WATCHED -> isWatchedChipChecked = true
