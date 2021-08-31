@@ -15,6 +15,7 @@ import com.example.feature_collection.di.CollectionFeatureComponent
 import com.example.feature_collection.di.CollectionFeatureKey
 import com.example.feature_collection.presentation.CollectionMenuItemMode
 import com.example.feature_collection.presentation.CollectionViewModel
+import com.example.feature_collection_api.domain.model.ViewPagerFragmentType
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.base.adapter.BaseAdapter
 import com.technokratos.common.di.FeatureUtils
@@ -100,9 +101,4 @@ class WillWatchLaterFilmsFragment : BaseFragment<WillWatchLaterFilmsViewModel>()
             viewModel.onRefreshSwiped()
         }
     }
-}
-
-enum class ViewPagerFragmentType {
-    WILL_WATCH,
-    WATCHED
 }

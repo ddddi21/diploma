@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.feature_film_details.FilmDetailsRouter
+import com.example.feature_film_details.domain.FilmDetailsInteractor
 import com.example.feature_film_details.presentation.FilmDetailsViewModel
 import com.technokratos.common.di.viewmodel.ViewModelKey
 import com.technokratos.common.di.viewmodel.ViewModelModule
@@ -23,7 +24,7 @@ class FilmDetailsModule {
     @Provides
     @IntoMap
     @ViewModelKey(FilmDetailsViewModel::class)
-    fun provideFilmDetailsViewModel(router: FilmDetailsRouter): ViewModel {
-        return FilmDetailsViewModel(router)
+    fun provideFilmDetailsViewModel(router: FilmDetailsRouter, interactor: FilmDetailsInteractor): ViewModel {
+        return FilmDetailsViewModel(router, interactor)
     }
 }

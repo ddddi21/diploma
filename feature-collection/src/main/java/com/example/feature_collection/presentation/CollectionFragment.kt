@@ -13,8 +13,8 @@ import com.example.feature_collection.R
 import com.example.feature_collection.databinding.CollectionFragmentBinding
 import com.example.feature_collection.di.CollectionFeatureComponent
 import com.example.feature_collection.di.CollectionFeatureKey
-import com.example.feature_collection.presentation.nestedFragments.ViewPagerFragmentType
 import com.example.feature_collection.presentation.nestedFragments.WillWatchLaterFilmsFragment
+import com.example.feature_collection_api.domain.model.ViewPagerFragmentType
 import com.google.android.material.tabs.TabLayoutMediator
 import com.technokratos.common.base.BaseFragment
 import com.technokratos.common.di.FeatureUtils

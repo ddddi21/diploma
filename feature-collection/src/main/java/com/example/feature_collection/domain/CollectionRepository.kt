@@ -1,6 +1,6 @@
 package com.example.feature_collection.domain
 
-import com.example.feature_collection.data.network.model.Film
+import com.example.feature_collection_api.domain.model.Film
 
 interface CollectionRepository {
 

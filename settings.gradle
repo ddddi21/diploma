@@ -1,3 +1,4 @@
+include ':feature-collection-api'
 include ':feature-film-details'
 include ':feature-collection'
 include ':navigation'

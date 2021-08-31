@@ -28,11 +28,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        freeCompilerArgs = ["-Xallow-result-return-type"]
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
+    implementation project(':feature-collection-api')
 
     implementation kotlinDep
 
@@ -53,4 +58,12 @@ dependencies {
     implementation swipeRefreshLayoutDep
     implementation glideDep
     implementation designDep
+
+    implementation retrofitDep
+    implementation gsonConvertedDep
+    implementation loggingInterceptorDep
+    implementation coroutinesDep
+    implementation viewModelDep
+    implementation lifecycleKtxDep
+    implementation ktxCoreDep
 }

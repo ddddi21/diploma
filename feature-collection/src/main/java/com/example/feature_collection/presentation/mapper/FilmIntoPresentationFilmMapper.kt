@@ -1,6 +1,6 @@
-package com.example.feature_collection.presentation.mappers
+package com.example.feature_collection.presentation.mapper
 
-import com.example.feature_collection.data.network.model.Film
+import com.example.feature_collection_api.domain.model.Film
 import com.example.feature_collection.model.FilmGridItem
 import com.example.feature_collection.model.FilmLinearItem
 import javax.inject.Inject
@@ -9,7 +9,7 @@ private const val DEFAULT_POSTER_URL = "https://upload.wikimedia.org/wikipedia/r
 
 class FilmIntoPresentationFilmMapper @Inject constructor() {
 
-    fun mapIntoGridFilm(model: Film, onItemClicked: ((Int) -> Unit)? = null): FilmGridItem {
+    fun mapIntoGridFilm(model: Film, onItemClicked: (() -> Unit)? = null): FilmGridItem {
         return FilmGridItem(
             id = model.id,
             title = model.title,
@@ -21,7 +21,7 @@ class FilmIntoPresentationFilmMapper @Inject constructor() {
         )
     }
 
-    fun mapIntoLinearFilm(model: Film, onItemClicked: ((Int) -> Unit)? = null): FilmLinearItem {
+    fun mapIntoLinearFilm(model: Film, onItemClicked: (() -> Unit)? = null): FilmLinearItem {
         return FilmLinearItem(
             id = model.id,
             title = model.title,

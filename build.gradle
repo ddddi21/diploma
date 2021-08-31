@@ -54,6 +54,10 @@ buildscript {
 
         lifecycleVersion = '2.2.0'
 
+        ktxCoreVersion = '1.6.0'
+
+        ktxCoreDep = "androidx.core:core-ktx:$ktxCoreVersion"
+
         swipeRefreshLayoutDep = "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
 
         kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"

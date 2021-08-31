@@ -2,7 +2,7 @@ package com.example.feature_collection.data.repository
 
 import com.example.feature_collection.data.network.CollectionApi
 import com.example.feature_collection.data.network.mapper.FilmEntityIntoModelMapper
-import com.example.feature_collection.data.network.model.Film
+import com.example.feature_collection_api.domain.model.Film
 import com.example.feature_collection.domain.CollectionRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

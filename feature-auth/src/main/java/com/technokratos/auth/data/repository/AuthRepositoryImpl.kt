@@ -50,8 +50,4 @@ class AuthRepositoryImpl @Inject constructor(
             }
         }
     }
-
-    override fun getUserAuthToken() = userSharedPreferences.userAuthToken
-
-    override fun getUserRefreshToken() = userSharedPreferences.userRefreshToken
 }

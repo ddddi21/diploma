@@ -1,6 +1,8 @@
 package com.example.navigation.router
 
 import android.os.Bundle
+import com.example.feature_collection_api.domain.model.Film
+import com.example.feature_film_details.presentation.FilmDetailsFragment
 import com.technokratos.splash.R
 import com.example.navigation.navigation.NavControllerProvider
 import javax.inject.Inject
@@ -29,8 +31,8 @@ class RouterImpl @Inject constructor(
         navControllerProvider.get()?.popBackStack()
     }
 
-    override fun navigateToFilmDetailsScreen() {
-        navigateTo(R.id.filmDetailsFragment)
+    override fun navigateToFilmDetailsScreen(film: Film) {
+        navigateTo(R.id.filmDetailsFragment, FilmDetailsFragment.buildArgs(film))
     }
 
     private fun navigateTo(actionId: Int, bundle: Bundle? = null) {

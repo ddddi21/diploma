@@ -1,7 +1,7 @@
 package com.example.feature_collection.data.network.mapper
 
 import com.example.feature_collection.data.network.response.FilmDto
-import com.example.feature_collection.data.network.model.Film
+import com.example.feature_collection_api.domain.model.Film
 import com.technokratos.common.utils.BaseSingleModelMapper
 import javax.inject.Inject
 

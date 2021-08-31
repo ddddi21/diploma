@@ -10,6 +10,8 @@ import com.example.feature_collection.databinding.FilmItemViewGridBinding
 import com.technokratos.common.base.adapter.Fillable
 import com.technokratos.common.base.adapter.ViewType
 
+private const val DEFAULT_POSTER_URL = "https://upload.wikimedia.org/wikipedia/ru/thumb/6/6e/%D0%9E%D1%81%D1%82%D1%80%D0%9A%D0%BE%D0%B7.jpg/274px-%D0%9E%D1%81%D1%82%D1%80%D0%9A%D0%BE%D0%B7.jpg"
+
 class FilmGridItemView @JvmOverloads constructor(
     context: Context,
     attributes: AttributeSet? = null,
@@ -31,7 +33,7 @@ class FilmGridItemView @JvmOverloads constructor(
             .into(posterImageView)
         rateTextView.text = model.rating.toString()
         setOnClickListener {
-            model.onItemClicked?.invoke(model.id)
+            model.onItemClicked?.invoke()
         }
     }
 }
@@ -43,5 +45,5 @@ data class FilmGridItem(
     val posterUrl: String?,
     val description: String,
     val genres: List<String>,
-    val onItemClicked: ((Int) -> Unit) ? = null
+    val onItemClicked: (() -> Unit)? = null
 ) : ViewType(R.layout.film_item_view_grid)
