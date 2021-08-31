@@ -33,7 +33,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
-    implementation project(':feature-auth')
     implementation project(':feature-collection')
 
     implementation kotlinDep
