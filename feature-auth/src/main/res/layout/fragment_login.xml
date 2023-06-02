@@ -13,7 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/watch_later_logo_full" />
+        app:srcCompat="@drawable/ic_heart" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailInputLayout"
@@ -68,18 +68,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
-        style="@style/Auth.EnterButton"
-        android:layout_width="@dimen/login_enter_button_width"
-        android:layout_height="@dimen/login_enter_button_height"
-        android:layout_marginTop="@dimen/login_enter_button_margin_top"
-        android:text="@string/enter_button"
-        android:textColor="@color/auth_enter_button_text_color"
-        android:textSize="@dimen/text_size_16sp"
+        style="@style/Application.Design3.ButtonSmall"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/application___dimen__x13"
+        android:layout_marginHorizontal="@dimen/application___dimen__x4"
+        android:layout_marginTop="@dimen/application___dimen__x7"
+        android:enabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
+        android:text="@string/enter_button" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"

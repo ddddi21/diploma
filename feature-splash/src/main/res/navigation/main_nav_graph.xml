@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.technokratos.splash.presentation.SplashFragment"
+        android:name="com.medicalSystem.splash.presentation.SplashFragment"
         android:label="splash_fragment"
         tools:layout="@layout/splash_fragment">
 
@@ -19,27 +19,58 @@
     </fragment>
 
     <fragment
-        android:id="@+id/collectionFragment"
-        android:name="com.example.feature_collection.presentation.CollectionFragment"
+        android:id="@+id/patientListsFragment"
+        android:name="com.example.feature_main.presentation.nestedFragments.PatientsListsFragment"
         android:label="fragment_collection"
         tools:layout="@layout/collection_fragment" />
 
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.technokratos.splash.presentation.AddFragment"
+        android:name="com.medicalSystem.splash.presentation.AddFragment"
         android:label="fragment_add"
         tools:layout="@layout/add_fragment" />
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.technokratos.splash.presentation.ProfileFragment"
+        android:name="com.example.feature_main.presentation.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/profile_fragment" />
 
     <fragment
-        android:id="@+id/filmDetailsFragment"
-        android:name="com.example.feature_film_details.presentation.FilmDetailsFragment"
+        android:id="@+id/mainDiagnosCheckListFragment"
+        android:name="com.example.feature_main.presentation.diagnos.MainDiagnosCheckListFragment"
+        android:label="fragment_main_diagnos"
+        tools:layout="@layout/profile_fragment" />
+
+
+    <fragment
+        android:id="@+id/diabetCheckFragment"
+        android:name="com.example.feature_main.presentation.diagnos.DiabetCheckFragment"
+        android:label="fragment_main_diagnos"
+        tools:layout="@layout/profile_fragment" />
+
+
+    <fragment
+        android:id="@+id/kidneyCheckFragment"
+        android:name="com.example.feature_main.presentation.diagnos.KidneyCheckFragment"
+        android:label="fragment_main_diagnos"
+        tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/illnessIteractionCheckFragment"
+        android:name="com.example.feature_main.presentation.illnessIteraction.IllnessIteractionFragment"
+        android:label="fragment_main_diagnos"
+        tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/patientDetailsFragment"
+        android:name="com.example.feature_patient_details.presentation.PatientDetailsFragment"
         android:label="fragment_film_details"
-        tools:layout="@layout/film_details_fragment" />
+        tools:layout="@layout/patient_detail_fragment" />
+
+    <fragment
+        android:id="@+id/addIteractionFragment"
+        android:name="com.example.feature_main.presentation.profile.AddInteractionFragment"
+        android:label="fragment_film_details"
+        tools:layout="@layout/patient_detail_fragment" />
 
 </navigation>

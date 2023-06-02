@@ -15,10 +15,10 @@
     <dimen name="eye_logo_left_place_margin_start">164dp</dimen>
     <dimen name="eye_logo_left_place_margin_end">176dp</dimen>
     
-    <dimen name="app_logo_width">96dp</dimen>
-    <dimen name="app_logo_height">44dp</dimen>
+    <dimen name="app_logo_width">100dp</dimen>
+    <dimen name="app_logo_height">100dp</dimen>
 
-    <dimen name="app_logo_margin_top">160dp</dimen>
+    <dimen name="app_logo_margin_top">60dp</dimen>
 
     <dimen name="email_input_layout_margin_top">112dp</dimen>
     <dimen name="email_input_layout_margin_bottom">440dp</dimen>

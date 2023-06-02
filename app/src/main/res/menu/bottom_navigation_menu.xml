@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/collectionFragment"
-        android:icon="@drawable/ic_collection_tab"
-        android:title="@string/bottom_navigation_collection_tab" />
+        android:id="@+id/patientListsFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Пациенты" />
 
     <item
-        android:id="@+id/addFragment"
-        android:icon="@drawable/ic_add_tab"
-        android:title="@string/bottom_navigation_add_tab" />
+        android:id="@+id/mainDiagnosCheckListFragment"
+        android:icon="@drawable/ic_sick"
+        android:title="Диагностика" />
+
+    <item
+        android:id="@+id/illnessIteractionCheckFragment"
+        android:icon="@drawable/ic_genetic"
+        android:title="Заболевания" />
 
     <item
         android:id="@+id/profileFragment"
-        android:icon="@drawable/ic_profile_tab"
-        android:title="@string/bottom_navigation_profile_tab" />
+        android:icon="@drawable/ic_profile_white"
+        android:title="Профиль" />
 </menu>

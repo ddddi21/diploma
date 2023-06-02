@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/watch_later_logo_full" />
+        app:srcCompat="@drawable/ic_heart" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailInputLayout"
@@ -95,16 +95,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordRepeatInputLayout" />
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/registrationButton"
-        style="@style/Auth.EnterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/to_registration_text_view"
+        style="@style/Application.Design3.ButtonSmall"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/application___dimen__x13"
+        android:layout_marginHorizontal="@dimen/application___dimen__x4"
+        android:layout_marginTop="@dimen/application___dimen__x7"
+        android:enabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordRepeatInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordRepeatInputLayout"
+        android:text="@string/to_registration_text_view" />
 
     <ProgressBar
         android:id="@+id/progressBar"

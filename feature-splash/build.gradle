@@ -33,7 +33,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
-    implementation project(':feature-collection')
+    implementation project(':feature-main')
 
     implementation kotlinDep
 
@@ -56,4 +56,6 @@ dependencies {
     implementation fragmentDep
 
     implementation supportDep
+
+    implementation materialDep
 }

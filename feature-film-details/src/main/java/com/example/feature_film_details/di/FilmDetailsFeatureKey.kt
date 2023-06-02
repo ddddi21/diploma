@@ -1,3 +1,0 @@
-package com.example.feature_film_details.di
-
-interface FilmDetailsFeatureKey

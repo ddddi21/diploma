@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.technokratos.app">
+    package="com.medicalSystem.app">
 
     <application
-        android:name="com.technokratos.app.App"
+        android:name="com.medicalSystem.app.App"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +11,7 @@
         android:supportsRtl="true">
 
         <activity
-            android:name="com.technokratos.app.presentation.MainActivity"
+            android:name="com.medicalSystem.app.presentation.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
 

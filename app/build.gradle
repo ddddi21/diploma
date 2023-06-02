@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.compileSdkVersion
     defaultConfig {
-        applicationId "com.technokratos.template"
+        applicationId "com.medical.system"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode rootProject.versionCode
@@ -32,8 +32,8 @@ dependencies {
     implementation project(':feature-splash')
     implementation project(':feature-auth')
     implementation project(':navigation')
-    implementation project(':feature-collection')
-    implementation project(':feature-film-details')
+    implementation project(':feature-main')
+    implementation project(':feature-patient-details')
 
     implementation kotlinDep
 

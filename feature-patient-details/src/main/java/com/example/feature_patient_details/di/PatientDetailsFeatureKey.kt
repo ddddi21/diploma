@@ -1,0 +1,3 @@
+package com.example.feature_patient_details.di
+
+interface PatientDetailsFeatureKey

@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <style name="Application.Theme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/application___design__accent_primary__default</item>
+        <item name="colorPrimaryDark">@color/lightGrey</item>
+        <item name="colorAccent">#03DAC5</item>
+
+        <item name="colorControlHighlight">@color/application___design3__achromatic_dark_gray</item>
+
+<!--        <item name="searchViewStyle">@style/Application.Search</item>-->
+
+        <item name="android:textColorSecondary">@color/black</item>
+
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <item name="android:statusBarColor">@color/application___design3__translucent</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <item name="materialAlertDialogTheme">@style/Application.MaterialAlertDialog.Rounded</item>
+
+        <item name="android:colorEdgeEffect">#80FFFFFF</item>
+
+<!--        <item name="android:actionOverflowButtonStyle">-->
+<!--            @style/Application.ActionButtonOverflow-->
+<!--        </item>-->
+    </style>
+
+    <style name="Application.Theme.Splash">
+        <item name="android:windowBackground">@color/application___design3__text__black</item>
+    </style>
+
+    <style name="Application.Switch" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="colorAccent">@color/application___design3__main_purple</item>
+    </style>
+
+    <style name="Application.Header.TextAppearance" parent=""/>
+
+    <style name="Application.Header" parent="">
+        <item name="android:textAppearance">@style/Application.Header.TextAppearance</item>
+    </style>
+
+    <style name="Application.Counter" parent="">
+        <item name="android:includeFontPadding">false</item>
+
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">none</item>
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+<!--    <style name="Application.Counter.SFScalable">-->
+<!--        <item name="android:textAppearance">-->
+<!--            @style/Application.Design.RobotoBody15Regular.TextAppearance-->
+<!--        </item>-->
+
+<!--        <item name="android:background">@drawable/application___counter__background__scalable</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.Counter.Scalable">-->
+<!--        <item name="android:textAppearance">-->
+<!--            @style/Application.Design3.Caption.TextAppearance-->
+<!--        </item>-->
+
+<!--        <item name="android:background">@drawable/application___counter__background__scalable</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.Counter.NotScalable">-->
+<!--        <item name="android:textAppearance">-->
+<!--            @style/Application.Design3.Caption.TextAppearance-->
+<!--        </item>-->
+
+<!--        <item name="android:background">-->
+<!--            @drawable/application___counter__background__not_scalable-->
+<!--        </item>-->
+<!--    </style>-->
+
+    <style name="Application.Toolbar.Light.ThemeOverlay" parent="">
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="Application.Toolbar.Black.ThemeOverlay" parent="">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="Application.AppBarLayout.Collapsing" parent="Widget.MaterialComponents.AppBarLayout.Primary">
+        <item name="android:background">@null</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Application.CollapsingToolbarLayout" parent="Widget.Design.CollapsingToolbar">
+        <item name="collapsedTitleTextAppearance">@style/Application.Design.Body17SemiBold.SFTextAppearance
+        </item>
+        <item name="expandedTitleTextAppearance">
+            @style/Application.Design.ExpandedToolbarTitle.TextAppearance
+        </item>
+        <item name="contentScrim">?colorSurface</item>
+        <item name="statusBarScrim">@null</item>
+        <item name="android:minHeight">?actionBarSize</item>
+    </style>
+
+    <style name="Application.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">?colorSurface</item>
+        <item name="android:minHeight">?actionBarSize</item>
+        <item name="titleTextAppearance">@style/Application.Design.Body17SemiBold.SFTextAppearance</item>
+    </style>
+
+    <style name="Application.Toolbar.Collapsing" parent="Application.Toolbar">
+        <item name="android:background">@null</item>
+        <item name="titleMargin">0dp</item>
+        <item name="layout_collapseMode">pin</item>
+    </style>
+
+<!--    <style name="Application.Chips" parent="Widget.MaterialComponents.Chip.Choice">-->
+<!--        <item name="chipCornerRadius">@dimen/application___dimen__x3</item>-->
+<!--        <item name="chipBackgroundColor">@color/application___gray_chip__background__selector</item>-->
+<!--        <item name="android:textColor">@color/application___white__to__shaft_black__selector</item>-->
+<!--        <item name="android:textAppearance">@style/Application.Design.Chips.TextAppearance</item>-->
+<!--        <item name="rippleColor">@color/transparent</item>-->
+<!--    </style>-->
+
+    <!--region For roboto-->
+    <style name="Application.Design.Chips.TextAppearance" parent="">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textSize">13sp</item>
+        <item name="lineHeight">@dimen/application___dimen__x4</item>
+    </style>
+
+    <style name="Application.Design.RobotoHeadline30Bold.TextAppearance" parent="">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/sf_pro_text_bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:letterSpacing">0.00</item>
+        <item name="lineHeight">@dimen/application___dimen__x9</item>
+    </style>
+
+    <style name="Application.Design.RobotoHeadline28Bold.TextAppearance" parent="">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/sf_pro_text_bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Application.Design.RobotoHeadline28Bold.TextAppearance.LineHeight28">
+        <item name="lineHeight">28dp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Application.Design.RobotoHeadline18Bold.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Application.Design.ExpandedToolbarTitle.TextAppearance" parent="">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/sf_pro_text_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0.00</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="lineHeight">@dimen/application___dimen__x7</item>
+    </style>
+
+    <style name="Application.Design.RobotoHeadline20Medium.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Application.Design.RobotoHeadline32Medium.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Application.Design.RobotoHeadline20Bold.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design.RobotoBody16Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design.RobotoBody16Regular.TextAppearance.LineHeight20">
+        <item name="lineHeight">20dp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="Application.Design.RobotoBody17Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">22dp</item>
+        <item name="android:letterSpacing">-0.04</item>
+    </style>
+
+    <style name="Application.Design.RobotoBody15Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">15sp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design.RobotoBody14Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="lineHeight">18dp</item>
+    </style>
+
+    <style name="Application.Design.RobotoBody10Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Application.Design.RobotoBody16Regular.NotScalable.TextAppearance" parent="Application.Design.Body16Regular.TextAppearance">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+    </style>
+
+    <style name="Application.Design.RobotoBody15Medium.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design.RobotoBody16Medium.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="Application.Design.BodyMedium.TextAppearance.Roboto_Gray" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textColor">@color/application___design3__text__gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Application.Design.Body16Medium.NotScalable.RobotoTextAppearance" parent="Application.Design.Body16Medium.TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+    </style>
+
+    <style name="Application.Design.Body16Bold.RobotoTextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Application.Design.Caption14Medium.RobotoTextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design.Caption14Medium.NotScalable.RobotoTextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="Application.Design.Caption14Regular.RobotoTextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Application.Design.Caption14Regular.NotScalable.RobotoTextAppearance" parent="Application.Design.Caption14Regular.TextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+    </style>
+
+    <style name="Application.Design.Caption12Regular.RobotoTextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Application.Design.Body15SemiBold.SFTextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="lineHeight">@dimen/application___dimen__x5</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design.Body17SemiBold.SFTextAppearance" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="lineHeight">22dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <!--endregion-->
+
+    <!--region For `Design` styles see https://www.figma.com/file/xSNjmam4RWiqK99XHFu4CG/iOS-%2F-Android.-%D0%A2%D0%B0%D1%82%D0%B0%D1%80%D1%81%D1%82%D0%B0%D0%BD.%D0%91%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0?node-id=1%3A3749-->
+    <style name="Application.Design.Headline28Bold.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Application.Design.Headline18Bold.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Application.Design.Headline20Medium.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Application.Design.Headline32Medium.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_medium</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Application.Design.Headline20Bold.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="Application.Design.Body16Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Application.Design.Body14Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Application.Design.Body10Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Application.Design.Body16Regular.NotScalable.TextAppearance" parent="Application.Design.Body16Regular.TextAppearance">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="Application.Design.Body16Medium.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="Application.Design.BodyMedium.TextAppearance.Gray" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textColor">@color/application___design3__text__gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Application.Design.Body16Medium.NotScalable.TextAppearance" parent="Application.Design.Body16Medium.TextAppearance">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="Application.Design.Body16Bold.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Application.Design.Caption14Medium.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_medium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Application.Design.Caption14Medium.NotScalable.TextAppearance" parent="">
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="Application.Design.Caption14Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Application.Design.Caption14Regular.NotScalable.TextAppearance" parent="Application.Design.Caption14Regular.TextAppearance">
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="Application.Design.Caption12Regular.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+    <!--endregion-->
+
+    <color name="application___design__accent_primary__default">
+        @color/application___design3__main_orange
+    </color>
+    <color name="application___design__accent_secondary__default">
+        @color/application___design3__main_purple
+    </color>
+
+    <color name="application___design__dark_grey">#8C8891</color>
+    <color name="application___design__grey">#CDCAD2</color>
+
+    <color name="application___design__achromatic_black">#040910</color>
+    <color name="application___design__achromatic_grey_light">#F1F0F2</color>
+    <color name="application___design__achromatic_grey">#8A888F</color>
+    <color name="application___design__achromatic_mid_grey">#C3C0C8</color>
+
+    <!--https://www.figma.com/file/m3GUrnX2IFrubzeQgocgIm/Дизайн?node-id=7488%3A222138-->
+    <!--region design 3.0 colors-->
+    <color name="application___design3__black_60">#99000000</color>
+    <color name="application___design3__background__deep_blue">#414066</color>
+    <color name="application___design3__background__similar_blue">#4F69F1</color>
+    <color name="application___design3__background__blue">#2D3998</color>
+    <color name="application___design3__background__deep_green">#426A5A</color>
+    <color name="application___design3__background__peach_tan">#E9A16D</color>
+    <color name="application___design3__background__beige">#EFEDEA</color>
+    <color name="application___design3__text__black">#050609</color>
+    <color name="application___design3__text__translucent">#80050609</color>
+    <color name="application___design3__text__gray">#8C8891</color>
+    <color name="application___design3__text__light_gray">#C4C2C6</color>
+    <color name="application___design3__text__black__shark">#2C2D2E</color>
+    <color name="application___design3__text__black__shark__opacity_40">#662C2D2E</color>
+    <color name="application___design3__text__black__gunmetal">#2B2D33</color>
+    <color name="application___design3__text__red__flamingo">#EF3E3E</color>
+    <color name="application___design3__text__royal_blue">#7066E7</color>
+    <color name="application___design3__text__royal_blue__opacity_40">#667066E7</color>
+    <color name="application___design3__text__ultramarine_blue">#3C74EE</color>
+    <color name="application___design3__text__ultramarine_blue__opacity_10">#1A3C74EE</color>
+    <color name="application___design3__text__cornflower_blue">#4E7CF6</color>
+    <color name="application___design3__text__cornflower_blue_opacity_10">#1A4E7CF6</color>
+    <color name="application___design3__text__alice_blue">#EFF7FF</color>
+    <color name="application___design3__text__dodger_blue">#2983FF</color>
+    <color name="application___design3__text__curious_blue__opacity_40">#662EA0E0</color>
+    <color name="application___design3__text__denim_blue">#175CE0</color>
+    <color name="application___design3__text__de_france_blue">#2E9CDB</color>
+    <color name="application___design3__text__curious_blue">#226DFF</color>
+    <color name="application___design3__text__curious_blue_opacity_40">#66226DFF</color>
+    <color name="application___design3__text__dark_electric_blue">#546880</color>
+    <color name="application___design3__text__lavender_indigo_purple">#8655EF</color>
+    <color name="application___design3__text__lavender_indigo_purple__opacity_10">#1A8655EF</color>
+    <color name="application___design3__text__pale_gray">#6D7885</color>
+    <color name="application___design3__text__regent_gray">#818C99</color>
+    <color name="application___design3__achromatic_light_gray">#F5F4F2</color>
+    <color name="application___design3__achromatic_gray">#E0E0E0</color>
+    <color name="application___design3__achromatic_dark_gray">#BABABA</color>
+    <color name="application___design3__achromatic_black">#040910</color>
+    <color name="application___design3__mine_shaft_black">#2E2D2D</color>
+    <color name="application___design3__mirage_black">#18212B</color>
+    <color name="application___design3__achromatic_silver">#BDBDBD</color>
+    <color name="application___design3__main_yellow">#FFC226</color>
+    <color name="application___design3__main_green">#1EC876</color>
+    <color name="application___design3__ottoman_green">#EDFAED</color>
+    <color name="application___design3__main_purple">#6874E8</color>
+    <color name="application___design3__main_orange">#FC5130</color>
+    <color name="orange">#E58007</color>
+    <color name="orange_2">#F9951E</color>
+    <color name="application___design3__cinnabar_red">#EC4040</color>
+    <color name="application___design3__cinnabar_red__opacity_10">#1AEC4040</color>
+    <color name="application___design3__electric_red">#F20000</color>
+    <color name="application___design3__burnt_sienna_orange">#E96D39</color>
+    <color name="application___design3__burnt_sienna_orange__opacity_10">#1AE96D39</color>
+    <color name="application___design3__stories__neighbors">#FFA88F</color>
+    <color name="application___design3__stories__business">#78E3FD</color>
+    <color name="application___desing3__idea__onboarding">#8499B1</color>
+    <color name="application___design3__translucent">#66000000</color>
+    <color name="application___design3__action_bar">#F2EFEDEA</color>
+    <color name="application___design3__translucent_light">#1A000000</color>
+    <color name="application___design3__translucent_black">#8A000000</color>
+    <color name="application___design3__jungle_green">#27AE60</color>
+    <color name="application___design3__black__3">#08000000</color>
+    <color name="application___design3__pickled_blue_wood__opacity_8">#142B3949</color>
+    <color name="application___design3__mystic_gray">#ECF0F3</color>
+    <color name="application___design3__gray_chateau">#99A2AD</color>
+    <color name="application___design3__gray_chateau__opacity_40">#6699A2AD</color>
+    <color name="application___design3__pale_blue">#F3F5FB</color>
+    <color name="application___design3__heather_gray">#B8C1CC</color>
+    <color name="application___design3__athens_gray">#E8EAF1</color>
+    <color name="application___design3__cultured_gray">#F5F6F8</color>
+    <color name="application___design3__porcelain_gray">#EDF2F2</color>
+    <color name="application___design3__bright_gray">#EEECEB</color>
+    <color name="application___design3__bright_gray__status">#EBECF3</color>
+    <color name="application___design3__catskill_white">#EFF2F8</color>
+    <color name="application___design3__la_palma_green">#12B212</color>
+    <color name="application___design3__shamrock_green">#36CB84</color>
+    <color name="application___design3__shamrock_green__opacity_10">#1A36CB84</color>
+    <color name="application___design3__mountain_meadow_green">#17B792</color>
+    <color name="application___design3__mountain_meadow_green__opacity_10">#1A17B792</color>
+    <color name="application___design3__peppermint_green">#D9F3D9</color>
+    <color name="application___design3__gainsboro_light_gray">#D8DCE1</color>
+    <!--endregion design 3.0 colors-->
+
+    <!--region design 3.0 text style-->
+    <style name="Application.Design3.H1.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:textSize">36sp</item>
+        <item name="lineHeight">44dp</item>
+        <item name="android:letterSpacing">-0.04</item>
+    </style>
+
+    <style name="Application.Design3.H2.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">28dp</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="Application.Design3.H2.TextAppearance.Black">
+        <item name="android:textColor">@color/application___design3__text__black</item>
+    </style>
+
+    <style name="Application.Design3.H2.TextAppearance.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Application.Design3.H3.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/rubik_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
+
+    <style name="Application.Design3.H3.TextAppearance.Black">
+        <item name="android:textColor">@color/application___design3__text__black</item>
+    </style>
+
+    <style name="Application.Design3.H3.TextAppearance.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Application.Design3.H4.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/rubik_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Application.Design3.H4.TextAppearance.ButtonSmall" parent="">
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textSize">17sp</item>
+        <item name="lineHeight">24dp</item>
+        <item name="android:letterSpacing">-0.04</item>
+    </style>
+
+    <style name="Application.Design3.H4.TextAppearance.GolosMedium" parent="">
+        <item name="android:fontFamily">@font/golos_text_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Application.Design3.H1.TextAppearance.Black">
+        <item name="android:textColor">@color/application___design3__text__black</item>
+    </style>
+
+    <style name="Application.Design3.H4.TextAppearance.Black">
+        <item name="android:textColor">@color/application___design3__text__black</item>
+    </style>
+
+    <style name="Application.Design3.H4.TextAppearance.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Application.Design3.Body.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24dp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Application.Design3.Body.TextAppearance.Black">
+        <item name="android:textColor">@color/application___design3__text__black</item>
+    </style>
+
+    <style name="Application.Design3.Body.TextAppearance.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Application.Design3.Body.TextAppearance.Gray">
+        <item name="android:textColor">@color/application___design3__text__gray</item>
+    </style>
+
+    <style name="Application.Design3.H5.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20dp</item>
+    </style>
+
+    <style name="Application.Design3.H5.TextAppearance.Gray">
+        <item name="android:textColor">@color/application___design3__text__gray</item>
+    </style>
+
+    <style name="Application.Design3.H5.TextAppearance.Black">
+        <item name="android:textColor">@color/application___design3__text__black</item>
+    </style>
+
+    <style name="Application.Design3.H5.TextAppearance.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Application.Design3.H5.TextAppearance.Orange">
+        <item name="android:textColor">@color/application___design3__main_orange</item>
+    </style>
+
+    <style name="Application.Design3.H5.TextAppearance.Regular" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20dp</item>
+    </style>
+
+    <style name="Application.Design3.H5.TextAppearance.Regular.Gray" parent="">
+        <item name="android:textColor">@color/application___design3__text__gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20dp</item>
+    </style>
+
+    <style name="Application.Design3.Caption.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20dp</item>
+    </style>
+
+    <style name="Application.Design3.Caption.TextAppearance.Gray">
+        <item name="android:textColor">@color/application___design3__text__gray</item>
+    </style>
+
+    <style name="Application.Design3.Caption.TextAppearance.Black">
+        <item name="android:textColor">@color/application___design3__text__black</item>
+    </style>
+
+    <style name="Application.Design3.Caption.TextAppearance.Translucent">
+        <item name="android:textColor">@color/application___design3__text__translucent</item>
+    </style>
+
+    <style name="Application.Design3.Caption.TextAppearance.Blue">
+        <item name="android:textColor">@color/application___design3__main_purple</item>
+    </style>
+
+    <style name="Application.Design3.Description.TextAppearance" parent="">
+        <item name="android:fontFamily">@font/golos_text_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">12dp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Application.Design3.Description.TextAppearance.Gray">
+        <item name="android:textColor">@color/application___design3__text__gray</item>
+    </style>
+    <!--endregion design 3.0 colors-->
+
+    <!--region design 3.0 buttons style-->
+    <style name="Application.Design3.Button.IOS" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:backgroundTint">#4DFFFFFF</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/application___dimen__x3</item>
+        <item name="iconGravity">textStart</item>
+
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+
+        <item name="android:textAppearance">
+            @style/Application.Design3.H4.TextAppearance
+        </item>
+
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design3.Button.Dialog.IOS" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:backgroundTint">#4DFFFFFF</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/application___dimen__x3</item>
+        <item name="iconGravity">textStart</item>
+
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+
+        <item name="android:textAppearance">
+            @style/Application.Design3.H4.TextAppearance.GolosMedium
+        </item>
+
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design3.Button.IOS.Secondary">
+        <item name="android:backgroundTint">
+            @color/application___secondary_color__selector
+        </item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Application.Design3.Button.IOS.PaleBlue">
+        <item name="android:backgroundTint">@color/application___design3__catskill_white</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAppearance">@style/Application.Design.RobotoBody15Medium.TextAppearance</item>
+        <item name="android:textColor">@color/application___design3__text__curious_blue</item>
+    </style>
+
+    <style name="Application.Design3.Button.IOS.Black">
+        <item name="android:backgroundTint">
+            @color/application___black_button__background__selector
+        </item>
+        <item name="android:textColor">@color/application___black_button__text__selector</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+<!--    <style name="Application.Design3.Button.IOS.Black.TextWhite">-->
+<!--        <item name="android:backgroundTint">-->
+<!--            @color/application___black_button__background__selector-->
+<!--        </item>-->
+<!--        <item name="android:textColor">@color/application___black_button__text__selector__white_disable</item>-->
+<!--        <item name="iconTint">@color/white</item>-->
+<!--    </style>-->
+
+    <style name="Application.Design3.Button.Dialog.IOS.GolosMedium">
+        <item name="android:backgroundTint">
+            @color/application___black_button__background__selector
+        </item>
+        <item name="android:textColor">@color/application___black_button__text__selector</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+    <style name="Application.Design3.Button.IOS.Green">
+        <item name="android:backgroundTint">
+            @color/application___design3__jungle_green
+        </item>
+        <item name="android:textColor">@color/application___black_button__text__selector</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+<!--    <style name="Application.Design3.Button.IOS.White">-->
+<!--        <item name="android:backgroundTint">-->
+<!--            @color/application___white_button__background__selector-->
+<!--        </item>-->
+<!--        <item name="android:textColor">@color/application___white_button__text__selector</item>-->
+<!--        <item name="iconTint">@color/black</item>-->
+<!--    </style>-->
+
+    <style name="Application.Design3.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="rippleColor">#80FFFFFF</item>
+        <item name="android:textAppearance">@style/Application.Design3.H4.TextAppearance
+        </item>
+        <item name="android:textColor">@color/application___design3__text__black</item>
+    </style>
+
+    <style name="Application.Design3.Button.Text.Menu">
+        <item name="android:textAlignment">textStart</item>
+        <item name="iconPadding">@dimen/application___dimen__x8</item>
+        <item name="iconTint">@color/black</item>
+        <item name="iconSize">24dp</item>
+        <item name="android:textAppearance">@style/Application.Design3.Body.TextAppearance
+        </item>
+    </style>
+
+<!--    <style name="Application.Design3.Button.Edit" parent="">-->
+<!--        <item name="android:src">@drawable/application___edit</item>-->
+<!--        <item name="android:foreground">@drawable/application___ripple</item>-->
+<!--        <item name="android:background">@drawable/application___image_edit</item>-->
+<!--        <item name="android:textAppearance">@style/Application.Design3.H4.TextAppearance-->
+<!--        </item>-->
+<!--        <item name="android:textColor">@color/application___design3__text__black</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.Design3.Button.Go" parent="">-->
+<!--        <item name="android:src">@drawable/application___go</item>-->
+<!--        <item name="android:foreground">@drawable/application___ripple</item>-->
+<!--        <item name="android:background">@drawable/application___image_edit</item>-->
+<!--        <item name="android:textAppearance">@style/Application.Design3.H4.TextAppearance</item>-->
+<!--        <item name="android:textColor">@color/application___design3__text__black</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.Design3.Button.Close" parent="">-->
+<!--        <item name="android:src">@drawable/application___close</item>-->
+<!--        <item name="android:foreground">@drawable/application___ripple</item>-->
+<!--        <item name="android:background">@drawable/application___circle__background</item>-->
+<!--        <item name="android:layout_width">28dp</item>-->
+<!--        <item name="android:layout_height">28dp</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.Design3.Button.Remove" parent="">-->
+<!--        <item name="android:src">@drawable/application__remove</item>-->
+<!--        <item name="android:foreground">@drawable/application___ripple</item>-->
+<!--        <item name="android:background">@drawable/application___circle__background</item>-->
+<!--        <item name="android:layout_width">28dp</item>-->
+<!--        <item name="android:layout_height">28dp</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.Design3.Button.Save" parent="">-->
+<!--        <item name="android:src">@drawable/application___up</item>-->
+<!--        <item name="android:foreground">@drawable/application___ripple</item>-->
+<!--        <item name="android:background">@drawable/application___circle__background</item>-->
+<!--        <item name="android:backgroundTint">-->
+<!--            @color/application___save_button__background__selector-->
+<!--        </item>-->
+<!--        <item name="tint">@color/white</item>-->
+<!--        <item name="android:layout_width">32dp</item>-->
+<!--        <item name="android:layout_height">32dp</item>-->
+<!--    </style>-->
+
+    <style name="Application.Design3.IconButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+    </style>
+
+    <style name="Application.Design3.IconButton.Black">
+        <item name="android:backgroundTint">
+            @color/application___design3__achromatic_black
+        </item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+    <style name="Application.Design3.IconButton.Black.Oval">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="cornerRadius">100dp</item>
+    </style>
+
+    <style name="Application.Design3.IconButton.Black.Square">
+        <item name="cornerRadius">@dimen/application___dimen__x3</item>
+        <item name="android:paddingLeft">@dimen/application___dimen__x3</item>
+        <item name="iconSize">24dp</item>
+    </style>
+    <!--endregion design 3.0 buttons style-->
+    <!--region design 3.0 input style-->
+    <style name="Application.Design3.InputFilled.IOS" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="android:textColor">@color/application___design__achromatic_grey</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusTopStart">@dimen/application___dimen__x3</item>
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="android:textColorHint">@color/application___design3__text__light_gray</item>
+        <item name="hintTextColor">@color/application___design3__text__light_gray</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="errorTextAppearance">@style/Application.Design3.Caption.TextAppearance</item>
+        <item name="errorTextColor">@color/application___design__accent_primary__default</item>
+        <item name="android:textAppearance">@style/Application.Design3.Body.TextAppearance
+        </item>
+    </style>
+
+    <style name="Application.Design3.BaseInputFilled" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/common___input__background</item>
+        <item name="android:textColorHint">@color/application___design3__text__regent_gray</item>
+        <item name="android:textAppearance">@style/Application.Design.RobotoBody16Regular.TextAppearance
+        </item>
+    </style>
+
+    <style name="Application.Design3.BaseInputFilled.TextInput" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="boxCornerRadiusBottomEnd">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusTopStart">@dimen/application___dimen__x3</item>
+        <item name="boxBackgroundColor">@color/application___design3__mystic_gray</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="android:textColorHint">@color/application___design3__text__regent_gray</item>
+        <item name="hintTextColor">@color/application___design3__text__regent_gray</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="android:textAppearance">@style/Application.Design.RobotoBody16Regular.TextAppearance
+        </item>
+    </style>
+    
+    <style name="Application.Design3.BaseInputFilled.TextInput.ClearMode">
+        <item name="endIconDrawable">@drawable/ic_clear</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconTint">@color/application___design3__heather_gray</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.TextInputEditText.Outlined" parent="">
+        <item name="android:textColorHint">@color/endIconModeDarkGrey</item>
+        <item name="colorControlActivated">@color/application___design3__text__curious_blue</item>
+    </style>
+
+    <style name="Application.Design3.BaseInputFilled.TextEditText.Search" parent="">
+        <item name="android:drawableStart">@drawable/ic_search</item>
+        <item name="android:drawablePadding">@dimen/application___dimen__x2</item>
+        <item name="android:padding">@dimen/application___dimen__x2</item>
+    </style>
+
+    <style name="Application.Design3.BaseInputFilledRadius10.TextInput" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxBackgroundColor">@color/application___design3__mystic_gray</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="android:textColorHint">@color/application___design3__text__regent_gray</item>
+        <item name="hintTextColor">@color/application___design3__text__regent_gray</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="android:textAppearance">@style/Application.Design.RobotoBody16Regular.TextAppearance
+        </item>
+    </style>
+
+    <style name="Application.Design3.Input.IOS" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:textColor">@color/application___design3__text__black</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusTopStart">@dimen/application___dimen__x3</item>
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="android:textColorHint">@color/application___design3__text__light_gray</item>
+        <item name="hintTextColor">@color/application___design3__text__light_gray</item>
+        <item name="errorTextAppearance">@style/Application.Design3.Caption.TextAppearance</item>
+        <item name="errorTextColor">@color/application___design__accent_primary__default</item>
+        <item name="android:textAppearance">@style/Application.Design3.H2.TextAppearance
+        </item>
+    </style>
+
+<!--    <style name="Application.Design3.Input.IOS.Clickable" parent="Application.Design3.InputFilled.IOS">-->
+<!--        <item name="endIconDrawable">@drawable/application___down</item>-->
+<!--        <item name="endIconMode">custom</item>-->
+<!--        <item name="endIconTint">@color/black</item>-->
+<!--        <item name="android:foreground">@drawable/application___ripple</item>-->
+<!--    </style>-->
+    <!--endregion design 3.0 input style-->
+    <!--region design 3.0 other styles-->
+    <style name="Application.Divider" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:layout_marginTop">@dimen/application___dimen__x8</item>
+        <item name="android:layout_marginBottom">@dimen/application___dimen__x6</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">@dimen/application___dimen__x4</item>
+        <item name="android:background">@color/application___design3__achromatic_dark_gray</item>
+    </style>
+    <!--endregion design 3.0 other styles-->
+
+    <style name="Application.Design.AccentPrimary.ThemeOverlay" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorPrimary">@color/application___design__accent_primary__default</item>
+    </style>
+
+    <style name="Application.Design.AccentSecondary.ThemeOverlay" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorPrimary">@color/application___design__accent_secondary__default</item>
+    </style>
+
+    <style name="Application.Design3.ButtonSmall" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:backgroundTint">@color/application___button__secondary_color__selector</item>
+        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="iconGravity">textStart</item>
+
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+        <item name="android:minHeight">52dp</item>
+        <item name="android:minWidth">343dp</item>
+
+        <item name="android:textAppearance">
+            @style/Application.Design3.H4.TextAppearance.ButtonSmall
+        </item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design3.ButtonSmall.Secondary" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:backgroundTint">@color/application___button__secondary_color__selector</item>
+        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">12dp</item>
+
+        <item name="android:textAppearance">
+            @style/Application.Design.RobotoBody15Regular.TextAppearance
+        </item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design.Button.Rate" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/application___dimen__x2</item>
+        <item name="iconGravity">textStart</item>
+
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+        <item name="android:minHeight">40dp</item>
+
+        <item name="android:textAppearance">
+            @style/Application.Design.Caption14Medium.TextAppearance
+        </item>
+    </style>
+
+    <style name="Application.Design.Button.IOS" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:backgroundTint">#4DFFFFFF</item>
+        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/application___dimen__x3</item>
+        <item name="iconGravity">textStart</item>
+
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+
+        <item name="android:textAppearance">
+            @style/Application.Design.Body16Medium.TextAppearance
+        </item>
+    </style>
+
+    <style name="Application.Design.Button.IOS.Secondary">
+        <item name="android:backgroundTint">
+            @color/application___secondary_color__selector
+        </item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+<!--    <style name="Application.Design.Button.IOS.Alternative" parent="Widget.MaterialComponents.Button.UnelevatedButton">-->
+<!--        <item name="backgroundTint">@color/main__user_editor___button_change__background</item>-->
+<!--        <item name="android:textColor">@color/application___design__accent_secondary__default</item>-->
+<!--        <item name="android:insetTop">0dp</item>-->
+<!--        <item name="android:insetBottom">0dp</item>-->
+<!--        <item name="cornerRadius">44dp</item>-->
+
+<!--        <item name="android:textAppearance">-->
+<!--            @style/Application.Design.Caption14Medium.TextAppearance-->
+<!--        </item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.Design.Button.IOS.Dropdown">-->
+<!--        <item name="android:textAppearance">-->
+<!--            @style/Application.Design.Body16Regular.TextAppearance-->
+<!--        </item>-->
+<!--        <item name="android:textAlignment">textStart</item>-->
+<!--        <item name="android:textColor">@color/application___design__achromatic_black</item>-->
+<!--        <item name="android:ellipsize">end</item>-->
+
+<!--        <item name="icon">@drawable/application___down</item>-->
+<!--        <item name="iconGravity">end</item>-->
+<!--        <item name="iconTint">@color/application___design__achromatic_black</item>-->
+<!--    </style>-->
+
+    <style name="Application.Design.IconButton.IOS" parent="Application.Design.Button.IOS">
+        <item name="iconPadding">0dp</item>
+    </style>
+
+    <style name="Application.Design.IconButton.IOS.Secondary" parent="Application.Design.IconButton.IOS">
+        <item name="android:backgroundTint">
+            @color/application___design__accent_secondary__default
+        </item>
+    </style>
+
+    <style name="Application.Design3.Button.IOS.DottedLine" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="backgroundTint">@null</item>
+        <item name="android:paddingVertical" tools:ignore="NewApi">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="colorPrimary">@null</item>
+
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+        <item name="android:textAppearance">
+            @style/Application.Design.RobotoBody17Regular.TextAppearance
+        </item>
+        <item name="android:textColor">@color/black</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Application.Design.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAppearance">@style/Application.Design.Body16Medium.TextAppearance
+        </item>
+        <item name="rippleColor">@null</item>
+    </style>
+
+    <style name="Application.Design.Button.Text.Primary">
+        <item name="android:textColor">@color/application___design__accent_primary__default</item>
+    </style>
+
+    <style name="Application.Design.Button.Text.Secondary">
+        <item name="android:textColor">@color/application___design__accent_secondary__default</item>
+    </style>
+
+    <style name="Application.Input.IOS" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="android:textColor">@color/application___design__achromatic_grey</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/application___dimen__x3</item>
+        <item name="boxCornerRadiusTopStart">@dimen/application___dimen__x3</item>
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="android:textColorHint">@color/application___design__achromatic_grey</item>
+        <item name="hintTextColor">@color/application___design__achromatic_grey</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="android:textAppearance">@style/Application.Design.Body16Regular.TextAppearance
+        </item>
+    </style>
+
+    <style name="Application.EditText.Clickable" parent="">
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <attr name="application___bottom_sheet__background__color" format="color|reference"/>
+
+    <style name="Application.BottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="backgroundTint">@null</item>
+
+        <item name="android:background">@drawable/application___bottom_sheet__background</item>
+
+        <item name="shapeAppearance">@null</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <style name="Application.BottomSheetStyle.DrawableTransparent" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="backgroundTint">@null</item>
+
+        <item name="shapeAppearance">@null</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <style name="Application.BottomSheet" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Application.BottomSheetStyle</item>
+
+        <item name="application___bottom_sheet__background__color">@color/white</item>
+    </style>
+
+    <style name="Application.BottomSheet.DrawableTransparent" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Application.BottomSheetStyle.DrawableTransparent</item>
+
+        <item name="application___bottom_sheet__background__color">@color/white</item>
+    </style>
+
+    <style name="Application.BottomSheet.Beige">
+        <item name="application___bottom_sheet__background__color">
+            @color/application___design3__background__beige
+        </item>
+    </style>
+
+    <style name="Application.BottomSheet.White">
+        <item name="application___bottom_sheet__background__color">
+            @color/white
+        </item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="Application.BottomSheet.DrawableTransparent.Transparent">
+        <item name="application___bottom_sheet__background__color">
+           @null
+        </item>
+    </style>
+
+    <style name="Application.BottomSheetDialog" parent="">
+        <item name="cornerSizeTopLeft">@dimen/application___dimen__x5</item>
+        <item name="cornerSizeTopRight">@dimen/application___dimen__x5</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="Application.BottomSheet.White.Input">
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Application.BottomSheet.AchromaticGreyLight">
+        <item name="application___bottom_sheet__background__color">
+            @color/application___design3__achromatic_light_gray
+        </item>
+    </style>
+
+    <style name="Application.MaterialAlertDialog.Rounded" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">
+            @style/Application.ShapeAppearanceOverlay.MaterialAlertDialog.Rounded
+        </item>
+        <item name="colorPrimary">@color/application___design__accent_secondary__default</item>
+    </style>
+
+    <style name="Application.ShapeAppearanceOverlay.MaterialAlertDialog.Rounded" parent="">
+        <item name="cornerSize">@dimen/application___dimen__x3</item>
+    </style>
+
+    <style name="TextAppearance.MaterialAlertDialog.Rounded" parent="MaterialAlertDialog.MaterialComponents.Title.Panel">
+        <item name="android:textAppearance">@style/Application.Design3.Body.TextAppearance.Black
+        </item>
+    </style>
+
+    <style name="Application.CheckBox" parent="">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+
+        <item name="android:background">@null</item>
+        <item name="android:foreground">@null</item>
+
+        <item name="useMaterialThemeColors">false</item>
+    </style>
+
+<!--    <style name="Application.CheckBox.Circle">-->
+<!--        <item name="android:button">@drawable/main__chat___content_picker__check_indicator</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.CheckBox.ListCircle">-->
+<!--        <item name="android:button">@drawable/main__check_circle_indicator</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.CheckBox.Square">-->
+<!--        <item name="android:button">@drawable/main__poll___multiple_choice__selector</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.CheckBox.Square.Dark">-->
+<!--        <item name="android:buttonTint">@color/black</item>-->
+<!--    </style>-->
+
+<!--    <style name="Application.CheckBox.Circle.Dark">-->
+<!--        <item name="android:buttonTint">@color/black</item>-->
+<!--    </style>-->
+
+    <style name="Application.Button.Square.Rounded" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:paddingBottom">@dimen/application___dimen__x3</item>
+        <item name="android:paddingTop">@dimen/application___dimen__x4</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">@dimen/application___dimen__x1</item>
+        <item name="android:gravity">bottom</item>
+        <item name="cornerRadius">@dimen/application___dimen__x3</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/main__oss___text__color__selector</item>
+        <item name="android:textAlignment">center</item>
+        <item name="maxLines">1</item>
+        <item name="iconTint">@color/main__oss___text__color__selector</item>
+        <item name="iconPadding">@dimen/application___dimen__x3</item>
+        <item name="iconGravity">textTop</item>
+
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+
+        <item name="android:textAppearance">
+            @style/Application.Design3.H5.TextAppearance
+        </item>
+
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!--region DEPRECATED: Use application___dimen__x instead.-->
+    <dimen name="application___spacing__tiny">@dimen/application___dimen__x1</dimen>
+    <dimen name="application___spacing__smaller">@dimen/application___dimen__x2</dimen>
+    <dimen name="application___spacing__small">@dimen/application___dimen__x3</dimen>
+    <dimen name="application___spacing__normal">@dimen/application___dimen__x4</dimen>
+    <dimen name="application___spacing__large">@dimen/application___dimen__x6</dimen>
+    <dimen name="application___spacing__huge">@dimen/application___dimen__x8</dimen>
+
+    <dimen name="application___corner_radius__smaller">@dimen/application___dimen__x2</dimen>
+    <dimen name="application___corner_radius__small">@dimen/application___dimen__x3</dimen>
+    <dimen name="application___corner_radius__normal">@dimen/application___dimen__x4</dimen>
+    <dimen name="application___corner_radius__large">@dimen/application___dimen__x5</dimen>
+    <dimen name="application___corner_radius__huge">@dimen/application___dimen__x6</dimen>
+    <!--endregion-->
+
+    <dimen name="application___dimen__x0">0dp</dimen>
+    <dimen name="application___dimen__x1">4dp</dimen>
+    <dimen name="application___dimen__x2">8dp</dimen>
+    <dimen name="application___dimen__x3">12dp</dimen>
+    <dimen name="application___dimen__x4">16dp</dimen>
+    <dimen name="application___dimen__x5">20dp</dimen>
+    <dimen name="application___dimen__x6">24dp</dimen>
+    <dimen name="application___dimen__x7">28dp</dimen>
+    <dimen name="application___dimen__x8">32dp</dimen>
+    <dimen name="application___dimen__x9">36dp</dimen>
+    <dimen name="application___dimen__x10">40dp</dimen>
+    <dimen name="application___dimen__x11">44dp</dimen>
+    <dimen name="application___dimen__x12">48dp</dimen>
+    <dimen name="application___dimen__x13">52dp</dimen>
+    <dimen name="application___dimen__x14">56dp</dimen>
+    <dimen name="application___dimen__x15">60dp</dimen>
+    <dimen name="application___dimen__x16">64dp</dimen>
+    <dimen name="application___dimen__x17">68dp</dimen>
+    <dimen name="application___dimen__x18">72dp</dimen>
+    <dimen name="application___dimen__x19">76dp</dimen>
+    <dimen name="application___dimen__x20">70dp</dimen>
+
+    <dimen name="application___dimen_scaled__x0">0sp</dimen>
+    <dimen name="application___dimen_scaled__x1">4sp</dimen>
+    <dimen name="application___dimen_scaled__x2">8sp</dimen>
+    <dimen name="application___dimen_scaled__x3">12sp</dimen>
+    <dimen name="application___dimen_scaled__x4">16sp</dimen>
+    <dimen name="application___dimen_scaled__x5">20sp</dimen>
+    <dimen name="application___dimen_scaled__x6">24sp</dimen>
+    <dimen name="application___dimen_scaled__x7">28sp</dimen>
+    <dimen name="application___dimen_scaled__x8">32sp</dimen>
+    <dimen name="application___dimen_scaled__x9">36sp</dimen>
+    <dimen name="application___dimen_scaled__x10">40sp</dimen>
+
+    <dimen name="application___base_image_size">50dp</dimen>
+
+    <dimen name="application___button__big_size">64dp</dimen>
+
+    <declare-styleable name="AutoScrollableRecyclerView">
+        <attr name="delay" format="integer"/>
+    </declare-styleable>
+
+    <plurals name="application___seconds_ago">
+        <item quantity="zero">только что</item>
+        <item quantity="one">%d секунду назад</item>
+        <item quantity="two">%d секунды назад</item>
+        <item quantity="few">%d секунды назад</item>
+        <item quantity="many">%d секунд назад</item>
+        <item quantity="other">%d секунд назад</item>
+    </plurals>
+
+    <plurals name="application___minutes_ago">
+        <item quantity="zero">минуту назад</item>
+        <item quantity="one">%d минуту назад</item>
+        <item quantity="two">%d минуты назад</item>
+        <item quantity="few">%d минуты назад</item>
+        <item quantity="many">%d минут назад</item>
+        <item quantity="other">%d минут назад</item>
+    </plurals>
+
+    <plurals name="application___hours_ago">
+        <item quantity="zero">час назад</item>
+        <item quantity="one">%d час назад</item>
+        <item quantity="two">%d часа назад</item>
+        <item quantity="few">%d часа назад</item>
+        <item quantity="many">%d часов назад</item>
+        <item quantity="other">%d часов назад</item>
+    </plurals>
+
+    <plurals name="application___days_ago">
+        <item quantity="zero">вчера</item>
+        <item quantity="one">%d день назад</item>
+        <item quantity="two">%d дня назад</item>
+        <item quantity="few">%d дня назад</item>
+        <item quantity="many">%d дней назад</item>
+        <item quantity="other">%d дней назад</item>
+    </plurals>
+
+    <plurals name="application___seconds">
+        <item quantity="zero">%d секунд</item>
+        <item quantity="one">%d секунду</item>
+        <item quantity="two">%d секунды</item>
+        <item quantity="few">%d секунды</item>
+        <item quantity="many">%d секунд</item>
+        <item quantity="other">%d секунд</item>
+    </plurals>
+
+    <string name="empty"></string>
+</resources>

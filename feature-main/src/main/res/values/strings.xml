@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="collection_toolbar_title_text">Коллекция</string>
+    <string name="collection_will_watch_tab">Буду смотреть</string>
+    <string name="collection_already_watched_tab">Просмотрено</string>
+    <string name="collection_no_films_yet">Еще нет фильмов</string>
+
+    <string name="cancel">Отмена</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="check">Проверить</string>
+
+    <string name="kidney_check_title">Заболеваниe почек</string>
+    <string name="kidney_check_hemo_title">Гемоглобин</string>
+    <string name="kidney_check_hemo_hint">грамм</string>
+    <string name="kidney_check_sg_title">Удельный вес</string>
+    <string name="kidney_check_sg_hint">1.005-1.050</string>
+    <string name="kidney_check_al_title">Альбумин</string>
+    <string name="kidney_check_al_hint">0-5 г/дл</string>
+    <string name="kidney_check_pe_title">Отек стопы</string>
+    <string name="kidney_check_bp_title">Давление</string>
+    <string name="kidney_check_bp_hint">мм/рт.ст.</string>
+    <string name="kidney_check_bgr_title">Глюкоза</string>
+    <string name="kidney_check_bgr_hint">мг/дл</string>
+</resources>

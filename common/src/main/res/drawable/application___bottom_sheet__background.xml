@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="7dp">
+
+    <item>
+        <shape android:shape="rectangle">
+
+            <solid android:color="?application___bottom_sheet__background__color"/>
+
+            <corners
+                android:topLeftRadius="@dimen/application___dimen__x6"
+                android:topRightRadius="@dimen/application___dimen__x6"/>
+        </shape>
+    </item>
+
+    <item
+        android:drawable="@drawable/application___drag"
+        android:gravity="top|center_horizontal"
+        android:top="4dp"/>
+</layer-list>

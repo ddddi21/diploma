@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="collection_toolbar_title_text">Коллекция</string>
-    <string name="collection_will_watch_tab">Буду смотреть</string>
-    <string name="collection_already_watched_tab">Просмотрено</string>
-    <string name="collection_no_films_yet">Еще нет фильмов</string>
-</resources>

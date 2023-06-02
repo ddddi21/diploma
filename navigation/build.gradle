@@ -36,9 +36,9 @@ dependencies {
     implementation project(':common')
     implementation project(':feature-splash')
     implementation project(':feature-auth')
-    implementation project(':feature-collection')
-    implementation project(':feature-film-details')
-    implementation project(':feature-collection-api')
+    implementation project(':feature-main')
+    implementation project(':feature-patient-details')
+    implementation project(':feature-main-api')
 
     implementation kotlinDep
 

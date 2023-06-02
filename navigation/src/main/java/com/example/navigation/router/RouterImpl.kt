@@ -1,9 +1,9 @@
 package com.example.navigation.router
 
 import android.os.Bundle
-import com.example.feature_collection_api.domain.model.Film
-import com.example.feature_film_details.presentation.FilmDetailsFragment
-import com.technokratos.splash.R
+import com.example.feature_patient_details.presentation.PatientDetailsFragment
+import com.example.feature_main_api.domain.model.Patient
+import com.medicalSystem.splash.R
 import com.example.navigation.navigation.NavControllerProvider
 import javax.inject.Inject
 
@@ -16,7 +16,7 @@ class RouterImpl @Inject constructor(
     }
 
     override fun navigateToMain() {
-        navigateTo(R.id.collectionFragment)
+        navigateTo(R.id.patientListsFragment)
     }
 
     override fun navigateToRegistration() {
@@ -31,8 +31,28 @@ class RouterImpl @Inject constructor(
         navControllerProvider.get()?.popBackStack()
     }
 
-    override fun navigateToFilmDetailsScreen(film: Film) {
-        navigateTo(R.id.filmDetailsFragment, FilmDetailsFragment.buildArgs(film))
+    override fun navigateToPatientDetailsScreen(patient: Patient) {
+        navigateTo(R.id.patientDetailsFragment, PatientDetailsFragment.buildArgs(patient))
+    }
+
+    override fun navigateToCheckDiagnosDetailsScreen(diagnos: String) {
+        navigateTo(R.id.illnessIteractionCheckFragment)
+    }
+
+    override fun navigateToKidney() {
+        navigateTo(R.id.kidneyCheckFragment)
+    }
+
+    override fun navigateToDiabet() {
+        navigateTo(R.id.diabetCheckFragment)
+    }
+
+    override fun navigateToAuth() {
+        navigateTo(R.id.authFragment)
+    }
+
+    override fun navigateToAddIteraction() {
+        navigateTo(R.id.addIteractionFragment)
     }
 
     private fun navigateTo(actionId: Int, bundle: Bundle? = null) {

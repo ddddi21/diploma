@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">splash</string>
+    <string name="app_name">Medical\nSystem</string>
+
+    <string name="cancel">Отмена</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="check">Проверить</string>
+
+    <string name="kidney_check_title">Заболеваниe почек</string>
+    <string name="kidney_check_hemo_title">Гемоглобин</string>
+    <string name="kidney_check_hemo_hint">грамм</string>
+    <string name="kidney_check_sg_title">Удельный вес</string>
+    <string name="kidney_check_sg_hint">1.005-1.050</string>
+    <string name="kidney_check_al_title">Альбумин</string>
+    <string name="kidney_check_al_hint">0-5 г/дл</string>
+    <string name="kidney_check_pe_title">Отек стопы</string>
+<!--    <string name="kidney_check_pe_hint">Отек стопы</string>-->
+    <string name="kidney_check_bp_title">Давление</string>
+    <string name="kidney_check_bp_hint">мм/рт.ст.</string>
+    <string name="kidney_check_bgr_title">Глюкоза</string>
+    <string name="kidney_check_bgr_hint">мг/дл</string>
 </resources>
